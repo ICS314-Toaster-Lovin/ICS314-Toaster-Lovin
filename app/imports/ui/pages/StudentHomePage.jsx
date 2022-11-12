@@ -23,6 +23,27 @@ const StudentHomePage = () => {
       ready: rdy,
     };
   }, []);
+  // constant to test if recipes would pass through correctly
+  const recipe = [{
+    name: 'Spam Musubi',
+    servingSize: '1',
+    estimatedTime: '10 minutes',
+    dietaryRestrictions: 'gluten-free',
+    image: 'https://github.com/philipmjohnson.png',
+    ingredientList: 'Rice, Spam, Seaweed',
+    instructions: 'fry spam, mold rice, cut seaweed, assemble',
+  },
+  {
+    name: 'Top Ramen',
+    servingSize: '1',
+    estimatedTime: '2 minutes',
+    dietaryRestrictions: 'vegan',
+    image: 'https://github.com/philipmjohnson.png',
+    ingredientList: 'Rice, Spam, Seaweed',
+    instructions: 'fry spam, mold rice, cut seaweed, assemble',
+  },
+  ];
+
   return (ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">

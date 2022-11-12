@@ -1,32 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { Card, Image } from 'react-bootstrap';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-const HomeRecipeItem = ({ home }) => (
-  <tr>
-    <td>{home.name}</td>
-    <td>{home.image}</td>
-    <td>
-      <Link to={`/edit/${home._id}`}>View</Link>
-    </td>
-  </tr>
+const HomeRecipeItem = ({ recipe }) => (
+  <Card className="h-100">
+    <Card.Header>
+      <Image src={recipe.image} />
+    </Card.Header>
+    <Card.Body>
+      <Card.Text>{recipe.name}</Card.Text>
+    </Card.Body>
+  </Card>
 );
 
 const HomeIngredientItem = ({ ingredient }) => (
-  <tr>
-    <td>{ingredient.name}</td>
-    <td>{ingredient.price}</td>
-    <td>{ingredient.vendor}</td>
-    <td>
-      <Link to={`/edit/${ingredient._id}`}>View</Link>
-    </td>
-  </tr>
+  <Card className="h-50">
+    <Card.Header>
+      <Card.Text>{ingredient.name} {ingredient.price}</Card.Text>
+    </Card.Header>
+    <Card.Body>
+      <Card.Text>{ingredient.vendor}</Card.Text>
+    </Card.Body>
+  </Card>
 );
 
 // Require a document to be passed to this component.
 HomeRecipeItem.propTypes = {
-  home: PropTypes.shape({
+  recipe: PropTypes.shape({
     name: PropTypes.string,
     image: PropTypes.string,
     _id: PropTypes.string,

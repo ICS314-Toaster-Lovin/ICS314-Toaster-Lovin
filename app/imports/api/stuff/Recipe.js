@@ -15,12 +15,11 @@ class RecipeCollection {
     this.schema = new SimpleSchema({
       name: String,
       servingSize: Number,
-      estimatedTime: Number,
-      dietaryRestrictions: {
-        type: String,
-        allowedValues: ['none', 'gluten-free', 'vegan', 'other'],
-        defaultValue: 'none',
-      },
+      estimatedTime: String,
+      glutenFree: Boolean,
+      lactoseFree: Boolean,
+      vegan: Boolean,
+      vegetarian: Boolean,
       image: String,
       ingredientList: String,
       instructions: String,
@@ -34,7 +33,7 @@ class RecipeCollection {
 }
 
 /**
- * The singleton instance of the StuffsCollection.
+ * The singleton instance of the RecipeCollection.
  * @type {RecipeCollection}
  */
 export const Recipe = new RecipeCollection();
