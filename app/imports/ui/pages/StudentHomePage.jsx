@@ -1,43 +1,49 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Col, Container, Row, Table } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Recipe } from '../../api/stuff/Recipe';
-import { HomeRecipeItem, HomeIngredientItem} from '../components/StudentHomePageItem';
+import { HomeRecipeItem } from '../components/StudentHomePageItem';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 const StudentHomePage = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { ready, users } = useTracker(() => {
+  const { ready } = useTracker(() => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
-    // Get access to Stuff documents.
+    // Get access to Recipe documents.
     const subscription = Meteor.subscribe(Recipe.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
-    // Get the Stuff documents
-    const homePageItems = Recipe.collection.find({}).fetch();
+    // Get the Recipe documents
+    const recipeItems = Recipe.collection.find({}).fetch();
     return {
-      user: homePageItems,
+      stuffs: recipeItems,
       ready: rdy,
     };
   }, []);
+
   // constant to test if recipes would pass through correctly
-  const recipe = [{
+  const recipes = [{
     name: 'Spam Musubi',
-    servingSize: '1',
+    servingSize: '10',
     estimatedTime: '10 minutes',
-    dietaryRestrictions: 'gluten-free',
+    glutenFree: '0',
+    lactoseFree: '0',
+    vegan: '0',
+    vegetarian: '0',
     image: 'https://github.com/philipmjohnson.png',
     ingredientList: 'Rice, Spam, Seaweed',
     instructions: 'fry spam, mold rice, cut seaweed, assemble',
   },
-  {
-    name: 'Top Ramen',
-    servingSize: '1',
+  { name: 'Top Ramen',
+    servingSize: '10',
     estimatedTime: '2 minutes',
-    dietaryRestrictions: 'vegan',
+    glutenFree: '0',
+    lactoseFree: '0',
+    vegan: '0',
+    vegetarian: '0',
     image: 'https://github.com/philipmjohnson.png',
     ingredientList: 'Rice, Spam, Seaweed',
     instructions: 'fry spam, mold rice, cut seaweed, assemble',
@@ -47,23 +53,13 @@ const StudentHomePage = () => {
   return (ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
-        <Col md={7}>
+        <Col>
           <Col className="text-left">
             <h2>Favorite Recipes</h2>
           </Col>
-          <Table striped bordered hover>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Quantity</th>
-                <th>Condition</th>
-                <th>Edit</th>
-              </tr>
-            </thead>
-            <tbody>
-              {users.map((user) => <HomeRecipeItem key={user._id} user={user}/>)}
-            </tbody>
-          </Table>
+          <Row xs={1} md={2} lg={3} className="g-4">
+            {recipes.map((homerecipeitem, index) => (<Col key={index}><HomeRecipeItem homerecipeitem={homerecipeitem} /></Col>))}
+          </Row>
         </Col>
       </Row>
     </Container>

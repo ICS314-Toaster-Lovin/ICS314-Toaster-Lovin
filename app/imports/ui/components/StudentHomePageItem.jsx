@@ -4,43 +4,49 @@ import { Link } from 'react-router-dom';
 import { Card, Image } from 'react-bootstrap';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-const HomeRecipeItem = ({ recipe }) => (
+const HomeRecipeItem = ({ homerecipeitem }) => (
   <Card className="h-100">
     <Card.Header>
-      <Image src={recipe.image} />
+      <Image src={homerecipeitem.image} />
     </Card.Header>
     <Card.Body>
-      <Card.Text>{recipe.name}</Card.Text>
+      <Card.Text>{homerecipeitem.name}</Card.Text>
     </Card.Body>
   </Card>
 );
 
-const HomeIngredientItem = ({ ingredient }) => (
+const HomeIngredientItem = ({ homeingredientitem }) => (
   <Card className="h-50">
     <Card.Header>
-      <Card.Text>{ingredient.name} {ingredient.price}</Card.Text>
+      <Card.Text>{homeingredientitem.name} {homeingredientitem.price}</Card.Text>
     </Card.Header>
     <Card.Body>
-      <Card.Text>{ingredient.vendor}</Card.Text>
+      <Card.Text>{homeingredientitem.vendor}</Card.Text>
     </Card.Body>
   </Card>
 );
 
 // Require a document to be passed to this component.
 HomeRecipeItem.propTypes = {
-  recipe: PropTypes.shape({
+  homerecipeitem: PropTypes.shape({
     name: PropTypes.string,
+    servingSize: PropTypes.number,
+    estimatedTime: PropTypes.string,
+    glutenFree: PropTypes.bool,
+    lactoseFree: PropTypes.bool,
+    vegan: PropTypes.bool,
+    vegetarian: PropTypes.bool,
     image: PropTypes.string,
-    _id: PropTypes.string,
+    ingredientList: PropTypes.string,
+    instructions: PropTypes.string,
   }).isRequired,
 };
 
 HomeIngredientItem.propTypes = {
-  ingredient: PropTypes.shape({
+  homeingredientitem: PropTypes.shape({
     name: PropTypes.string,
     price: PropTypes.string,
     vendor: PropTypes.string,
-    _id: PropTypes.string,
   }).isRequired,
 };
 
