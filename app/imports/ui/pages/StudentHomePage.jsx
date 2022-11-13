@@ -48,22 +48,57 @@ const StudentHomePage = () => {
     ingredientList: 'Rice, Spam, Seaweed',
     instructions: 'fry spam, mold rice, cut seaweed, assemble',
   },
+  { name: 'Top Ramen',
+    servingSize: '10',
+    estimatedTime: '2 minutes',
+    glutenFree: '0',
+    lactoseFree: '0',
+    vegan: '0',
+    vegetarian: '0',
+    image: 'https://github.com/philipmjohnson.png',
+    ingredientList: 'Rice, Spam, Seaweed',
+    instructions: 'fry spam, mold rice, cut seaweed, assemble',
+  },
+  { name: 'Top Ramen',
+    servingSize: '10',
+    estimatedTime: '2 minutes',
+    glutenFree: '0',
+    lactoseFree: '0',
+    vegan: '0',
+    vegetarian: '0',
+    image: 'https://github.com/philipmjohnson.png',
+    ingredientList: 'Rice, Spam, Seaweed',
+    instructions: 'fry spam, mold rice, cut seaweed, assemble',
+  },
+  { name: 'Top Ramen',
+    servingSize: '10',
+    estimatedTime: '2 minutes',
+    glutenFree: '0',
+    lactoseFree: '0',
+    vegan: '0',
+    vegetarian: '0',
+    image: 'https://github.com/philipmjohnson.png',
+    ingredientList: 'Rice, Spam, Seaweed',
+    instructions: 'fry spam, mold rice, cut seaweed, assemble',
+  },
   ];
 
-  return (ready ? (
-    <Container className="py-3">
+  return (
+    <Container className="py-3 container-fluid">
       <Row className="justify-content-center">
         <Col>
           <Col className="text-left">
             <h2>Favorite Recipes</h2>
           </Col>
-          <Row xs={1} md={2} lg={3} className="g-4">
-            {recipes.map((homerecipeitem, index) => (<Col key={index}><HomeRecipeItem homerecipeitem={homerecipeitem} /></Col>))}
-          </Row>
+          <div className="d-flex flex-row flex-nowrap row-horizon">
+            <Row>
+              {recipes.map((homerecipeitem, index) => (<Col key={index}><HomeRecipeItem homerecipeitem={homerecipeitem} /></Col>))}
+            </Row>
+          </div>
         </Col>
       </Row>
     </Container>
-  ) : <LoadingSpinner />);
+  );
 };
 
 export default StudentHomePage;

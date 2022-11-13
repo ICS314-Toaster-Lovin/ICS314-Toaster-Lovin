@@ -5,12 +5,10 @@ import { Card, Image } from 'react-bootstrap';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 const HomeRecipeItem = ({ homerecipeitem }) => (
-  <Card className="h-100">
-    <Card.Header>
-      <Image src={homerecipeitem.image} />
-    </Card.Header>
+  <Card style={{ width: '18rem' }}>
+    <Card.Img style={{ objectFit: 'cover', height: '8vw' }} variant="top" src={homerecipeitem.image} />
     <Card.Body>
-      <Card.Text>{homerecipeitem.name}</Card.Text>
+      <Card.Title>{homerecipeitem.name}</Card.Title>
     </Card.Body>
   </Card>
 );
