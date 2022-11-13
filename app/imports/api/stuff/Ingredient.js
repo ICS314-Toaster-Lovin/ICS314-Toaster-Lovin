@@ -16,7 +16,10 @@ class IngredientCollection {
       name: String,
       price: String,
       quantity: Number,
+      units: String,
+      image: String,
       vendor: String,
+      owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
@@ -30,4 +33,4 @@ class IngredientCollection {
  * The singleton instance of the RecipeCollection.
  * @type {IngredientCollection}
  */
-export const Recipe = new IngredientCollection();
+export const Ingredient = new IngredientCollection();
