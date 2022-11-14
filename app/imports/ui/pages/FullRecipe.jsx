@@ -1,27 +1,35 @@
+import { Meteor } from 'meteor/meteor';
+import { useTracker } from 'meteor/react-meteor-data';
 import React, { useRef } from 'react';
-import { Container, Image, ListGroup, Row, Col} from 'react-bootstrap';
+import { Container, Image, ListGroup, Row, Col } from 'react-bootstrap';
 import { CheckCircleFill, XCircleFill, AlarmFill, PersonFill } from 'react-bootstrap-icons';
-
-// Placeholder data - replace with Mongo collection
-const recipe = {
-  name: 'Bacon Omelette',
-  ingredientList: ['2 eggs', '5 cherry tomatoes', '1 cup spinach', '1/2 cup mushrooms', '1/4 cup diced bacon', '1/2 Tbsp butter'],
-  instructions: 'Beat the eggs in a small bowl until smooth. Heat the pan and melt the butter. Once melted, sautee the spinach, mushrooms, tomatoes, and bacon for 2 minutes. Then add the eggs to the pan and reduce to low heat. Once the eggs are nearly set, fold the omelette and turn off the heat.',
-  estimatedTime: 4,
-  servingSize: 1,
-  glutenFree: true,
-  lactoseFree: true,
-  vegan: false,
-  vegetarian: false,
-  image: 'https://www.simplyrecipes.com/thmb/LLhiA8KZ7JZ5ZI0g-1bF1eg-gGM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2018__10__HT-Make-an-Omelet-LEAD-HORIZONTAL-17cd2e469c4a4ccbbd1273a7cae6425c.jpg',
-  owner: 'john@foo.com',
-};
+import { useParams } from 'react-router';
+import { Recipe } from '../../api/stuff/Recipe';
+import { Ingredient } from '../../api/stuff/Ingredient';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const FullRecipe = () => {
+  const { _id } = useParams();
+
+  const { ready, recipe, ingredients } = useTracker(() => {
+    const recipeSubscription = Meteor.subscribe(Recipe.userPublicationName);
+    const ingredientSubscription = Meteor.subscribe(Ingredient.userPublicationName);
+    // Determine if the subscription is ready
+    const rdy = recipeSubscription.ready() && ingredientSubscription.ready();
+    // Get the documents
+    const recipeItem = Recipe.collection.findOne(_id);
+    const ingredientItems = Ingredient.collection.find({}).fetch();
+    return {
+      ready: rdy,
+      recipe: recipeItem,
+      ingredients: ingredientItems,
+    };
+  }, []);
   const vendorList = useRef();
 
   /* Shows a list of vendors that carry an ingredient */
   function showVendors(e) {
+    console.log(e);
     vendorList.current.style.display = 'block';
     vendorList.current.style.top = `${e.pageY - 95}px`;
   }
@@ -31,7 +39,7 @@ const FullRecipe = () => {
     vendorList.current.style.display = 'none';
   }
 
-  return (
+  return (ready ? (
     <Container className="py-3">
       <div className="d-flex">
         <div>
@@ -77,13 +85,13 @@ const FullRecipe = () => {
         <div className="ms-5" style={{ minWidth: '200px', maxWidth: '300px', wordBreak: 'break-word', position: 'relative' }}>
           <h4 className="text-center" style={{ marginTop: '19px' }}><u>Ingredients</u></h4>
           <ListGroup>
-            {recipe.ingredientList.map((ingredient, idx) => (
+            {recipe.ingredientList.split(', ').map((recipeIngredient, idx) => (
               <ListGroup.Item
                 action
                 onMouseEnter={showVendors}
                 onMouseLeave={hideVendors}
                 key={idx}
-              >{ingredient}
+              >{recipeIngredient}
               </ListGroup.Item>
             ))}
           </ListGroup>
@@ -101,7 +109,7 @@ const FullRecipe = () => {
         </div>
       </div>
     </Container>
-  );
+  ) : <LoadingSpinner />);
 };
 
 export default FullRecipe;
