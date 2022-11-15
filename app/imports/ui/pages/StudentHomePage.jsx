@@ -2,103 +2,59 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
-import { Recipe } from '../../api/stuff/Recipe';
-import { HomeRecipeItem } from '../components/StudentHomePageItem';
+import { Recipe } from '../../api/recipe/Recipe';
+import { HomeIngredientItem, HomeRecipeItem } from '../components/StudentHomePageItem';
 import LoadingSpinner from '../components/LoadingSpinner';
+import { Ingredient } from '../../api/ingredient/Ingredient';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 const StudentHomePage = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { ready } = useTracker(() => {
+  const { ready, recipes, ingredients } = useTracker(() => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
     // Get access to Recipe documents.
     const subscription = Meteor.subscribe(Recipe.userPublicationName);
+    const subscription2 = Meteor.subscribe(Ingredient.userPublicationName);
     // Determine if the subscription is ready
-    const rdy = subscription.ready();
+    const rdy = subscription.ready() && subscription2.ready();
+
     // Get the Recipe documents
     const recipeItems = Recipe.collection.find({}).fetch();
+    const ingredientItems = Ingredient.collection.find({}).fetch();
     return {
-      stuffs: recipeItems,
+      ingredients: ingredientItems,
+      recipes: recipeItems,
       ready: rdy,
     };
   }, []);
 
-  // constant to test if recipes would pass through correctly
-  const recipes = [{
-    name: 'Spam Musubi',
-    servingSize: '10',
-    estimatedTime: '10 minutes',
-    glutenFree: '0',
-    lactoseFree: '0',
-    vegan: '0',
-    vegetarian: '0',
-    image: 'https://github.com/philipmjohnson.png',
-    ingredientList: 'Rice, Spam, Seaweed',
-    instructions: 'fry spam, mold rice, cut seaweed, assemble',
-  },
-  { name: 'Top Ramen',
-    servingSize: '10',
-    estimatedTime: '2 minutes',
-    glutenFree: '0',
-    lactoseFree: '0',
-    vegan: '0',
-    vegetarian: '0',
-    image: 'https://github.com/philipmjohnson.png',
-    ingredientList: 'Rice, Spam, Seaweed',
-    instructions: 'fry spam, mold rice, cut seaweed, assemble',
-  },
-  { name: 'Top Ramen',
-    servingSize: '10',
-    estimatedTime: '2 minutes',
-    glutenFree: '0',
-    lactoseFree: '0',
-    vegan: '0',
-    vegetarian: '0',
-    image: 'https://github.com/philipmjohnson.png',
-    ingredientList: 'Rice, Spam, Seaweed',
-    instructions: 'fry spam, mold rice, cut seaweed, assemble',
-  },
-  { name: 'Top Ramen',
-    servingSize: '10',
-    estimatedTime: '2 minutes',
-    glutenFree: '0',
-    lactoseFree: '0',
-    vegan: '0',
-    vegetarian: '0',
-    image: 'https://github.com/philipmjohnson.png',
-    ingredientList: 'Rice, Spam, Seaweed',
-    instructions: 'fry spam, mold rice, cut seaweed, assemble',
-  },
-  { name: 'Top Ramen',
-    servingSize: '10',
-    estimatedTime: '2 minutes',
-    glutenFree: '0',
-    lactoseFree: '0',
-    vegan: '0',
-    vegetarian: '0',
-    image: 'https://github.com/philipmjohnson.png',
-    ingredientList: 'Rice, Spam, Seaweed',
-    instructions: 'fry spam, mold rice, cut seaweed, assemble',
-  },
-  ];
-
-  return (
+  return (ready ? (
     <Container className="py-3 container-fluid">
       <Row className="justify-content-center">
         <Col>
           <Col className="text-left">
             <h2>Favorite Recipes</h2>
           </Col>
-          <div className="d-flex flex-row flex-nowrap row-horizon">
-            <Row>
-              {recipes.map((homerecipeitem, index) => (<Col key={index}><HomeRecipeItem homerecipeitem={homerecipeitem} /></Col>))}
+          <div>
+            <Row className="d-flex flex-row flex-nowrap row-horizon overflow-auto me-1">
+              {recipes.map((homerecipeitem, index) => (<Col className="col-sm-3" key={index}><HomeRecipeItem homerecipeitem={homerecipeitem} /></Col>))}
+            </Row>
+          </div>
+        </Col>
+        <Col>
+          <Col className="text-left">
+            <h2>Recommended Ingredients</h2>
+          </Col>
+          <div>
+            <Row className="d-flex flex-row flex-nowrap row-horizon overflow-auto me-1">
+              {ingredients.map((homeingredientitem, index) => (<Col className="col-sm-3"  key={index}><HomeIngredientItem homeingredientitem={homeingredientitem} /></Col>))}
             </Row>
           </div>
         </Col>
       </Row>
     </Container>
-  );
+  ) : <LoadingSpinner />);
 };
 
 export default StudentHomePage;
