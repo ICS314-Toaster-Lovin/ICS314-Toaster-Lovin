@@ -3,20 +3,27 @@ import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /**
- * The IngredientCollection. It encapsulates state and variable values for ingredients.
+ * The RecipeCollection. It encapsulates state and variable values for stuff.
  */
-class IngredientCollection {
+class RecipeCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'IngredientCollection';
+    this.name = 'RecipeCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       name: String,
-      price: String,
-      quantity: Number,
-      vendor: String,
+      servingSize: Number,
+      estimatedTime: String,
+      glutenFree: Boolean,
+      lactoseFree: Boolean,
+      vegan: Boolean,
+      vegetarian: Boolean,
+      image: String,
+      ingredientList: String,
+      instructions: String,
+      owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
@@ -28,6 +35,6 @@ class IngredientCollection {
 
 /**
  * The singleton instance of the RecipeCollection.
- * @type {IngredientCollection}
+ * @type {RecipeCollection}
  */
-export const Recipe = new IngredientCollection();
+export const Recipe = new RecipeCollection();
