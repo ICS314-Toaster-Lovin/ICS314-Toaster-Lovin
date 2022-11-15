@@ -21,8 +21,8 @@
       "vegan": false,
       "vegetarian": false,
       "image": "https://www.simplyrecipes.com/thmb/LLhiA8KZ7JZ5ZI0g-1bF1eg-gGM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2018__10__HT-Make-an-Omelet-LEAD-HORIZONTAL-17cd2e469c4a4ccbbd1273a7cae6425c.jpg",
-      "ingredientList": "2 eggs, 5 cherry tomatoes, 1 cup spinach, 1/2 cup mushrooms, 1/4 cup diced bacon, 1/2 Tbsp butter",
-      "instructions": "Beat the eggs in a small bowl until smooth. Heat the pan and melt the butter. Once melted, sautee the spinach, mushrooms, tomatoes, and bacon for 2 minutes. Then add the eggs to the pan and reduce to low heat. Once the eggs are nearly set, fold the omelette and turn off the heat.",
+      "ingredientList": "eggs, cherry tomatoes, spinach, mushrooms, bacon, butter",
+      "instructions": "Beat the eggs in a small bowl until smooth. Heat the pan and melt the butter. Once melted, sautee the spinach, mushrooms, tomatoes, and diced bacon for 2 minutes. Then add the eggs to the pan and reduce to low heat. Once the eggs are nearly set, fold the omelette and turn off the heat.",
       "owner": "john@foo.com"
     },
     {
@@ -34,7 +34,7 @@
       "vegan": false,
       "vegetarian": false,
       "image": "https://takestwoeggs.com/wp-content/uploads/2022/05/Hawaiian-Spam-Musubi-Takestwoeggs-Final-Photography-sq-480x270.jpg",
-      "ingredientList": "3 cups rice, 1 can Spam, 2 sheets seaweed",
+      "ingredientList": "rice, spam, seaweed",
       "instructions": "Fry spam for 2 minutes on each side.  Mold the rice and cut seaweed. Assemble by placing spam on top of the rice, then wrapping it with seaweed.",
       "owner": "john@foo.com"
     },
@@ -47,7 +47,7 @@
       "vegan": true,
       "vegetarian": true,
       "image": "https://christieathome.com/wp-content/uploads/2022/02/Curry-Ramen-15.jpg",
-      "ingredientList": "1 Instant Ramen Pack, 2 cups boiling water",
+      "ingredientList": "instant ramen",
       "instructions": "Pour boiling water into the cup of instant ramen. Cover and wait for 2 minutes.",
       "owner": "john@foo.com"
     }
