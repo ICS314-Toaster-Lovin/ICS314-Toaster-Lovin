@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
-import { Recipe } from '../../api/stuff/Recipe';
-import { Ingredient } from '../../api/stuff/Ingredient';
+import { Recipe } from '../../api/recipe/Recipe';
+import { Ingredient } from '../../api/ingredient/Ingredient';
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.
