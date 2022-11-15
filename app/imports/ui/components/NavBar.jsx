@@ -28,13 +28,18 @@ const NavBar = () => {
             )}
             {currentUser ? ([
               <Nav.Link id="home-nav" as={NavLink} to="/home" key="home">Home</Nav.Link>,
+            ]) : ''}
+            {Roles.userIsInRole(Meteor.userId(), 'user') ? ([
               <Nav.Link id="favorites-nav" as={NavLink} to="/favorites" key="favorites">Favorites</Nav.Link>,
               <Nav.Link id="add-recipe-nav" as={NavLink} to="/add-recipe" key="add-recipe">Add Recipe</Nav.Link>,
               <Nav.Link id="search-nav" as={NavLink} to="/search" key="search">Search</Nav.Link>,
             ]) : ''}
-            {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-              <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin" key="admin">Admin</Nav.Link>
-            ) : ''}
+            {Roles.userIsInRole(Meteor.userId(), 'admin') ? ([
+              <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin" key="admin">Admin</Nav.Link>,
+              <Nav.Link id="user-list-admin-nav" as={NavLink} to="/user-list" key="user-list">User List</Nav.Link>,
+              <Nav.Link id="newest-recipes-admin-nav" as={NavLink} to="/newest-recipes" key="newest-recipes">Newest Recipes</Nav.Link>,
+              <Nav.Link id="newest-Ingredients-admin-nav" as={NavLink} to="/newest-ingredients" key="newest-ingredients">Newest Ingredients</Nav.Link>,
+            ]) : ''}
           </Nav>
           <Nav className="justify-content-end">
             {currentUser === '' ? (
@@ -52,9 +57,11 @@ const NavBar = () => {
               </NavDropdown>
             ) : (
               <NavDropdown id="navbar-current-user" title={currentUser}>
-                <NavDropdown.Item id="navbar-profile" as={NavLink} to="/profile">
-                  Profile
-                </NavDropdown.Item>
+                {Roles.userIsInRole(Meteor.userId(), 'user') ? (
+                  <NavDropdown.Item id="navbar-profile" as={NavLink} to="/profile">
+                    Profile
+                  </NavDropdown.Item>
+                ) : ''}
                 <NavDropdown.Item id="navbar-sign-out" as={NavLink} to="/signout">
                   <BoxArrowRight />
                   {' '}
