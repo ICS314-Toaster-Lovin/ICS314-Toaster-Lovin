@@ -26,3 +26,11 @@ body {
   padding-top: 10px;
   padding-bottom: 20px;
 }
+
+
+.container-fluid {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+
