@@ -1,8 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
-import { Recipe } from '../../api/stuff/Recipe';
-import { Ingredient } from '../../api/stuff/Ingredient';
+import { Recipe } from '../../api/recipe/Recipe';
+import { Ingredient } from '../../api/ingredient/Ingredient';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
