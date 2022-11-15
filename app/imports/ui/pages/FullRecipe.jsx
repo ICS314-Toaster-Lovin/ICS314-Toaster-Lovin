@@ -4,8 +4,8 @@ import React, { useRef, useState } from 'react';
 import { Container, Image, ListGroup, Row, Col } from 'react-bootstrap';
 import { CheckCircleFill, XCircleFill, AlarmFill, PersonFill } from 'react-bootstrap-icons';
 import { useParams } from 'react-router';
-import { Recipe } from '../../api/stuff/Recipe';
-import { Ingredient } from '../../api/stuff/Ingredient';
+import { Recipe } from '../../api/recipe/Recipe';
+import { Ingredient } from '../../api/ingredient/Ingredient';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const FullRecipe = () => {

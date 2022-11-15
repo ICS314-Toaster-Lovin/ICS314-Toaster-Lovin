@@ -4,7 +4,7 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { PlusCircleFill } from 'react-bootstrap-icons';
-import { Ingredient } from '../../api/stuff/Ingredient';
+import { Ingredient } from '../../api/ingredient/Ingredient';
 import LoadingSpinner from '../components/LoadingSpinner';
 import IngredientCard from '../components/IngredientCard';
 
