@@ -29,7 +29,7 @@ const NavBar = () => {
             {currentUser ? ([
               <Nav.Link id="home-nav" as={NavLink} to="/home" key="home">Home</Nav.Link>,
             ]) : ''}
-            {Roles.userIsInRole(Meteor.userId(), 'user') ? ([
+            {Roles.userIsInRole(Meteor.userId(), 'student') ? ([
               <Nav.Link id="favorites-nav" as={NavLink} to="/favorites" key="favorites">Favorites</Nav.Link>,
               <Nav.Link id="add-recipe-nav" as={NavLink} to="/add-recipe" key="add-recipe">Add Recipe</Nav.Link>,
               <Nav.Link id="search-nav" as={NavLink} to="/search" key="search">Search</Nav.Link>,
@@ -57,7 +57,12 @@ const NavBar = () => {
               </NavDropdown>
             ) : (
               <NavDropdown id="navbar-current-user" title={currentUser}>
-                {Roles.userIsInRole(Meteor.userId(), 'user') ? (
+                {Roles.userIsInRole(Meteor.userId(), 'student') ? (
+                  <NavDropdown.Item id="navbar-profile" as={NavLink} to="/profile">
+                    Profile
+                  </NavDropdown.Item>
+                ) : ''}
+                {Roles.userIsInRole(Meteor.userId(), 'vendor') ? (
                   <NavDropdown.Item id="navbar-profile" as={NavLink} to="/profile">
                     Profile
                   </NavDropdown.Item>
