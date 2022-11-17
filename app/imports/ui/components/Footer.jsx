@@ -7,26 +7,31 @@ const Footer = () => (
     <Container>
       <Row className="pb-3">
         <Col className="text-center">
-          <br />
+          Resources:
+          <hr />
+          <a href="https://no-more-ramen.github.io/">
+            Visit our Github Page
+          </a>
           <br />
           <a href="https://no-more-ramen.github.io/">
             Github Repository
           </a>
         </Col>
         <Col className="text-center">
-          Resources:
+          No More Ramen
+          {' '}
+          <hr />
+          University of Hawaii
           <br />
-          <br />
-          <a href="https://no-more-ramen.github.io/">
-            Visit our Github Page
-          </a>
+          Honolulu, HI 96822
+          {' '}
         </Col>
         <Col className="text-center">
+          Contact Us:
+          <hr />
+          Email
           <br />
-          <br />
-          <a href="http://ics-software-engineering.github.io/meteor-application-template-react">
-            Template Home Page
-          </a>
+          Phone #
         </Col>
       </Row>
     </Container>
