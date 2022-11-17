@@ -34,7 +34,6 @@ const AddRecipe = () => {
     const vegan = dietaryRestrictions.includes('Vegan');
     const vegetarian = dietaryRestrictions.includes('Vegetarian');
     const createdAt = new Date();
-    console.log(createdAt);
     // Insert into Recipe Collection
     Recipe.collection.insert(
       { name, servingSize, estimatedTime, glutenFree, lactoseFree, vegan, vegetarian, image, ingredientList, instructions, owner, createdAt },
