@@ -19,6 +19,7 @@ import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
 import StudentHomePage from '../pages/StudentHomePage';
 import RecipeSearch from '../pages/RecipeSearch';
+import AdminHomePage from '../pages/AdminHomePage';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => (
@@ -32,6 +33,7 @@ const App = () => (
         <Route path="/signout" element={<SignOut />} />
         <Route path="/search" element={<RecipeSearch />} />
         <Route path="/studenthome" element={<ProtectedRoute><StudentHomePage /></ProtectedRoute>} />
+        <Route path="/adminhome" element={<AdminProtectedRoute><AdminHomePage /></AdminProtectedRoute>} />
         <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
         <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
         <Route path="/add-recipe" element={<ProtectedRoute><AddRecipe /></ProtectedRoute>} />
