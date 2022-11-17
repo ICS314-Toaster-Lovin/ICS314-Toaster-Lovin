@@ -9,6 +9,7 @@ import ListStuff from '../pages/ListStuff';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import AddRecipe from '../pages/AddRecipe';
 import FullRecipe from '../pages/FullRecipe';
+import StudentProfile from '../pages/StudentProfile';
 import VendorHome from '../pages/VendorHome';
 import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
@@ -32,6 +33,7 @@ const App = () => (
         <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
         <Route path="/add" element={<ProtectedRoute><AddRecipe /></ProtectedRoute>} />
         <Route path="/recipe" element={<ProtectedRoute><FullRecipe /></ProtectedRoute>} />
+        <Route path="/profile" element={<ProtectedRoute><StudentProfile /></ProtectedRoute>} />
         <Route path="/vendor" element={<ProtectedRoute><VendorHome /></ProtectedRoute>} />
         <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
         <Route path="/admin" element={<AdminProtectedRoute><ListStuffAdmin /></AdminProtectedRoute>} />
