@@ -15,6 +15,14 @@ const createUser = (email, password, role) => {
     Roles.createRole(role, { unlessExists: true });
     Roles.addUsersToRoles(userID, 'admin');
   }
+  if (role === 'student') {
+    Roles.createRole(role, { unlessExists: true });
+    Roles.addUsersToRoles(userID, 'student');
+  }
+  if (role === 'vendor') {
+    Roles.createRole(role, { unlessExists: true });
+    Roles.addUsersToRoles(userID, 'vendor');
+  }
 };
 
 // When running app for first time, pass a settings file to set up a default user account.

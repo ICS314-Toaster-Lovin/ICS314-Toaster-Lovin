@@ -1,7 +1,13 @@
 {
+  "monti": {
+    "appId": "e9T8Yin9dtNLMsYA8",
+    "appSecret": "63e8a3c1-b03c-4248-934f-f1f63fc12488"
+  },
+
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme" }
+    { "email": "john@foo.com", "password": "changeme", "role": "student" },
+    { "email": "walmart@foo.com", "password": "changeme", "role": "vendor" }
   ],
 
   "defaultData": [
