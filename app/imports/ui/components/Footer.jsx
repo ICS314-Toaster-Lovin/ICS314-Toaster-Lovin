@@ -13,7 +13,7 @@ const Footer = () => (
             Visit our Github Page
           </a>
           <br />
-          <a href="https://no-more-ramen.github.io/">
+          <a href="https://github.com/no-more-ramen/no-more-ramen">
             Github Repository
           </a>
         </Col>
