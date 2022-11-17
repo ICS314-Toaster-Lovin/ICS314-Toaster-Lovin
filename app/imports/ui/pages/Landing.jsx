@@ -14,8 +14,8 @@ const Landing = () => (
       />
 
       <Carousel.Caption>
-        <Button className="justify-content-center" href="http://localhost:3000/signup">Sign Up Today</Button>
         <p>The goal of this site is to help improve the nutritional content and variety of foods eaten by students and help them limit the use of vending machines or fast food products by providing tasty, realistic alternatives.</p>
+        <Button className="justify-content-center" href="http://localhost:3000/signup">Sign Up Today</Button>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
@@ -27,8 +27,8 @@ const Landing = () => (
       />
 
       <Carousel.Caption>
-        <Button className="justify-content-center" href="http://localhost:3000/signup">Sign Up Today</Button>
         <p>The goal of this site is to help improve the nutritional content and variety of foods eaten by students and help them limit the use of vending machines or fast food products by providing tasty, realistic alternatives.</p>
+        <Button className="justify-content-center" href="http://localhost:3000/signup">Sign Up Today</Button>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
@@ -40,10 +40,10 @@ const Landing = () => (
       />
 
       <Carousel.Caption>
-        <Button className="justify-content-center" href="http://localhost:3000/signup">Sign Up Today</Button>
         <p>
           The goal of this site is to help improve the nutritional content and variety of foods eaten by students and help them limit the use of vending machines or fast food products by providing tasty, realistic alternatives.
         </p>
+        <Button className="justify-content-center" href="http://localhost:3000/signup">Sign Up Today</Button>
       </Carousel.Caption>
     </Carousel.Item>
   </Carousel>
