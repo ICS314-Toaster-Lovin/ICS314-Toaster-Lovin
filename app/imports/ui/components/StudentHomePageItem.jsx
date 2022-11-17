@@ -5,16 +5,16 @@ import { Card, Image } from 'react-bootstrap';
 
 /** Renders recipe cards on the user home page */
 const HomeRecipeItem = ({ homerecipeitem }) => (
-  <Card style={{ width: '18rem' }}>
+  <Card style={{ width: '95%' }}>
     <Card.Img style={{ objectFit: 'cover', height: '8vw' }} variant="top" src={homerecipeitem.image} />
     <Card.Body>
-      <Card.Title>{homerecipeitem.name}</Card.Title>
+      <Card.Title style={{ margin: '-5px', size: '8vw' }}>{homerecipeitem.name}</Card.Title>
     </Card.Body>
   </Card>
 );
 
 const HomeIngredientItem = ({ homeingredientitem }) => (
-  <Card style={{ width: '18rem' }}>
+  <Card style={{ width: '95%' }}>
     <Card.Header>
       <Card.Text>{homeingredientitem.name} {homeingredientitem.price}</Card.Text>
     </Card.Header>

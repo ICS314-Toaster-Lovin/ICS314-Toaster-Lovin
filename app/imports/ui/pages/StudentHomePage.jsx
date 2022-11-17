@@ -30,28 +30,18 @@ const StudentHomePage = () => {
   }, []);
 
   return (ready ? (
-    <Container className="py-3 container-fluid">
-      <Row className="justify-content-center">
-        <Col>
-          <Col className="text-left">
-            <h2>Favorite Recipes</h2>
-          </Col>
-          <div>
-            <Row className="d-flex flex-row flex-nowrap row-horizon overflow-auto me-1">
-              {recipes.map((homerecipeitem, index) => (<Col className="col-sm-3" key={index}><HomeRecipeItem homerecipeitem={homerecipeitem} /></Col>))}
-            </Row>
-          </div>
-        </Col>
-        <Col>
-          <Col className="text-left">
-            <h2>Recommended Ingredients</h2>
-          </Col>
-          <div>
-            <Row className="d-flex flex-row flex-nowrap row-horizon overflow-auto me-1">
-              {ingredients.map((homeingredientitem, index) => (<Col className="col-sm-3"  key={index}><HomeIngredientItem homeingredientitem={homeingredientitem} /></Col>))}
-            </Row>
-          </div>
-        </Col>
+    <Container className="py-3">
+      <Row>
+        <h2 className="mt-2">Favorite Recipe</h2>
+      </Row>
+      <Row className="d-flex flex-row flex-nowrap row-horizon overflow-auto">
+        {recipes.map((homerecipeitem, index) => (<Col className="col-sm-3" key={index}><HomeRecipeItem homerecipeitem={homerecipeitem} /></Col>))}
+      </Row>
+      <Row>
+        <h2 className="mt-4">Recommended Ingredients</h2>
+      </Row>
+      <Row>
+        {ingredients.map((homeingredientitem, index) => (<Col className="col-sm-3 pb-4" key={index}><HomeIngredientItem homeingredientitem={homeingredientitem} /></Col>))}
       </Row>
     </Container>
   ) : <LoadingSpinner />);

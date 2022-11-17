@@ -30,8 +30,8 @@ const App = () => (
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signout" element={<SignOut />} />
-        <Route path="/testhome" element={<ProtectedRoute><StudentHomePage /></ProtectedRoute>} />
         <Route path="/search" element={<RecipeSearch />} />
+        <Route path="/studenthome" element={<ProtectedRoute><StudentHomePage /></ProtectedRoute>} />
         <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
         <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
         <Route path="/add-recipe" element={<ProtectedRoute><AddRecipe /></ProtectedRoute>} />
