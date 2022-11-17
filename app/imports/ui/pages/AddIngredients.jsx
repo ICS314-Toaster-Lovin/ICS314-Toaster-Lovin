@@ -24,9 +24,10 @@ const AddIngredient = () => {
     // Get data from the forms
     const { name, quantity, price, image } = data;
     const owner = Meteor.user().username;
+    const createdAt = new Date();
     // Insert into Recipe Collection
     Ingredient.collection.insert(
-      { name, quantity, price, image, owner },
+      { name, quantity, price, image, owner, createdAt },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
