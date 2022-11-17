@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Recipe } from '../../api/recipe/Recipe';
 import { Ingredient } from '../../api/ingredient/Ingredient';
+import { Vendors } from '../../api/vendor/Vendor';
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.
@@ -43,5 +44,13 @@ if (Ingredient.collection.find().count() === 0) {
   if (Meteor.settings.ingredientData) {
     console.log('Creating default ingredient data.');
     Meteor.settings.ingredientData.forEach(data => addIngredientData(data));
+  }
+}
+
+// Initialize the VendorCollection if empty
+if (Vendors.collection.find().count() === 0) {
+  if (Meteor.settings.vendorData) {
+    console.log('Creating default vendor data.');
+    Meteor.settings.vendorData.forEach(data => addVendorData(data));
   }
 }

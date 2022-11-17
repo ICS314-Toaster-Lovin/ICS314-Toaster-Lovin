@@ -83,9 +83,17 @@
       "price": "$5.25",
       "quantity": 22,
       "units": "bunch",
-      "image": "https://i5.walmartimages.com/asr/3bbb1151-d69a-43fb-b132-47e0bc066307.1f28c1acf3df725a6a39ba4c8738e025.jpeg",
+      "image": "https://i5.walmartimages.com/asr/3bbb1151-d69a-43fb-b132-47e0bc066307,.1f28c1acf3df725a6a39ba4c8738e025.jpeg",
       "vendor": "Foodland",
       "owner": "john@foo.com"
+    }
+  ],
+  "vendorData": [
+    {
+      "name": "Walmart",
+      "location": "700 Ke’eaumoku St, Honolulu, HI 96814",
+      "gps": "https://www.google.com/maps/vt/data=oBGmHTZqWH7q4sFBr8RXRyhM4EITOspCY9GE0kQenbQsTYyfPYIj385CnGWtt49lnqrHbkq_tWVyLPqHVALoH8tcppeICjzxaMrSjklAWykxzv0hq_aQ5VeFxv18ev-m_C-7XKIhVA98WHcABWqzz680Zq80eLVqk4lI04kwezgtlU4Kx-BmIKvNqTSqZ52_nFr45RQPvS1AVYN7hh0dlAWnRlDaKlPCfS8s_C5MJ0zFVBspPkeU-9TIB--2te8rSMbZQ-swTcOWCXgYeaoK7_diiebaWwgGtTgQtdpy",
+      "owner": "walmart@foo.com"
     }
   ]
 }
