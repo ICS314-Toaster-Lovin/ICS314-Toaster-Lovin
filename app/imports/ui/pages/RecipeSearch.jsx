@@ -69,7 +69,7 @@ const RecipeSearch = () => {
 
   const returnFilter = () => (
     <div className="pb-3">
-      <h1 className="mt-4 text-center mb-2"><b>Search Recipes</b></h1>
+      <h2 className="mt-4 text-center mb-2">Search Recipes</h2>
       <div id="filter-border">
         <Accordion>
           <Accordion.Item eventKey="0">
