@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
+import { Trash } from 'react-bootstrap-icons';
+import { Ingredient } from '../../api/ingredient/Ingredient';
+
+function removeIngredient(id) {
+  Ingredient.collection.remove(id);
+}
 
 const IngredientCard = ({ ingredient }) => (
   <Card className="h-100">
@@ -8,7 +14,10 @@ const IngredientCard = ({ ingredient }) => (
     <Card.Body>
       <Card.Title>{ingredient.name} ({ingredient.quantity})</Card.Title>
       <Card.Text>{(ingredient.price)}</Card.Text>
-      <Card.Link href={`/edit/${ingredient._id}`}>Edit</Card.Link>
+      <div className="d-flex justify-content-between">
+        <Card.Link href={`/edit/${ingredient._id}`}>Edit</Card.Link>
+        <Button variant="danger" onClick={() => removeIngredient(ingredient._id)}><Trash /></Button>
+      </div>
     </Card.Body>
   </Card>
 );
