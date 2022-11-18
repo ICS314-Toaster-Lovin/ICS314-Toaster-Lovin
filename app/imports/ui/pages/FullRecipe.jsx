@@ -26,7 +26,7 @@ const FullRecipe = () => {
     };
   }, []);
   const vendorList = useRef();
-  const [searchIngredient, setSearchIngredient] = useState("");
+  const [searchIngredient, setSearchIngredient] = useState('');
   const filteredIngredients = ingredients.filter(ing => ing.name.trim().toLowerCase() === searchIngredient);
 
   /* Shows a list of vendors that carry an ingredient */

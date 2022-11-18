@@ -7,8 +7,8 @@ const IngredientCard = ({ ingredient }) => (
     <Card.Img src={ingredient.image} />
     <Card.Body>
       <Card.Title>{ingredient.name} ({ingredient.quantity})</Card.Title>
-      <Card.Text>{(ingredient.price)} / {ingredient.units}</Card.Text>
-      <Card.Link href="#">Edit</Card.Link>
+      <Card.Text>{(ingredient.price)}</Card.Text>
+      <Card.Link href={`/edit/${ingredient._id}`}>Edit</Card.Link>
     </Card.Body>
   </Card>
 );
@@ -18,6 +18,7 @@ export default IngredientCard;
 // Require a document to be passed to this component.
 IngredientCard.propTypes = {
   ingredient: PropTypes.shape({
+    _id: PropTypes.string,
     name: PropTypes.string,
     quantity: PropTypes.number,
     price: PropTypes.string,
