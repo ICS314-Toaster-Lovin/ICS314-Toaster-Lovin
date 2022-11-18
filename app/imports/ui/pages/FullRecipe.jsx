@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useCallback } from 'react';
 import { Container, Image, ListGroup, Row, Col } from 'react-bootstrap';
 import { CheckCircleFill, XCircleFill, AlarmFill, PersonFill } from 'react-bootstrap-icons';
 import { useParams } from 'react-router';
@@ -17,11 +17,11 @@ const FullRecipe = () => {
     // Determine if the subscription is ready
     const rdy = recipeSubscription.ready() && ingredientSubscription.ready();
     // Get the documents
-    const recipeItem = Recipe.collection.find({}).fetch() //Recipe.collection.findOne(_id);
+    const recipeItem = Recipe.collection.findOne(_id);
     const ingredientItems = Ingredient.collection.find({}).fetch();
     return {
       ready: rdy,
-      recipe: recipeItem[0],
+      recipe: recipeItem,
       ingredients: ingredientItems,
     };
   }, []);
@@ -30,16 +30,22 @@ const FullRecipe = () => {
   const filteredIngredients = ingredients.filter(ing => ing.name.trim().toLowerCase() === searchIngredient);
 
   /* Shows a list of vendors that carry an ingredient */
-  function showVendors(e) {
-    setSearchIngredient(e.target.innerText.toLowerCase());
-    vendorList.current.style.display = 'block';
-    vendorList.current.style.top = `${e.pageY - 95}px`;
-  }
+  const showVendors = useCallback(
+    function showVendors(e) {
+      setSearchIngredient(e.target.innerText.toLowerCase());
+      vendorList.current.style.display = 'block';
+      vendorList.current.style.top = `${e.pageY - 140}px`;
+    },
+    [],
+  );
 
   /* Hides the list of vendors */
-  function hideVendors() {
-    vendorList.current.style.display = 'none';
-  }
+  const hideVendors = useCallback(
+    function hideVendors() {
+      vendorList.current.style.display = 'none';
+    },
+    [],
+  );
 
   /* Capitalizes the first letter of a string */
   function capitalize(word) {
