@@ -65,8 +65,8 @@ const EditIngredient = () => {
 
                 </Row>
                 <Col><TextField name="image" /></Col>
-                <Col><LongTextField name="quantity" /></Col>
-                <Col><LongTextField name="price" /></Col>
+                <Col><TextField name="quantity" /></Col>
+                <Col><TextField name="price" /></Col>
                 <SubmitField value="Submit" />
                 <ErrorsField />
               </Card.Body>
