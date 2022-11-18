@@ -17,6 +17,7 @@ class IngredientCollection {
       price: String,
       quantity: Number,
       image: String,
+      vendor: String,
       owner: String,
       createdAt: Date,
     }, { tracker: Tracker });
