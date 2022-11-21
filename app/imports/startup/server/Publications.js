@@ -66,8 +66,8 @@ Meteor.publish(Ingredient.adminPublicationName, function () {
 });
 
 Meteor.publish(Vendors.adminPublicationName, function () {
-  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Recipe.collection.find();
+  if (this.userId && Roles.userIsInRole(this.userId, 'vendor')) {
+    return Vendors.collection.find();
   }
   return this.ready();
 });

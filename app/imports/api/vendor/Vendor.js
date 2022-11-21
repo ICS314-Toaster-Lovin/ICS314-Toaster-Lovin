@@ -15,6 +15,7 @@ class VendorCollection {
     this.schema = new SimpleSchema({
       name: String,
       location: String,
+      hours: String,
       gps: String,
       owner: String,
     }, { tracker: Tracker });

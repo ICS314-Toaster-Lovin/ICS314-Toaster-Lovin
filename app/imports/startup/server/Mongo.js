@@ -23,6 +23,12 @@ const addIngredientData = (data) => {
   Ingredient.collection.insert(data);
 };
 
+// Initialize the recipe database with default recipes
+const addVendorData = (data) => {
+  console.log(`  Adding: ${data.name} (${data.owner})`);
+  Vendors.collection.insert(data);
+};
+
 // Initialize the StuffsCollection if empty.
 if (Stuffs.collection.find().count() === 0) {
   if (Meteor.settings.defaultData) {
