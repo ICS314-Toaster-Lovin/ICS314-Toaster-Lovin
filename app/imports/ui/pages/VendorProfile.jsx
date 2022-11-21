@@ -6,7 +6,7 @@ import { Vendors } from '../../api/vendor/Vendor';
 import LoadingSpinner from '../components/LoadingSpinner';
 import VendorInfo from '../components/VendorInfo';
 
-/* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+/* Renders a page containing all of the Vendor documents. */
 const VendorProfile = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { ready, vendorInfos } = useTracker(() => {
