@@ -8,9 +8,10 @@ import Landing from '../pages/Landing';
 import ListStuff from '../pages/ListStuff';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import AddRecipe from '../pages/AddRecipe';
+import AddIngredients from '../pages/AddIngredients';
+import EditIngredient from '../pages/EditIngredient';
 import FullRecipe from '../pages/FullRecipe';
 import VendorHome from '../pages/VendorHome';
-import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
 import SignOut from '../pages/SignOut';
@@ -35,9 +36,10 @@ const App = () => (
         <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
         <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
         <Route path="/add-recipe" element={<ProtectedRoute><AddRecipe /></ProtectedRoute>} />
-        <Route path="/recipe" element={<ProtectedRoute><FullRecipe /></ProtectedRoute>} />
+        <Route path="/recipe/:_id" element={<ProtectedRoute><FullRecipe /></ProtectedRoute>} />
+        <Route path="/add-ingredients" element={<ProtectedRoute><AddIngredients /></ProtectedRoute>} />
         <Route path="/vendor" element={<ProtectedRoute><VendorHome /></ProtectedRoute>} />
-        <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
+        <Route path="/edit/:_id" element={<ProtectedRoute><EditIngredient /></ProtectedRoute>} />
         <Route path="/admin" element={<AdminProtectedRoute><ListStuffAdmin /></AdminProtectedRoute>} />
         <Route path="/notauthorized" element={<NotAuthorized />} />
         <Route path="*" element={<NotFound />} />

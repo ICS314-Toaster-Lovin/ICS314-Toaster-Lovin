@@ -17,7 +17,7 @@ const RecipeItem = ({ recipe }) => (
   <tr>
     <td><Image rounded width={100} src={recipe.image} /></td>
     <td>
-      <Link to={`/edit/${recipe._id}`}>{recipe.name}</Link>
+      <Link to={`/recipe/${recipe._id}`}>{recipe.name}</Link>
     </td>
     <td>{recipe.servingSize}</td>
     <td>{recipe.estimatedTime}</td>

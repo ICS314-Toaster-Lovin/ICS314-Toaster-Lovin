@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Card, Image } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 /** Renders recipe cards on the user home page */
 const HomeRecipeItem = ({ homerecipeitem }) => (
-  <Card style={{ width: '95%' }}>
-    <Card.Img style={{ objectFit: 'cover', height: '8vw' }} variant="top" src={homerecipeitem.image} />
-    <Card.Body>
-      <Card.Title style={{ margin: '-5px', size: '8vw' }}>{homerecipeitem.name}</Card.Title>
-    </Card.Body>
-  </Card>
+  <Link to={`/recipe/${homerecipeitem._id}`} className="text-decoration-none">
+    <Card style={{ width: '95%' }}>
+      <Card.Img style={{ objectFit: 'cover', height: '8vw' }} variant="top" src={homerecipeitem.image} />
+      <Card.Body>
+        <Card.Title style={{ margin: '-5px', size: '8vw' }} className="text-black">{homerecipeitem.name}</Card.Title>
+      </Card.Body>
+    </Card>
+  </Link>
 );
 
 const HomeIngredientItem = ({ homeingredientitem }) => (
@@ -27,6 +29,7 @@ const HomeIngredientItem = ({ homeingredientitem }) => (
 // Require a document to be passed to this component.
 HomeRecipeItem.propTypes = {
   homerecipeitem: PropTypes.shape({
+    _id: PropTypes.string,
     name: PropTypes.string,
     servingSize: PropTypes.number,
     estimatedTime: PropTypes.string,

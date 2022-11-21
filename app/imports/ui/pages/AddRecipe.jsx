@@ -27,15 +27,16 @@ const AddRecipe = () => {
   const submit = (data, formRef) => {
     // Get data from the forms
     const { name, servingSize, estimatedTime, image, ingredientList, instructions, dietaryRestrictions } = data;
+    // for Recipe collection fields
     const owner = Meteor.user().username;
     const glutenFree = dietaryRestrictions.includes('Gluten Free');
     const lactoseFree = dietaryRestrictions.includes('Lactose Free');
     const vegan = dietaryRestrictions.includes('Vegan');
     const vegetarian = dietaryRestrictions.includes('Vegetarian');
-    console.log(dietaryRestrictions);
+    const createdAt = new Date();
     // Insert into Recipe Collection
     Recipe.collection.insert(
-      { name, servingSize, estimatedTime, glutenFree, lactoseFree, vegan, vegetarian, image, ingredientList, instructions, owner },
+      { name, servingSize, estimatedTime, glutenFree, lactoseFree, vegan, vegetarian, image, ingredientList, instructions, owner, createdAt },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
