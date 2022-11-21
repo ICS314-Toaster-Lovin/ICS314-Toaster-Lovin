@@ -36,7 +36,7 @@ const VendorHome = () => {
           ))
         }
         <Col className="mb-3">
-          <Link className="text-decoration-none">
+          <Link to="/add-ingredients" className="text-decoration-none">
             <Card className="h-100 text-center" bg="light">
               <Card.Body>
                 <PlusCircleFill size="md" height="150px" className="text-primary my-5" />

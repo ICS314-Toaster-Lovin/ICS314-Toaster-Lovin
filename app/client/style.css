@@ -35,7 +35,11 @@ body {
 
 
 #img {
-  filter: blur(2px);
+  filter: blur(4px);
   -webkit-filter: blur(2px);
 
+}
+
+#second {
+  justify-content: center;
 }

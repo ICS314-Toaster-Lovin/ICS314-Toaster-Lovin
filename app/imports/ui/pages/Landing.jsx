@@ -12,11 +12,12 @@ const Landing = () => (
         src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
         alt="First slide"
       />
-
-      <Carousel.Caption>
-        <Button className="justify-content-center" href="http://localhost:3000/signup">Sign Up Today</Button>
-        <p>The goal of this site is to help improve the nutritional content and variety of foods eaten by students and help them limit the use of vending machines or fast food products by providing tasty, realistic alternatives.</p>
-      </Carousel.Caption>
+      <div id="caption">
+        <Carousel.Caption>
+          <p>The goal of this site is to help improve the nutritional content and variety of foods eaten by students and help them limit the use of vending machines or fast food products by providing tasty, realistic alternatives.</p>
+          <Button className="justify-content-center" href="http://localhost:3000/signup">Sign Up Today</Button>
+        </Carousel.Caption>
+      </div>
     </Carousel.Item>
     <Carousel.Item>
       <img
@@ -25,11 +26,12 @@ const Landing = () => (
         src="https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
         alt="Second slide"
       />
-
-      <Carousel.Caption>
-        <Button className="justify-content-center" href="http://localhost:3000/signup">Sign Up Today</Button>
-        <p>The goal of this site is to help improve the nutritional content and variety of foods eaten by students and help them limit the use of vending machines or fast food products by providing tasty, realistic alternatives.</p>
-      </Carousel.Caption>
+      <div id="caption">
+        <Carousel.Caption>
+          <p>The goal of this site is to help improve the nutritional content and variety of foods eaten by students and help them limit the use of vending machines or fast food products by providing tasty, realistic alternatives.</p>
+          <Button className="justify-content-center" href="http://localhost:3000/signup">Sign Up Today</Button>
+        </Carousel.Caption>
+      </div>
     </Carousel.Item>
     <Carousel.Item>
       <img
@@ -39,12 +41,14 @@ const Landing = () => (
         alt="Third slide"
       />
 
-      <Carousel.Caption>
-        <Button className="justify-content-center" href="http://localhost:3000/signup">Sign Up Today</Button>
-        <p>
-          The goal of this site is to help improve the nutritional content and variety of foods eaten by students and help them limit the use of vending machines or fast food products by providing tasty, realistic alternatives.
-        </p>
-      </Carousel.Caption>
+      <div id="caption">
+        <Carousel.Caption>
+          <p>
+            The goal of this site is to help improve the nutritional content and variety of foods eaten by students and help them limit the use of vending machines or fast food products by providing tasty, realistic alternatives.
+          </p>
+          <Button className="justify-content-center" href="http://localhost:3000/signup">Sign Up Today</Button>
+        </Carousel.Caption>
+      </div>
     </Carousel.Item>
   </Carousel>
 );

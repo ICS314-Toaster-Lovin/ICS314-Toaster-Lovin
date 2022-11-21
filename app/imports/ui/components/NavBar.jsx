@@ -26,19 +26,21 @@ const NavBar = () => {
             ) : (
               ''
             )}
-            {currentUser ? ([
-              <Nav.Link id="home-nav" as={NavLink} to="/home" key="home">Home</Nav.Link>,
-            ]) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'student') ? ([
+              <Nav.Link id="student-home-nav" as={NavLink} to="/student" key="student">Home</Nav.Link>,
               <Nav.Link id="favorites-nav" as={NavLink} to="/favorites" key="favorites">Favorites</Nav.Link>,
               <Nav.Link id="add-recipe-nav" as={NavLink} to="/add-recipe" key="add-recipe">Add Recipe</Nav.Link>,
               <Nav.Link id="search-nav" as={NavLink} to="/search" key="search">Search</Nav.Link>,
+            ]) : ''}
+            {Roles.userIsInRole(Meteor.userId(), 'vendor') ? ([
+              <Nav.Link id="vendor-home-nav" as={NavLink} to="/vendor" key="vendor">Home</Nav.Link>,
             ]) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? ([
               <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin" key="admin">Admin</Nav.Link>,
               <Nav.Link id="user-list-admin-nav" as={NavLink} to="/user-list" key="user-list">User List</Nav.Link>,
               <Nav.Link id="newest-recipes-admin-nav" as={NavLink} to="/newest-recipes" key="newest-recipes">Newest Recipes</Nav.Link>,
               <Nav.Link id="newest-Ingredients-admin-nav" as={NavLink} to="/newest-ingredients" key="newest-ingredients">Newest Ingredients</Nav.Link>,
+              <Nav.Link id="add-ingredients" as={NavLink} to="/add-ingredients" key="vendor">Add Ingredients</Nav.Link>,
             ]) : ''}
           </Nav>
           <Nav className="justify-content-end">
@@ -58,12 +60,12 @@ const NavBar = () => {
             ) : (
               <NavDropdown id="navbar-current-user" title={currentUser}>
                 {Roles.userIsInRole(Meteor.userId(), 'student') ? (
-                  <NavDropdown.Item id="navbar-profile" as={NavLink} to="/profile">
+                  <NavDropdown.Item id="student-navbar-profile" as={NavLink} to="/studentprofile">
                     Profile
                   </NavDropdown.Item>
                 ) : ''}
                 {Roles.userIsInRole(Meteor.userId(), 'vendor') ? (
-                  <NavDropdown.Item id="navbar-profile" as={NavLink} to="/profile">
+                  <NavDropdown.Item id="vendor-navbar-profile" as={NavLink} to="/vendorprofile">
                     Profile
                   </NavDropdown.Item>
                 ) : ''}
