@@ -29,11 +29,12 @@ const VendorProfile = () => {
   }, []);
   // const profile = _.find(Vendors.collection.find({ }).fetch(), function (num) { return num.owner === email; });
   // console.log(email);
-  // const filteredVendors = email.filter(vendor => vendor.owner === this.owner);
+  const owner = Meteor.user().username;
+  const filteredVendors = email.filter(vendor => vendor.owner === owner);
 
   return (ready ? (
     <Container>
-      {email.map((vendors) => <VendorInfo key={vendors.id} vendors={vendors} />)}
+      {filteredVendors.map((vendors) => <VendorInfo key={vendors.id} vendors={vendors} />)}
     </Container>
   ) : <LoadingSpinner />);
 };
