@@ -7,7 +7,8 @@
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "email": "john@foo.com", "password": "changeme", "role": "student" },
-    { "email": "walmart@foo.com", "password": "changeme", "role": "vendor" }
+    { "email": "walmart@foo.com", "password": "changeme", "role": "vendor" },
+    { "email": "foodland@foo.com", "password": "changeme", "role": "vendor" }
   ],
 
   "defaultData": [
@@ -88,10 +89,26 @@
       "price": "$5.25",
       "quantity": 22,
       "units": "bunch",
-      "image": "https://i5.walmartimages.com/asr/3bbb1151-d69a-43fb-b132-47e0bc066307.1f28c1acf3df725a6a39ba4c8738e025.jpeg",
+      "image": "https://i5.walmartimages.com/asr/3bbb1151-d69a-43fb-b132-47e0bc066307,.1f28c1acf3df725a6a39ba4c8738e025.jpeg",
       "vendor": "Foodland",
       "owner": "john@foo.com",
       "createdAt": "2022-06-25T12:00:00-06:30"
+    }
+  ],
+  "vendorData": [
+    {
+      "name": "Walmart",
+      "location": "700 Ke’eaumoku St, Honolulu, HI 96814",
+      "hours": "Everyday: 6AM-11PM",
+      "gps": "https://www.google.com/maps/vt/data=oBGmHTZqWH7q4sFBr8RXRyhM4EITOspCY9GE0kQenbQsTYyfPYIj385CnGWtt49lnqrHbkq_tWVyLPqHVALoH8tcppeICjzxaMrSjklAWykxzv0hq_aQ5VeFxv18ev-m_C-7XKIhVA98WHcABWqzz680Zq80eLVqk4lI04kwezgtlU4Kx-BmIKvNqTSqZ52_nFr45RQPvS1AVYN7hh0dlAWnRlDaKlPCfS8s_C5MJ0zFVBspPkeU-9TIB--2te8rSMbZQ-swTcOWCXgYeaoK7_diiebaWwgGtTgQtdpy",
+      "owner": "walmart@foo.com"
+    },
+    {
+      "name": "Foodland Market City",
+      "location": "2939 Harding Ave, Honolulu, HI 96816",
+      "hours": "Everyday: 6AM-9PM",
+      "gps": "https://www.google.com/maps/vt/data=yEDsUADVL32mYAv-EF3mJOuwSP64c1nxyGbVwL-MdW1cPSSi7bv9CjYjpWrG0OYglaP5orFOAQxDUSwtRzD7Q0NPop8SJgWMBOPGuCWo95B3w7jj_grtRtsn_-2QzVNlk3-a16_vDxjdOxddsnifukpk9Sgb2nitDA",
+      "owner": "foodland@foo.com"
     }
   ]
 }
