@@ -8,8 +8,9 @@ import VendorInfo from '../components/VendorInfo';
 
 /* Renders a page containing all of the Vendor documents. */
 const VendorProfile = () => {
+  // const { _id } = useParams();
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { ready, vendorInfos } = useTracker(() => {
+  const { ready, email } = useTracker(() => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
     // Get access to Venor documents.
@@ -17,17 +18,22 @@ const VendorProfile = () => {
     // Determine if the subscription is ready
     const rdy = subscription.ready();
     // Get the Vendors documents
-    const vendorInfoItems = Vendors.collection.find({}).fetch();
+    // const vendorInfoItems = Vendors.collection.findOne(_id);
+    // const vendorInfoItems = _.pluck(Vendors.collection.find({  }).fetch());
+    const vendorInfoItems = Vendors.collection.find({ }).fetch();
+    // const vendorInfoItems = Vendors.collection.find({ }, { owner: Meteor.user()?.owner });
     return {
-      vendorInfos: vendorInfoItems,
+      email: vendorInfoItems,
       ready: rdy,
     };
   }, []);
-  // const filteredVendors = vendorInfos.filter(vendor => vendor.owner === this.owner);
+  // const profile = _.find(Vendors.collection.find({ }).fetch(), function (num) { return num.owner === email; });
+  // console.log(email);
+  // const filteredVendors = email.filter(vendor => vendor.owner === this.owner);
 
   return (ready ? (
     <Container>
-      {vendorInfos.map((vendors) => <VendorInfo key={vendors.id} vendors={vendors} />)}
+      {email.map((vendors) => <VendorInfo key={vendors.id} vendors={vendors} />)}
     </Container>
   ) : <LoadingSpinner />);
 };
