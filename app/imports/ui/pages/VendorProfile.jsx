@@ -12,7 +12,7 @@ const VendorProfile = () => {
   const { ready, vendorInfos } = useTracker(() => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
-    // Get access to Stuff documents.
+    // Get access to Venor documents.
     const subscription = Meteor.subscribe(Vendors.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
@@ -23,6 +23,8 @@ const VendorProfile = () => {
       ready: rdy,
     };
   }, []);
+  // const filteredVendors = vendorInfos.filter(vendor => vendor.owner === this.owner);
+
   return (ready ? (
     <Container>
       {vendorInfos.map((vendors) => <VendorInfo key={vendors.id} vendors={vendors} />)}
