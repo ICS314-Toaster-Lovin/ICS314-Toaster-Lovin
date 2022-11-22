@@ -3,13 +3,14 @@ import { Meteor } from 'meteor/meteor';
 import { Col, Container, Row, Table } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Ingredient } from '../../api/ingredient/Ingredient';
+import { Recipe } from '../../api/recipe/Recipe';
 import StudentIngredientItem from '../components/StudentIngredientItem';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 const StudentProfile = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { ready, ingredients } = useTracker(() => {
+  const { ready, ingredients, recipes } = useTracker(() => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
     // Get access to Stuff documents.
@@ -17,9 +18,11 @@ const StudentProfile = () => {
     // Determine if the subscription is ready
     const rdy = subscription.ready();
     // Get the Stuff documents
-    const StudentIngredientItems = Ingredient.collection.find({}).fetch();
+    const studentIngredientItems = Ingredient.collection.find({}).fetch();
+    const studentRecipeItems = Recipe.collection.find({}).fetch();
     return {
-      ingredients: StudentIngredientItems,
+      ingredients: studentIngredientItems,
+      recipes: studentRecipeItems,
       ready: rdy,
     };
   }, []);
@@ -57,7 +60,7 @@ const StudentProfile = () => {
                 </tr>
               </thead>
               <tbody>
-                {ingredients.map((ingredient) => <StudentIngredientItem key={ingredient._id} stuff={ingredient} />)}
+                {recipes.map((ingredient) => <StudentRecipeItem key={ingredient._id} stuff={ingredient} />)}
               </tbody>
             </Table>
           </Col>

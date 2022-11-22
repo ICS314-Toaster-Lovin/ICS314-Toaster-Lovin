@@ -14,7 +14,10 @@ class StudentCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       name: String,
-      dietary: String,
+      glutenFree: Boolean,
+      lactoseFree: Boolean,
+      vegan: Boolean,
+      vegetarian: Boolean,
       owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.

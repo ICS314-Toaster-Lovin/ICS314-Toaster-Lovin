@@ -60,7 +60,7 @@ const NavBar = () => {
             ) : (
               <NavDropdown id="navbar-current-user" title={currentUser}>
                 {Roles.userIsInRole(Meteor.userId(), 'student') ? (
-                  <NavDropdown.Item id="student-navbar-profile" as={NavLink} to="/studentprofile">
+                  <NavDropdown.Item id="student-navbar-profile" as={NavLink} to="/profile">
                     Profile
                   </NavDropdown.Item>
                 ) : ''}
