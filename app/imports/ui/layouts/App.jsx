@@ -20,6 +20,7 @@ import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
 import StudentHomePage from '../pages/StudentHomePage';
 import RecipeSearch from '../pages/RecipeSearch';
+import NewestIngredients from '../pages/NewestIngredients';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => (
@@ -41,6 +42,7 @@ const App = () => (
         <Route path="/vendor" element={<ProtectedRoute><VendorHome /></ProtectedRoute>} />
         <Route path="/edit/:_id" element={<ProtectedRoute><EditIngredient /></ProtectedRoute>} />
         <Route path="/admin" element={<AdminProtectedRoute><ListStuffAdmin /></AdminProtectedRoute>} />
+        <Route path="/newest-ingredients" element={<AdminProtectedRoute><NewestIngredients /></AdminProtectedRoute>} />
         <Route path="/notauthorized" element={<NotAuthorized />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
