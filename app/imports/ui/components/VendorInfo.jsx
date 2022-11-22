@@ -28,6 +28,6 @@ VendorInfo.propTypes = {
     name: PropTypes.string,
     location: PropTypes.string,
     hours: PropTypes.string,
-    gps: PropTypes.string
+    gps: PropTypes.string,
   }).isRequired,
 };
