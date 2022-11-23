@@ -5,10 +5,10 @@
   },
 
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme", "role": "student" },
-    { "email": "walmart@foo.com", "password": "changeme", "role": "vendor" },
-    { "email": "foodland@foo.com", "password": "changeme", "role": "vendor" }
+    { "email": "admin@foo.com", "password": "changeme", "role": "admin", "organization": "admin" },
+    { "email": "john@foo.com", "password": "changeme", "role": "student", "organization": "University of Hawaii" },
+    { "email": "walmart@foo.com", "password": "changeme", "role": "vendor", "organization": "Walmart" },
+    { "email": "foodland@foo.com", "password": "changeme", "role": "vendor", "organization":  "Foodland"}
   ],
 
   "defaultData": [
@@ -89,7 +89,7 @@
       "price": "$5.25",
       "quantity": 22,
       "units": "bunch",
-      "image": "https://i5.walmartimages.com/asr/3bbb1151-d69a-43fb-b132-47e0bc066307,.1f28c1acf3df725a6a39ba4c8738e025.jpeg",
+      "image": "https://i5.walmartimages.com/asr/3bbb1151-d69a-43fb-b132-47e0bc066307.1f28c1acf3df725a6a39ba4c8738e025.jpeg",
       "vendor": "Foodland",
       "owner": "john@foo.com",
       "createdAt": "2022-06-25T12:00:00-06:30"

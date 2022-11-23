@@ -5,7 +5,9 @@ import { Accounts } from 'meteor/accounts-base';
 import { Alert, Card, Col, Container, Row } from 'react-bootstrap';
 import SimpleSchema from 'simpl-schema';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, RadioField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { Meteor } from 'meteor/meteor';
+import { setUserRoleMethod } from '../../startup/both/Methods';
 
 /**
  * SignUp component is similar to signin component, but we create a new user instead.
@@ -17,24 +19,36 @@ const SignUp = ({ location }) => {
   const schema = new SimpleSchema({
     email: String,
     password: String,
+    userRole: {
+      label: 'User Role',
+      type: String,
+      optional: false,
+      allowedValues: ['student', 'vendor', 'admin'],
+    },
+    organization: String,
   });
   const bridge = new SimpleSchema2Bridge(schema);
 
   /* Handle SignUp submission. Create user account and a profile entry, then redirect to the home page. */
   const submit = (doc) => {
-    const { email, password } = doc;
-    Accounts.createUser({ email, username: email, password }, (err) => {
+    const { email, password, organization, userRole } = doc;
+    // Organization is stored in the built-in "profile" object
+    Accounts.createUser({ email, username: email, password, profile: { organization: organization } }, (err) => {
       if (err) {
         setError(err.reason);
       } else {
         setError('');
+
+        // Add the role to the user using Meteor Methods
+        const userID = Meteor.userId();
+        Meteor.call(setUserRoleMethod, { userID: userID, role: userRole });
+
         setRedirectToRef(true);
       }
     });
   };
 
-  /* Display the signup form. Redirect to add page after successful registration and login. */
-  const { from } = location?.state || { from: { pathname: '/add' } };
+  const { from } = location?.state || { from: { pathname: '/home' } };
   // if correct authentication, redirect to from: page instead of signup screen
   if (redirectToReferer) {
     return <Navigate to={from} />;
@@ -51,6 +65,8 @@ const SignUp = ({ location }) => {
               <Card.Body>
                 <TextField name="email" placeholder="E-mail address" />
                 <TextField name="password" placeholder="Password" type="password" />
+                <TextField name="organization" placeholder="Organization Name" />
+                <RadioField name="userRole" checkboxes />
                 <ErrorsField />
                 <SubmitField />
               </Card.Body>
