@@ -17,20 +17,26 @@ Meteor.publish(Stuffs.userPublicationName, function () {
 
 // Recipe publication
 Meteor.publish(Recipe.userPublicationName, function () {
+  /*
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Recipe.collection.find({ owner: username });
   }
   return this.ready();
+   */
+  return Recipe.collection.find();
 });
 
 // Ingredient publication
 Meteor.publish(Ingredient.userPublicationName, function () {
+  /*
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Ingredient.collection.find({ owner: username });
   }
   return this.ready();
+   */
+  return Ingredient.collection.find();
 });
 
 // Vendor publication
