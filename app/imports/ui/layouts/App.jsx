@@ -11,6 +11,7 @@ import AddRecipe from '../pages/AddRecipe';
 import AddIngredients from '../pages/AddIngredients';
 import EditIngredient from '../pages/EditIngredient';
 import FullRecipe from '../pages/FullRecipe';
+import StudentProfile from '../pages/StudentProfile';
 import VendorHome from '../pages/VendorHome';
 import VendorProfile from '../pages/VendorProfile';
 import NotFound from '../pages/NotFound';
@@ -19,7 +20,7 @@ import SignOut from '../pages/SignOut';
 import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
-import StudentHomePage from '../pages/StudentHomePage';
+import StudentHome from '../pages/StudentHome';
 import RecipeSearch from '../pages/RecipeSearch';
 import NewestIngredients from '../pages/NewestIngredients';
 import NewestRecipes from '../pages/NewestRecipes';
@@ -36,9 +37,10 @@ const App = () => (
         <Route path="/signout" element={<SignOut />} />
         <Route path="/search" element={<RecipeSearch />} />
         <Route path="/recipe/:_id" element={<FullRecipe />} />
-        <Route path="/studenthome" element={<ProtectedRoute><StudentHomePage /></ProtectedRoute>} />
+        <Route path="/student" element={<ProtectedRoute><StudentHome /></ProtectedRoute>} />
         <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
         <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
+        <Route path="/profile" element={<ProtectedRoute><StudentProfile /></ProtectedRoute>} />
         <Route path="/add-recipe" element={<ProtectedRoute><AddRecipe /></ProtectedRoute>} />
         <Route path="/add-ingredients" element={<ProtectedRoute><AddIngredients /></ProtectedRoute>} />
         <Route path="/vendor" element={<ProtectedRoute><VendorHome /></ProtectedRoute>} />
