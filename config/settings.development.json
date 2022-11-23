@@ -7,6 +7,7 @@
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin", "organization": "admin" },
     { "email": "john@foo.com", "password": "changeme", "role": "student", "organization": "University of Hawaii" },
+    { "email": "adam@foo.com", "password": "changeme", "role": "student", "organization": "University of Hawaii" },
     { "email": "walmart@foo.com", "password": "changeme", "role": "vendor", "organization": "Walmart" },
     { "email": "foodland@foo.com", "password": "changeme", "role": "vendor", "organization":  "Foodland"}
   ],
@@ -93,6 +94,24 @@
       "vendor": "Foodland",
       "owner": "john@foo.com",
       "createdAt": "2022-06-25T12:00:00-06:30"
+    }
+  ],
+  "studentData": [
+    {
+      "name": "John Doe",
+      "glutenFree": false,
+      "lactoseFree": true,
+      "vegan": true,
+      "vegetarian": true,
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Adam Montoya",
+      "glutenFree": true,
+      "lactoseFree": false,
+      "vegan": false,
+      "vegetarian": true,
+      "owner": "adam@foo.com"
     }
   ],
   "vendorData": [

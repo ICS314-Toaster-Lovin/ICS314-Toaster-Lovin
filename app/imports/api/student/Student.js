@@ -32,4 +32,4 @@ class StudentCollection {
  * The singleton instance of the StudentCollection.
  * @type {StudentCollection}
  */
-export const Student = new StudentCollection();
+export const Students = new StudentCollection();

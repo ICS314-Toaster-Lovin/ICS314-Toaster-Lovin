@@ -4,6 +4,7 @@ import { Stuffs } from '../../api/stuff/Stuff';
 import { Recipe } from '../../api/recipe/Recipe';
 import { Ingredient } from '../../api/ingredient/Ingredient';
 import { Vendors } from '../../api/vendor/Vendor';
+import { Students } from '../../api/student/Student';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -48,6 +49,15 @@ Meteor.publish(Vendors.userPublicationName, function () {
   return this.ready();
 });
 
+// Student publication
+Meteor.publish(Students.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Students.collection.find({ owner: username });
+  }
+  return this.ready();
+});
+
 // Admin-level publication.
 // If logged in and with admin role, then publish all documents from all users. Otherwise publish nothing.
 Meteor.publish(Stuffs.adminPublicationName, function () {
@@ -74,6 +84,13 @@ Meteor.publish(Ingredient.adminPublicationName, function () {
 Meteor.publish(Vendors.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'vendor')) {
     return Vendors.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(Students.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'vendor')) {
+    return Students.collection.find();
   }
   return this.ready();
 });

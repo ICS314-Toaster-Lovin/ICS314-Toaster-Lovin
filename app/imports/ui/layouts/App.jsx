@@ -20,7 +20,7 @@ import SignOut from '../pages/SignOut';
 import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
-import StudentHomePage from '../pages/StudentHomePage';
+import StudentHome from '../pages/StudentHome';
 import RecipeSearch from '../pages/RecipeSearch';
 import NewestIngredients from '../pages/NewestIngredients';
 import NewestRecipes from '../pages/NewestRecipes';
@@ -37,7 +37,7 @@ const App = () => (
         <Route path="/signout" element={<SignOut />} />
         <Route path="/search" element={<RecipeSearch />} />
         <Route path="/recipe/:_id" element={<FullRecipe />} />
-        <Route path="/studenthome" element={<ProtectedRoute><StudentHomePage /></ProtectedRoute>} />
+        <Route path="/student" element={<ProtectedRoute><StudentHome /></ProtectedRoute>} />
         <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
         <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
         <Route path="/profile" element={<ProtectedRoute><StudentProfile /></ProtectedRoute>} />
