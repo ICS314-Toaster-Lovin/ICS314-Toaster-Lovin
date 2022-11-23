@@ -35,11 +35,11 @@ const App = () => (
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signout" element={<SignOut />} />
         <Route path="/search" element={<RecipeSearch />} />
+        <Route path="/recipe/:_id" element={<FullRecipe />} />
         <Route path="/studenthome" element={<ProtectedRoute><StudentHomePage /></ProtectedRoute>} />
         <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
         <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
         <Route path="/add-recipe" element={<ProtectedRoute><AddRecipe /></ProtectedRoute>} />
-        <Route path="/recipe/:_id" element={<ProtectedRoute><FullRecipe /></ProtectedRoute>} />
         <Route path="/add-ingredients" element={<ProtectedRoute><AddIngredients /></ProtectedRoute>} />
         <Route path="/vendor" element={<ProtectedRoute><VendorHome /></ProtectedRoute>} />
         <Route path="/vendorprofile" element={<ProtectedRoute><VendorProfile /></ProtectedRoute>} />
