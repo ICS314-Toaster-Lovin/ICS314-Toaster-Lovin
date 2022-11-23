@@ -25,13 +25,15 @@ const SignUp = ({ location }) => {
       optional: false,
       allowedValues: ['student', 'vendor', 'admin'],
     },
+    organization: String,
   });
   const bridge = new SimpleSchema2Bridge(schema);
 
   /* Handle SignUp submission. Create user account and a profile entry, then redirect to the home page. */
   const submit = (doc) => {
-    const { email, password, userRole } = doc;
-    Accounts.createUser({ email, username: email, password }, (err) => {
+    const { email, password, organization, userRole } = doc;
+    // Organization is stored in the built-in "profile" object
+    Accounts.createUser({ email, username: email, password, profile: { organization: organization } }, (err) => {
       if (err) {
         setError(err.reason);
       } else {
@@ -64,7 +66,8 @@ const SignUp = ({ location }) => {
               <Card.Body>
                 <TextField name="email" placeholder="E-mail address" />
                 <TextField name="password" placeholder="Password" type="password" />
-                <RadioField name="userRole" checkboxes transform={transform} />
+                <TextField name="organization" placeholder="Organization Name" />
+                <RadioField name="userRole" checkboxes />
                 <ErrorsField />
                 <SubmitField />
               </Card.Body>

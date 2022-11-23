@@ -24,13 +24,13 @@ const VendorHome = () => {
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col className="text-center">
-          <h2>Your Items</h2>
+          <h2>Your Items at {Meteor.user().profile.organization}</h2>
         </Col>
       </Row>
       <Row md={5}>
         {
           ingredients.map(ing => (
-            <Col className="mb-3">
+            <Col key={ing._id} className="mb-3">
               <IngredientCard ingredient={ing} />
             </Col>
           ))
@@ -39,7 +39,7 @@ const VendorHome = () => {
           <Link to="/add-ingredients" className="text-decoration-none">
             <Card className="h-100 text-center" bg="light">
               <Card.Body>
-                <PlusCircleFill size="md" height="150px" className="text-primary my-5" />
+                <PlusCircleFill size="70%" height="150px" className="text-primary my-5" />
                 <Card.Title className="text-black">Add a New Ingredient</Card.Title>
               </Card.Body>
             </Card>

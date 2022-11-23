@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, SubmitField, TextField, LongTextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -24,10 +24,11 @@ const AddIngredient = () => {
     // Get data from the forms
     const { name, quantity, price, image } = data;
     const owner = Meteor.user().username;
+    const vendor = Meteor.user().profile.organization;
     const createdAt = new Date();
     // Insert into Recipe Collection
     Ingredient.collection.insert(
-      { name, quantity, price, image, owner, createdAt },
+      { name, quantity, price, image, vendor, owner, createdAt },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -57,9 +58,9 @@ const AddIngredient = () => {
                   </Col>
 
                 </Row>
-                <Col><TextField name="image" /></Col>
-                <Col><LongTextField name="quantity" /></Col>
-                <Col><LongTextField name="price" /></Col>
+                <Col><TextField name="image" help="Make image as square as possible" /></Col>
+                <Col><TextField name="quantity" /></Col>
+                <Col><TextField name="price" /></Col>
                 <SubmitField value="Submit" />
                 <ErrorsField />
               </Card.Body>

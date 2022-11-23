@@ -64,7 +64,7 @@ const EditIngredient = () => {
                   </Col>
 
                 </Row>
-                <Col><TextField name="image" /></Col>
+                <Col><TextField name="image" help="Make image as square as possible" /></Col>
                 <Col><TextField name="quantity" /></Col>
                 <Col><TextField name="price" /></Col>
                 <SubmitField value="Submit" />
