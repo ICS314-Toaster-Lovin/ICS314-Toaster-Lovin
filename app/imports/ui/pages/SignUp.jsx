@@ -48,7 +48,6 @@ const SignUp = ({ location }) => {
     });
   };
 
-  const transform = (label) => ` ${label}`;
   const { from } = location?.state || { from: { pathname: '/home' } };
   // if correct authentication, redirect to from: page instead of signup screen
   if (redirectToReferer) {
