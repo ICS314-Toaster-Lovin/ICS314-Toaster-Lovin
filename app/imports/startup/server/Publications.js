@@ -63,3 +63,8 @@ Meteor.publish(null, function () {
   }
   return this.ready();
 });
+
+// publish available roles to client, used when setting roles for new users
+Meteor.publish(null, function () {
+  return Meteor.roles.find({});
+});
