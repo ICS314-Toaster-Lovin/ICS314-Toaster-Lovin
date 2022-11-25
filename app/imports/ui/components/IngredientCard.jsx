@@ -8,17 +8,25 @@ function removeIngredient(id) {
   Ingredient.collection.remove(id);
 }
 
-const IngredientCard = ({ ingredient }) => (
+const IngredientCard = ({ ingredient, showEditAndDelete }) => (
   <Card className="h-100">
     <Card.Img src={ingredient.image} />
     <Card.Body>
       <Card.Title>{ingredient.name} ({ingredient.quantity})</Card.Title>
       <Card.Text>{(ingredient.price)}</Card.Text>
-      <div className="d-flex justify-content-between">
-        <Card.Link href={`/edit/${ingredient._id}`}>Edit</Card.Link>
-        <Button variant="danger" onClick={() => removeIngredient(ingredient._id)}><Trash /></Button>
-      </div>
+      {
+        showEditAndDelete ?
+          (
+            <div className="d-flex justify-content-between align-items-end">
+              <Card.Link href={`/edit-ingredient/${ingredient._id}`}>Edit</Card.Link>
+              <Button variant="danger" onClick={() => removeIngredient(ingredient._id)}><Trash /></Button>
+            </div>
+          ) : null
+      }
     </Card.Body>
+    {/* <Link to="/vendor" className="text-decoration-none text-black"> */}
+    <Card.Footer className="text-center">{ingredient.vendor}</Card.Footer>
+    {/* </Link> */}
   </Card>
 );
 
@@ -36,4 +44,5 @@ IngredientCard.propTypes = {
     vendor: PropTypes.string,
     owner: PropTypes.string,
   }).isRequired,
+  showEditAndDelete: PropTypes.bool.isRequired,
 };
