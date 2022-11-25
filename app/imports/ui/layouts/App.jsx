@@ -9,6 +9,7 @@ import ListStuff from '../pages/ListStuff';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import AddRecipe from '../pages/AddRecipe';
 import AddIngredients from '../pages/AddIngredients';
+import EditRecipe from '../pages/EditRecipe';
 import EditIngredient from '../pages/EditIngredient';
 import FullRecipe from '../pages/FullRecipe';
 import StudentProfile from '../pages/StudentProfile';
@@ -22,6 +23,7 @@ import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
 import StudentHome from '../pages/StudentHome';
 import RecipeSearch from '../pages/RecipeSearch';
+import IngredientSearch from '../pages/IngredientSearch';
 import NewestIngredients from '../pages/NewestIngredients';
 import NewestRecipes from '../pages/NewestRecipes';
 
@@ -36,6 +38,7 @@ const App = () => (
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signout" element={<SignOut />} />
         <Route path="/search" element={<RecipeSearch />} />
+        <Route path="/search-ingredients" element={<IngredientSearch />} />
         <Route path="/recipe/:_id" element={<FullRecipe />} />
         <Route path="/student" element={<ProtectedRoute><StudentHome /></ProtectedRoute>} />
         <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
@@ -45,7 +48,8 @@ const App = () => (
         <Route path="/add-ingredients" element={<ProtectedRoute><AddIngredients /></ProtectedRoute>} />
         <Route path="/vendor" element={<ProtectedRoute><VendorHome /></ProtectedRoute>} />
         <Route path="/vendorprofile" element={<ProtectedRoute><VendorProfile /></ProtectedRoute>} />
-        <Route path="/edit/:_id" element={<ProtectedRoute><EditIngredient /></ProtectedRoute>} />
+        <Route path="/edit-recipe/:_id" element={<ProtectedRoute><EditRecipe /></ProtectedRoute>} />
+        <Route path="/edit-ingredient/:_id" element={<ProtectedRoute><EditIngredient /></ProtectedRoute>} />
         <Route path="/admin" element={<AdminProtectedRoute><ListStuffAdmin /></AdminProtectedRoute>} />
         <Route path="/newest-recipes" element={<AdminProtectedRoute><NewestRecipes /></AdminProtectedRoute>} />
         <Route path="/newest-ingredients" element={<AdminProtectedRoute><NewestIngredients /></AdminProtectedRoute>} />

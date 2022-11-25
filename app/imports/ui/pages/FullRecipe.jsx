@@ -1,5 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
+import { Roles } from 'meteor/alanning:roles';
+import { Link } from 'react-router-dom';
 import React, { useRef, useState, useCallback } from 'react';
 import { Container, Image, ListGroup, Row, Col } from 'react-bootstrap';
 import { CheckCircleFill, XCircleFill, AlarmFill, PersonFill } from 'react-bootstrap-icons';
@@ -56,7 +58,10 @@ const FullRecipe = () => {
     <Container className="py-3">
       <div className="d-flex" style={{ position: 'relative' }}>
         <div>
-          <h1>{recipe.name}</h1>
+          <div className="d-flex align-items-baseline justify-content-between">
+            <h1>{recipe.name}</h1>
+            { (Meteor.user() && Meteor.user().username === recipe.owner) || Roles.userIsInRole(Meteor.userId(), 'admin') ? <Link to={`/edit-recipe/${recipe._id}`}>Edit</Link> : null }
+          </div>
           <Image rounded style={{ alignSelf: 'start' }} width={400} src={recipe.image} />
           <div className="d-flex align-items-center mt-1">
             <AlarmFill className="me-1" /> {recipe.estimatedTime}

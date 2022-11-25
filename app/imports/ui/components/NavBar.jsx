@@ -30,7 +30,8 @@ const NavBar = () => {
               <Nav.Link id="student-home-nav" as={NavLink} to="/student" key="student">Home</Nav.Link>,
               <Nav.Link id="favorites-nav" as={NavLink} to="/favorites" key="favorites">Favorites</Nav.Link>,
               <Nav.Link id="add-recipe-nav" as={NavLink} to="/add-recipe" key="add-recipe">Add Recipe</Nav.Link>,
-              <Nav.Link id="search-nav" as={NavLink} to="/search" key="search">Search</Nav.Link>,
+              <Nav.Link id="search-nav" as={NavLink} to="/search" key="search">Search Recipes</Nav.Link>,
+              <Nav.Link id="search-ing-nav" as={NavLink} to="/search-ingredients" key="search-ingredients">Search Ingredients</Nav.Link>,
             ]) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'vendor') ? ([
               <Nav.Link id="vendor-home-nav" as={NavLink} to="/vendor" key="vendor">Home</Nav.Link>,
