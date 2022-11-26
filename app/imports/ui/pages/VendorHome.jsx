@@ -42,7 +42,7 @@ const VendorHome = () => {
         {
           ingredients.map(ing => (
             <Col key={ing._id} className="mb-3">
-              <IngredientCard ingredient={ing} showEditAndDelete />
+              <IngredientCard ingredient={ing} showEditAndDelete showFooter={false} />
             </Col>
           ))
         }

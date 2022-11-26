@@ -53,7 +53,7 @@ const IngredientSearch = () => {
   const returnFilter = () => (
     <div className="pb-3">
       <h2 className="mt-4 text-center mb-2">Search Ingredients</h2>
-      <div id="filter-border">
+      <div id="filter-border-ing">
         <Accordion>
           <Accordion.Item eventKey="0">
             <Accordion.Header>
@@ -127,7 +127,7 @@ const IngredientSearch = () => {
         {
           filteredIngredients.map(ing => (
             <Col key={ing._id} className="mb-3">
-              <IngredientCard ingredient={ing} showEditAndDelete={false} />
+              <IngredientCard ingredient={ing} showEditAndDelete={false} showFooter />
             </Col>
           ))
         }
@@ -138,10 +138,10 @@ const IngredientSearch = () => {
   return (
     <Container>
       <div className="d-flex justify-content-center">
-        <Row id="dashboard-screen">
+        <Row id="dashboard-screen-ing">
           <Col className="mx-3">
-            <Row id="dashboard-filter">{returnFilter()}</Row>
-            { ready ? <Row id="dashboard-list">{returnList()}</Row> : '' }
+            <Row id="dashboard-filter-ing">{returnFilter()}</Row>
+            { ready ? <Row id="dashboard-list-ing">{returnList()}</Row> : '' }
             { ready ? '' : <LoadingSpinner /> }
           </Col>
         </Row>

@@ -15,6 +15,7 @@ import FullRecipe from '../pages/FullRecipe';
 import StudentProfile from '../pages/StudentProfile';
 import VendorHome from '../pages/VendorHome';
 import VendorProfile from '../pages/VendorProfile';
+import PublicVendorProfile from '../pages/PublicVendorProfile';
 import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
 import SignOut from '../pages/SignOut';
@@ -48,6 +49,7 @@ const App = () => (
         <Route path="/add-ingredients" element={<ProtectedRoute><AddIngredients /></ProtectedRoute>} />
         <Route path="/vendor" element={<ProtectedRoute><VendorHome /></ProtectedRoute>} />
         <Route path="/vendorprofile" element={<ProtectedRoute><VendorProfile /></ProtectedRoute>} />
+        <Route path="/publicVendorProfile/:name" element={<ProtectedRoute><PublicVendorProfile /></ProtectedRoute>} />
         <Route path="/edit-recipe/:_id" element={<ProtectedRoute><EditRecipe /></ProtectedRoute>} />
         <Route path="/edit-ingredient/:_id" element={<ProtectedRoute><EditIngredient /></ProtectedRoute>} />
         <Route path="/admin" element={<AdminProtectedRoute><ListStuffAdmin /></AdminProtectedRoute>} />

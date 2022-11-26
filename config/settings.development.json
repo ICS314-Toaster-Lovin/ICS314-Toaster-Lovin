@@ -9,7 +9,7 @@
     { "email": "john@foo.com", "password": "changeme", "role": "student", "organization": "University of Hawaii" },
     { "email": "adam@foo.com", "password": "changeme", "role": "student", "organization": "University of Hawaii" },
     { "email": "walmart@foo.com", "password": "changeme", "role": "vendor", "organization": "Walmart" },
-    { "email": "foodland@foo.com", "password": "changeme", "role": "vendor", "organization":  "Foodland"}
+    { "email": "foodland@foo.com", "password": "changeme", "role": "vendor", "organization":  "Foodland Market City"}
   ],
 
   "defaultData": [
@@ -71,7 +71,7 @@
       "quantity": 13,
       "units": "lb",
       "image": "https://images.heb.com/is/image/HEBGrocery/000319108?fit=constrain,1&wid=800&hei=800&fmt=jpg&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0",
-      "vendor": "Foodland",
+      "vendor": "Foodland Market City",
       "owner": "foodland@foo.com",
       "createdAt": "2022-05-25T12:00:00-06:30"
     },
@@ -91,7 +91,7 @@
       "quantity": 22,
       "units": "bunch",
       "image": "https://i5.walmartimages.com/asr/3bbb1151-d69a-43fb-b132-47e0bc066307.1f28c1acf3df725a6a39ba4c8738e025.jpeg",
-      "vendor": "Foodland",
+      "vendor": "Foodland Market City",
       "owner": "foodland@foo.com",
       "createdAt": "2022-06-25T12:00:00-06:30"
     },

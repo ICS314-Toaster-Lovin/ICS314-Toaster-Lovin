@@ -42,11 +42,12 @@ Meteor.publish(Ingredient.userPublicationName, function () {
 
 // Vendor publication
 Meteor.publish(Vendors.userPublicationName, function () {
-  if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Vendors.collection.find({ owner: username });
-  }
-  return this.ready();
+  // if (this.userId) {
+  //   const username = Meteor.users.findOne(this.userId).username;
+  //   return Vendors.collection.find({ owner: username });
+  // }
+  // return this.ready();
+  return Vendors.collection.find();
 });
 
 // Student publication
