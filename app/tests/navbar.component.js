@@ -143,6 +143,15 @@ class NavBar {
     await testController.click('#newest-Ingredients-admin-nav');
   }
 
+  /** Go to Student Profile page */
+  async gotoStudentProfile(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#navbar-current-user');
+    await testController.click('#student-navbar-profile');
+  }
 }
 
 export const navBar = new NavBar();

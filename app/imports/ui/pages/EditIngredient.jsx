@@ -53,7 +53,7 @@ const EditIngredient = () => {
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   return (ready ? (
-    <Container className="py-3">
+    <Container className="py-3" id="edit-ingredient-page">
       <Row className="justify-content-center">
         <Col xs={5}>
           <Col className="text-center"><h2>Edit Ingredient</h2></Col>
@@ -63,7 +63,7 @@ const EditIngredient = () => {
                 <Row>
                   <Col>
                     <Row>
-                      <Col><TextField name="name" /></Col>
+                      <Col><TextField name="name" id="edit-ingredient-name" /></Col>
                     </Row>
                   </Col>
 
@@ -71,7 +71,7 @@ const EditIngredient = () => {
                 <Col><TextField name="image" help="Make image as square as possible" /></Col>
                 <Col><TextField name="quantity" /></Col>
                 <Col><TextField name="price" /></Col>
-                <SubmitField value="Submit" />
+                <SubmitField value="Submit" id="edit-ingredient-submit" />
                 <ErrorsField />
               </Card.Body>
             </Card>

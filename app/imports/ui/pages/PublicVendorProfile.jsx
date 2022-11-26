@@ -25,7 +25,7 @@ const PublicVendorProfile = () => {
   }, []);
 
   return (ready ? (
-    <Container>
+    <Container id="public-vendor-profile-page">
       <VendorInfo vendors={doc} />
     </Container>
   ) : <LoadingSpinner />);

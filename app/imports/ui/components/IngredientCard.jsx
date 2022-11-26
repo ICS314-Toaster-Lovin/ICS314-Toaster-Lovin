@@ -13,13 +13,13 @@ const IngredientCard = ({ ingredient, showEditAndDelete, showFooter }) => (
   <Card className="h-100">
     <Card.Img src={ingredient.image} />
     <Card.Body>
-      <Card.Title>{ingredient.name} ({ingredient.quantity})</Card.Title>
+      <Card.Title id="ingredient-card-title">{ingredient.name} ({ingredient.quantity})</Card.Title>
       <Card.Text>{(ingredient.price)}</Card.Text>
       {
         showEditAndDelete ?
           (
             <div className="d-flex justify-content-between align-items-end">
-              <Card.Link href={`/edit-ingredient/${ingredient._id}`}>Edit</Card.Link>
+              <Card.Link href={`/edit-ingredient/${ingredient._id}`} id="edit-ingredient-link">Edit</Card.Link>
               <Button variant="danger" onClick={() => removeIngredient(ingredient._id)}><Trash /></Button>
             </div>
           ) : null

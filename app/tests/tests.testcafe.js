@@ -1,16 +1,23 @@
+import { Selector } from 'testcafe';
 import { landingPage } from './landing.page';
 import { signinPage } from './signin.page';
 import { signoutPage } from './signout.page';
 import { addRecipePage } from './addrecipe.page';
 import { navBar } from './navbar.component';
 import { searchRecipePage } from './searchrecipe.page';
+import { searchIngredientsPage } from './searchIngredients.page';
+import { fullRecipePage } from './fullRecipe.page';
+import { editRecipePage } from './editRecipe.page';
+import { publicVendorProfilePage } from './publicVendorProfile.page';
+import { vendorHomePage } from './vendorHome.page';
+import { editIngredientPage } from './editIngredient.page';
 
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
 const student = { username: 'john@foo.com', password: 'changeme' };
-const vendor = { username: 'admin@foo.com', password: 'changeme' };
-const admin = { username: 'walmart@foo.com', password: 'changeme' };
+const vendor = { username: 'walmart@foo.com', password: 'changeme' };
+const admin = { username: 'admin@foo.com', password: 'changeme' };
 
 fixture('meteor-react-bootstrap-template localhost test with default db')
   .page('http://localhost:3000');
@@ -56,4 +63,52 @@ test('Test the Search Recipe page', async (testController) => {
   await navBar.gotoSearchRecipesPage(testController);
   await searchRecipePage.isDisplayed(testController);
   await searchRecipePage.hasTable(testController);
+});
+
+test('Test the Search Ingredients page', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, student.username, student.password);
+  await navBar.gotoSearchIngredientsPage(testController);
+  await searchIngredientsPage.isDisplayed(testController);
+});
+
+test('Test the Full Recipe and Edit Recipe pages', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, student.username, student.password);
+  // Goes to the student profile page so it can click on a link to the full recipe page
+  await navBar.gotoStudentProfile(testController);
+  const baconOmelette = Selector('a').withText('Bacon Omelette');
+  await testController.click(baconOmelette);
+  await fullRecipePage.isDisplayed(testController);
+
+  // Test Edit Recipe page
+  await fullRecipePage.gotoEditRecipe(testController);
+  await editRecipePage.isDisplayed(testController);
+  await editRecipePage.editInstructions(testController);
+  await fullRecipePage.confirmEdits(testController);
+});
+
+test('Test the Edit Ingredient page', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, vendor.username, vendor.password);
+  await navBar.gotoVendorHomePage(testController);
+  await vendorHomePage.clickEditLink(testController);
+  await editIngredientPage.isDisplayed(testController);
+  await editIngredientPage.editInstructions(testController);
+  await vendorHomePage.confirmEdits(testController);
+});
+
+test('Test the Public Vendor Profile page', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, student.username, student.password);
+  await navBar.gotoSearchIngredientsPage(testController);
+  await searchIngredientsPage.clickWalmartLink(testController);
+  await publicVendorProfilePage.isDisplayed(testController);
+});
+
+test('Test the Vendor Home page', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, vendor.username, vendor.password);
+  await navBar.gotoVendorHomePage(testController);
+  await vendorHomePage.isDisplayed(testController);
 });
