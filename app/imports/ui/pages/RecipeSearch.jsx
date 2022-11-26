@@ -181,7 +181,7 @@ const RecipeSearch = () => {
   );
 
   return (
-    <div>
+    <div id="search-recipe-page">
       <div className="d-flex justify-content-center">
         <Row id="dashboard-screen">
           <Col className="mx-3">
