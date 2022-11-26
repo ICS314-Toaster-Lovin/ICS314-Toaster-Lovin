@@ -3,6 +3,7 @@ import { signinPage } from './signin.page';
 import { signoutPage } from './signout.page';
 import { addRecipePage } from './addrecipe.page';
 import { navBar } from './navbar.component';
+import { searchRecipePage } from './searchrecipe.page';
 
 /* global fixture:false, test:false */
 
@@ -47,4 +48,12 @@ test('Test the Add Recipe page', async (testController) => {
   await navBar.gotoAddRecipePage(testController);
   await addRecipePage.isDisplayed(testController);
   await addRecipePage.addRecipe(testController);
+});
+
+test('Test the Search Recipe page', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, student.username, student.password);
+  await navBar.gotoSearchRecipesPage(testController);
+  await searchRecipePage.isDisplayed(testController);
+  await searchRecipePage.hasTable(testController);
 });
