@@ -34,13 +34,14 @@ const NavBar = () => {
             ]) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'vendor') ? ([
               <Nav.Link id="vendor-home-nav" as={NavLink} to="/vendor" key="vendor">Home</Nav.Link>,
+              <Nav.Link id="add-ingredients-nav" as={NavLink} to="/add-ingredients" key="vendor">Add Ingredients</Nav.Link>,
             ]) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? ([
               <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin" key="admin">Admin</Nav.Link>,
               <Nav.Link id="user-list-admin-nav" as={NavLink} to="/user-list" key="user-list">User List</Nav.Link>,
               <Nav.Link id="newest-recipes-admin-nav" as={NavLink} to="/newest-recipes" key="newest-recipes">Newest Recipes</Nav.Link>,
               <Nav.Link id="newest-Ingredients-admin-nav" as={NavLink} to="/newest-ingredients" key="newest-ingredients">Newest Ingredients</Nav.Link>,
-              <Nav.Link id="add-ingredients" as={NavLink} to="/add-ingredients" key="vendor">Add Ingredients</Nav.Link>,
+              <Nav.Link id="add-ingredients-nav" as={NavLink} to="/add-ingredients" key="vendor">Add Ingredients</Nav.Link>,
             ]) : ''}
           </Nav>
           <Nav className="justify-content-end">
