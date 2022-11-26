@@ -52,6 +52,15 @@ class NavBar {
     await testController.click('#login-dropdown');
     await testController.click('#login-dropdown-sign-up');
   }
+
+  /** Click on the Add Recipe link in the navbar */
+  async gotoAddRecipePage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#add-recipe-nav');
+  }
 }
 
 export const navBar = new NavBar();
