@@ -9,18 +9,22 @@ import ListStuff from '../pages/ListStuff';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import AddRecipe from '../pages/AddRecipe';
 import AddIngredients from '../pages/AddIngredients';
+import EditRecipe from '../pages/EditRecipe';
 import EditIngredient from '../pages/EditIngredient';
 import FullRecipe from '../pages/FullRecipe';
+import StudentProfile from '../pages/StudentProfile';
 import VendorHome from '../pages/VendorHome';
 import VendorProfile from '../pages/VendorProfile';
+import PublicVendorProfile from '../pages/PublicVendorProfile';
 import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
 import SignOut from '../pages/SignOut';
 import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
-import StudentHomePage from '../pages/StudentHomePage';
+import StudentHome from '../pages/StudentHome';
 import RecipeSearch from '../pages/RecipeSearch';
+import IngredientSearch from '../pages/IngredientSearch';
 import NewestIngredients from '../pages/NewestIngredients';
 import NewestRecipes from '../pages/NewestRecipes';
 
@@ -35,15 +39,19 @@ const App = () => (
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signout" element={<SignOut />} />
         <Route path="/search" element={<RecipeSearch />} />
-        <Route path="/studenthome" element={<ProtectedRoute><StudentHomePage /></ProtectedRoute>} />
+        <Route path="/search-ingredients" element={<IngredientSearch />} />
+        <Route path="/recipe/:_id" element={<FullRecipe />} />
+        <Route path="/student" element={<ProtectedRoute><StudentHome /></ProtectedRoute>} />
         <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
         <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
+        <Route path="/profile" element={<ProtectedRoute><StudentProfile /></ProtectedRoute>} />
         <Route path="/add-recipe" element={<ProtectedRoute><AddRecipe /></ProtectedRoute>} />
-        <Route path="/recipe/:_id" element={<ProtectedRoute><FullRecipe /></ProtectedRoute>} />
         <Route path="/add-ingredients" element={<ProtectedRoute><AddIngredients /></ProtectedRoute>} />
         <Route path="/vendor" element={<ProtectedRoute><VendorHome /></ProtectedRoute>} />
         <Route path="/vendorprofile" element={<ProtectedRoute><VendorProfile /></ProtectedRoute>} />
-        <Route path="/edit/:_id" element={<ProtectedRoute><EditIngredient /></ProtectedRoute>} />
+        <Route path="/publicVendorProfile/:name" element={<ProtectedRoute><PublicVendorProfile /></ProtectedRoute>} />
+        <Route path="/edit-recipe/:_id" element={<ProtectedRoute><EditRecipe /></ProtectedRoute>} />
+        <Route path="/edit-ingredient/:_id" element={<ProtectedRoute><EditIngredient /></ProtectedRoute>} />
         <Route path="/admin" element={<AdminProtectedRoute><ListStuffAdmin /></AdminProtectedRoute>} />
         <Route path="/newest-recipes" element={<AdminProtectedRoute><NewestRecipes /></AdminProtectedRoute>} />
         <Route path="/newest-ingredients" element={<AdminProtectedRoute><NewestIngredients /></AdminProtectedRoute>} />

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
+import { Tracker } from 'meteor/tracker';
+import { Accounts } from 'meteor/accounts-base';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Card } from 'react-bootstrap';
@@ -9,29 +11,38 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import IngredientCard from '../components/IngredientCard';
 
 const VendorHome = () => {
+  // Make sure data is ready before getting the username
+  let user;
+  Tracker.autorun(() => {
+    if (Accounts.loginServicesConfigured()) {
+      user = Meteor.user().username;
+    }
+  });
+
   const { ready, ingredients } = useTracker(() => {
     const ingredientSubscription = Meteor.subscribe(Ingredient.userPublicationName);
     // Determine if the subscription is ready
     const rdy = ingredientSubscription.ready();
     // Get the ingredient collection
-    const ingredientItems = Ingredient.collection.find({}).fetch();
+    const ingredientItems = Ingredient.collection.find({ owner: user }).fetch();
     return {
       ready: rdy,
       ingredients: ingredientItems,
     };
   }, []);
+
   return (ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col className="text-center">
-          <h2>Your Items at {Meteor.user().profile.organization}</h2>
+          <h2>Your Items</h2>
         </Col>
       </Row>
       <Row md={5}>
         {
           ingredients.map(ing => (
             <Col key={ing._id} className="mb-3">
-              <IngredientCard ingredient={ing} />
+              <IngredientCard ingredient={ing} showEditAndDelete showFooter={false} />
             </Col>
           ))
         }

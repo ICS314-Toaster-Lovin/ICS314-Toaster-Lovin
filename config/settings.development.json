@@ -7,8 +7,9 @@
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin", "organization": "admin" },
     { "email": "john@foo.com", "password": "changeme", "role": "student", "organization": "University of Hawaii" },
+    { "email": "adam@foo.com", "password": "changeme", "role": "student", "organization": "University of Hawaii" },
     { "email": "walmart@foo.com", "password": "changeme", "role": "vendor", "organization": "Walmart" },
-    { "email": "foodland@foo.com", "password": "changeme", "role": "vendor", "organization":  "Foodland"}
+    { "email": "foodland@foo.com", "password": "changeme", "role": "vendor", "organization":  "Foodland Market City"}
   ],
 
   "defaultData": [
@@ -58,7 +59,7 @@
       "image": "https://christieathome.com/wp-content/uploads/2022/02/Curry-Ramen-15.jpg",
       "ingredientList": "instant ramen",
       "instructions": "Pour boiling water into the cup of instant ramen. Cover and wait for 2 minutes.",
-      "owner": "john@foo.com",
+      "owner": "adam@foo.com",
       "createdAt": "2022-03-25T12:00:00-06:30"
     }
   ],
@@ -70,8 +71,8 @@
       "quantity": 13,
       "units": "lb",
       "image": "https://images.heb.com/is/image/HEBGrocery/000319108?fit=constrain,1&wid=800&hei=800&fmt=jpg&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0",
-      "vendor": "Foodland",
-      "owner": "john@foo.com",
+      "vendor": "Foodland Market City",
+      "owner": "foodland@foo.com",
       "createdAt": "2022-05-25T12:00:00-06:30"
     },
     {
@@ -80,8 +81,8 @@
       "quantity": 5,
       "units": "dozen",
       "image": "https://cdn.shopify.com/s/files/1/0571/1321/5163/products/EGPH-OPENWEGGS.png?v=1653408003",
-      "vendor": "Safeway",
-      "owner": "john@foo.com",
+      "vendor": "Walmart",
+      "owner": "walmart@foo.com",
       "createdAt": "2022-04-25T12:00:00-06:30"
     },
     {
@@ -90,9 +91,37 @@
       "quantity": 22,
       "units": "bunch",
       "image": "https://i5.walmartimages.com/asr/3bbb1151-d69a-43fb-b132-47e0bc066307.1f28c1acf3df725a6a39ba4c8738e025.jpeg",
-      "vendor": "Foodland",
-      "owner": "john@foo.com",
+      "vendor": "Foodland Market City",
+      "owner": "foodland@foo.com",
       "createdAt": "2022-06-25T12:00:00-06:30"
+    },
+    {
+      "name": "Spam",
+      "price": "$3.59",
+      "quantity": 18,
+      "units": "can",
+      "image": "https://m.media-amazon.com/images/I/A1xRLOh8ukL.jpg",
+      "vendor": "Walmart",
+      "owner": "walmart@foo.com",
+      "createdAt": "2022-07-25T12:00:00-06:30"
+    }
+  ],
+  "studentData": [
+    {
+      "name": "John Doe",
+      "glutenFree": false,
+      "lactoseFree": true,
+      "vegan": true,
+      "vegetarian": true,
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Adam Montoya",
+      "glutenFree": true,
+      "lactoseFree": false,
+      "vegan": false,
+      "vegetarian": true,
+      "owner": "adam@foo.com"
     }
   ],
   "vendorData": [

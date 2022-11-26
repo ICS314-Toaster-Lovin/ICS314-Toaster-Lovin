@@ -4,6 +4,7 @@ import { Stuffs } from '../../api/stuff/Stuff';
 import { Recipe } from '../../api/recipe/Recipe';
 import { Ingredient } from '../../api/ingredient/Ingredient';
 import { Vendors } from '../../api/vendor/Vendor';
+import { Students } from '../../api/student/Student';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -17,27 +18,43 @@ Meteor.publish(Stuffs.userPublicationName, function () {
 
 // Recipe publication
 Meteor.publish(Recipe.userPublicationName, function () {
+  /*
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Recipe.collection.find({ owner: username });
   }
   return this.ready();
+   */
+  return Recipe.collection.find();
 });
 
 // Ingredient publication
 Meteor.publish(Ingredient.userPublicationName, function () {
+  /*
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Ingredient.collection.find({ owner: username });
   }
   return this.ready();
+   */
+  return Ingredient.collection.find();
 });
 
 // Vendor publication
 Meteor.publish(Vendors.userPublicationName, function () {
+  // if (this.userId) {
+  //   const username = Meteor.users.findOne(this.userId).username;
+  //   return Vendors.collection.find({ owner: username });
+  // }
+  // return this.ready();
+  return Vendors.collection.find();
+});
+
+// Student publication
+Meteor.publish(Students.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
-    return Vendors.collection.find({ owner: username });
+    return Students.collection.find({ owner: username });
   }
   return this.ready();
 });
@@ -68,6 +85,13 @@ Meteor.publish(Ingredient.adminPublicationName, function () {
 Meteor.publish(Vendors.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'vendor')) {
     return Vendors.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(Students.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'vendor')) {
+    return Students.collection.find();
   }
   return this.ready();
 });

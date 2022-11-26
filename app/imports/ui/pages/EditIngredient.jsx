@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
@@ -7,6 +7,7 @@ import { useTracker } from 'meteor/react-meteor-data';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
 import { useParams } from 'react-router';
+import { Navigate } from 'react-router-dom';
 import { Ingredient } from '../../api/ingredient/Ingredient';
 import LoadingSpinner from '../components/LoadingSpinner';
 
@@ -22,6 +23,7 @@ const bridge = new SimpleSchema2Bridge(formSchema);
 
 const EditIngredient = () => {
   const { _id } = useParams();
+  const [redirect, setRedirect] = useState(false);
 
   const { ready, doc } = useTracker(() => {
     const ingredientSubscription = Meteor.subscribe(Ingredient.userPublicationName);
@@ -44,8 +46,10 @@ const EditIngredient = () => {
     // Insert into Recipe Collection
     Ingredient.collection.update(_id, { $set: { name, quantity, price, image, owner, createdAt } }, (error) => (error ?
       swal('Error', error.message, 'error') :
-      swal('Success', 'Item updated successfully', 'success').then(() => { window.location.href = '/vendor'; })));
+      swal('Success', 'Ingredient updated successfully', 'success').then(() => setRedirect(true))));
   };
+
+  if (redirect) return <Navigate to="/vendor" />;
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   return (ready ? (

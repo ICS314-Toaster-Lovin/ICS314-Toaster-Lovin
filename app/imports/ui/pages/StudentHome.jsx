@@ -8,7 +8,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import { Ingredient } from '../../api/ingredient/Ingredient';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-const StudentHomePage = () => {
+const StudentHome = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { ready, recipes, ingredients } = useTracker(() => {
     // Note that this subscription will get cleaned up
@@ -47,4 +47,4 @@ const StudentHomePage = () => {
   ) : <LoadingSpinner />);
 };
 
-export default StudentHomePage;
+export default StudentHome;
