@@ -32,7 +32,7 @@ const VendorHome = () => {
   }, []);
 
   return (ready ? (
-    <Container className="py-3">
+    <Container className="py-3" id="vendor-home-page">
       <Row className="justify-content-center">
         <Col className="text-center">
           <h2>Your Items</h2>

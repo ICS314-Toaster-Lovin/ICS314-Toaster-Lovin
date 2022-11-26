@@ -136,7 +136,7 @@ const IngredientSearch = () => {
   );
 
   return (
-    <Container>
+    <Container id="search-ing-page">
       <div className="d-flex justify-content-center">
         <Row id="dashboard-screen-ing">
           <Col className="mx-3">

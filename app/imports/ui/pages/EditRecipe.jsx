@@ -71,7 +71,7 @@ const EditRecipe = () => {
   if (redirect) return <Navigate to={`/recipe/${doc._id}`} />;
 
   return (ready ? (
-    <Container className="py-3">
+    <Container className="py-3" id="edit-recipe-page">
       <Row className="justify-content-center">
         <Col xs={5}>
           <Col className="text-center"><h2>Edit Recipe</h2></Col>
@@ -92,8 +92,8 @@ const EditRecipe = () => {
                 </Row>
                 <Col><TextField name="image" /></Col>
                 <Col><LongTextField name="ingredientList" /></Col>
-                <Col><LongTextField name="instructions" /></Col>
-                <SubmitField value="Submit" />
+                <Col><LongTextField name="instructions" id="edit-recipe-instructions" /></Col>
+                <SubmitField value="Submit" id="edit-recipe-submit" />
                 <ErrorsField />
               </Card.Body>
             </Card>

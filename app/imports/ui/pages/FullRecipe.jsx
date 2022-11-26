@@ -55,12 +55,12 @@ const FullRecipe = () => {
   }
 
   return (ready ? (
-    <Container className="py-3">
+    <Container className="py-3" id="full-recipe-page">
       <div className="d-flex" style={{ position: 'relative' }}>
         <div>
           <div className="d-flex align-items-baseline justify-content-between">
             <h1>{recipe.name}</h1>
-            { (Meteor.user() && Meteor.user().username === recipe.owner) || Roles.userIsInRole(Meteor.userId(), 'admin') ? <Link to={`/edit-recipe/${recipe._id}`}>Edit</Link> : null }
+            { (Meteor.user() && Meteor.user().username === recipe.owner) || Roles.userIsInRole(Meteor.userId(), 'admin') ? <Link to={`/edit-recipe/${recipe._id}`} id="edit-recipe-link">Edit</Link> : null }
           </div>
           <Image rounded style={{ alignSelf: 'start' }} width={400} src={recipe.image} />
           <div className="d-flex align-items-center mt-1">
@@ -130,7 +130,7 @@ const FullRecipe = () => {
         </div>
         <div className="ms-5">
           <h4 className="text-center" style={{ marginTop: '19px' }}><u>Instructions</u></h4>
-          <p className="border rounded px-3 py-2">{recipe.instructions}</p>
+          <p className="border rounded px-3 py-2" id="recipe-instructions">{recipe.instructions}</p>
         </div>
       </div>
     </Container>
