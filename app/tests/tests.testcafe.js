@@ -12,6 +12,7 @@ import { publicVendorProfilePage } from './publicVendorProfile.page';
 import { vendorHomePage } from './vendorHome.page';
 import { editIngredientPage } from './editIngredient.page';
 import { studentProfilePage } from './studentProfile.page';
+import { vendorProfilePage } from './vendorProfile.page';
 
 /* global fixture:false, test:false */
 
@@ -107,7 +108,7 @@ test('Test the Public Vendor Profile page', async (testController) => {
   await publicVendorProfilePage.isDisplayed(testController);
 });
 
-test.only('Test the Student Profile page', async (testController) => {
+test('Test the Student Profile page', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, student.username, student.password);
   await navBar.gotoStudentProfile(testController);
@@ -115,6 +116,13 @@ test.only('Test the Student Profile page', async (testController) => {
   const baconOmelette = Selector('a').withText('Bacon Omelette');
   await testController.click(baconOmelette);
   await fullRecipePage.isDisplayed(testController);
+});
+
+test('Test the Vendor Profile page', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, vendor.username, vendor.password);
+  await navBar.gotoVendorProfile(testController);
+  await vendorProfilePage.isDisplayed(testController);
 });
 
 test('Test the Vendor Home page', async (testController) => {

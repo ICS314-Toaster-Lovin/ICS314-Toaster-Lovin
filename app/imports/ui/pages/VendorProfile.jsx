@@ -27,7 +27,7 @@ const VendorProfile = () => {
   const filteredVendors = email.filter(vendor => vendor.owner === owner);
 
   return (ready ? (
-    <Container>
+    <Container id="vendor-profile-page">
       {filteredVendors.map((vendors) => <VendorInfo key={vendors.id} vendors={vendors} />)}
     </Container>
   ) : <LoadingSpinner />);
