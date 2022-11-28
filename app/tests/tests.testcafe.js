@@ -11,6 +11,7 @@ import { editRecipePage } from './editRecipe.page';
 import { publicVendorProfilePage } from './publicVendorProfile.page';
 import { vendorHomePage } from './vendorHome.page';
 import { editIngredientPage } from './editIngredient.page';
+import { studentProfilePage } from './studentProfile.page';
 
 /* global fixture:false, test:false */
 
@@ -104,6 +105,16 @@ test('Test the Public Vendor Profile page', async (testController) => {
   await navBar.gotoSearchIngredientsPage(testController);
   await searchIngredientsPage.clickWalmartLink(testController);
   await publicVendorProfilePage.isDisplayed(testController);
+});
+
+test.only('Test the Student Profile page', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, student.username, student.password);
+  await navBar.gotoStudentProfile(testController);
+  await studentProfilePage.isDisplayed(testController);
+  const baconOmelette = Selector('a').withText('Bacon Omelette');
+  await testController.click(baconOmelette);
+  await fullRecipePage.isDisplayed(testController);
 });
 
 test('Test the Vendor Home page', async (testController) => {

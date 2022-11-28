@@ -38,7 +38,7 @@ const StudentProfile = () => {
   const filteredIngredients = ingredients.filter(ing => ing.owner === owner);
 
   return (ready ? (
-    <Container className="py-3">
+    <Container className="py-3" id="student-profile-page">
       <Row className="justify-content-center">
         <Col md={7}>
           {filteredStudents.map((student) => <StudentInfoItem key={student.id} student={student} />)}
