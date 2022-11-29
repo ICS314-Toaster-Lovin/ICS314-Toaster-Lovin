@@ -22,6 +22,9 @@ const StudentInfoItem = ({ student }) => (
     <Row>
       <h3>Dietary Restrictions: {displayRestrictions(student).map((restriction) => `[${restriction}]`)}</h3>
     </Row>
+    <Row>
+      <h4><Link to={`/edit-student-profile/${student._id}`} id="edit-student-profile-link">Edit</Link></h4>
+    </Row>
   </Col>
 );
 
@@ -54,6 +57,7 @@ StudentInfoItem.propTypes = {
     lactoseFree: PropTypes.bool,
     vegan: PropTypes.bool,
     vegetarian: PropTypes.bool,
+    _id: PropTypes.string,
   }).isRequired,
 };
 
