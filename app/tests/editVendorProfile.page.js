@@ -1,8 +1,8 @@
 import { Selector } from 'testcafe';
 
-class EditStudentProfilePage {
+class EditVendorProfilePage {
   constructor() {
-    this.pageId = '#edit-student-profile-page';
+    this.pageId = '#edit-vendor-profile-page';
     this.pageSelector = Selector(this.pageId);
   }
 
@@ -12,9 +12,9 @@ class EditStudentProfilePage {
   }
 
   /** Edits the information */
-  async editProfile(testController) {
-    await testController.typeText('#edit-student-name', 'this is a test');
-    await testController.click('#edit-student-profile-submit input.btn.btn-primary');
+  async editVendorProfile(testController) {
+    await testController.typeText('#edit-vendor-name', 'this is a test');
+    await testController.click('#edit-vendor-profile-submit input.btn.btn-primary');
 
     // Check for Success alert
     await testController.expect(this.pageSelector('.swal-modal').exists).ok();
@@ -22,4 +22,4 @@ class EditStudentProfilePage {
   }
 }
 
-export const editStudentProfilePage = new EditStudentProfilePage();
+export const editVendorProfilePage = new EditVendorProfilePage();

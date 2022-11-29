@@ -62,13 +62,13 @@ const EditVendorProfile = () => {
                 <Row>
                   <Col>
                     <Row>
-                      <Col><TextField name="name" id="edit-vendor-profile-name" /></Col>
+                      <Col><TextField name="name" id="edit-vendor-name" /></Col>
                     </Row>
                   </Col>
                 </Row>
-                <Col><TextField name="location" /></Col>
-                <Col><TextField name="hours" /></Col>
-                <Col><TextField name="gps" help="Make image as square as possible" /></Col>
+                <Col><TextField name="location" id="edit-vendor-location" /></Col>
+                <Col><TextField name="hours" id="edit-vendor-hours" /></Col>
+                <Col><TextField name="gps" id="edit-vendor-gps" help="Make image as square as possible" /></Col>
                 <SubmitField value="Submit" id="edit-vendor-profile-submit" />
                 <ErrorsField />
               </Card.Body>

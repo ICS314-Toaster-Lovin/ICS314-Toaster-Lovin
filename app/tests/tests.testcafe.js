@@ -16,6 +16,7 @@ import { vendorProfilePage } from './vendorProfile.page';
 import { newestIngredientsPage } from './newestingredients.page';
 import { newestRecipesPage } from './newestrecipes.page';
 import { editStudentProfilePage } from './editStudentProfile.page';
+import { editVendorProfilePage } from './editVendorProfile.page';
 
 /* global fixture:false, test:false */
 
@@ -129,11 +130,17 @@ test('Test the Student Profile and Edit Student Profile pages', async (testContr
   await studentProfilePage.confirmEdits(testController);
 });
 
-test('Test the Vendor Profile page', async (testController) => {
+test('Test the Vendor Profile and Edit Vendor Profile pages', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, vendor.username, vendor.password);
   await navBar.gotoVendorProfile(testController);
   await vendorProfilePage.isDisplayed(testController);
+
+  // Test Edit Vendor Profile page
+  await vendorProfilePage.gotoEditVendorProfile(testController);
+  await editVendorProfilePage.isDisplayed(testController);
+  await editVendorProfilePage.editVendorProfile(testController);
+  await vendorProfilePage.confirmEdits(testController);
 });
 
 test('Test the Vendor Home page', async (testController) => {
