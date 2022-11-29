@@ -73,12 +73,10 @@ const EditStudentProfile = () => {
             <Card>
               <Card.Body>
                 <Row>
-                  <Col>
-                    <Row>
-                      <Col><TextField name="name" /></Col>
-                    </Row>
-                  </Col>
-                  <Col md="auto"><SelectField name="dietaryRestrictions" multiple checkboxes transform={transform} /></Col>
+                  <Row>
+                    <Col><TextField name="name" /></Col>
+                  </Row>
+                  <Row md="auto"><SelectField name="dietaryRestrictions" multiple checkboxes transform={transform} /></Row>
                 </Row>
                 <SubmitField value="Submit" id="edit-student-profile-submit" />
                 <ErrorsField />
