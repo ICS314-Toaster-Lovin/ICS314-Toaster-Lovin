@@ -5,11 +5,11 @@
   },
 
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "admin", "organization": "admin" },
-    { "email": "john@foo.com", "password": "changeme", "role": "student", "organization": "University of Hawaii" },
-    { "email": "adam@foo.com", "password": "changeme", "role": "student", "organization": "University of Hawaii" },
-    { "email": "walmart@foo.com", "password": "changeme", "role": "vendor", "organization": "Walmart" },
-    { "email": "foodland@foo.com", "password": "changeme", "role": "vendor", "organization":  "Foodland Market City"}
+    { "email": "admin@foo.com", "password": "changeme", "role": "admin", "name": "admin" },
+    { "email": "john@foo.com", "password": "changeme", "role": "student", "name": "University of Hawaii" },
+    { "email": "adam@foo.com", "password": "changeme", "role": "student", "name": "University of Hawaii" },
+    { "email": "walmart@foo.com", "password": "changeme", "role": "vendor", "name": "Walmart" },
+    { "email": "foodland@foo.com", "password": "changeme", "role": "vendor", "name":  "Foodland Market City"}
   ],
 
   "defaultData": [

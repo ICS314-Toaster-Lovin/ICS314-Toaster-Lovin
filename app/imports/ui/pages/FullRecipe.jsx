@@ -4,27 +4,32 @@ import { Roles } from 'meteor/alanning:roles';
 import { Link } from 'react-router-dom';
 import React, { useRef, useState, useCallback } from 'react';
 import { Container, Image, ListGroup, Row, Col } from 'react-bootstrap';
-import { CheckCircleFill, XCircleFill, AlarmFill, PersonFill } from 'react-bootstrap-icons';
+import { CheckCircleFill, XCircleFill, AlarmFill, PersonFill, Star } from 'react-bootstrap-icons';
 import { useParams } from 'react-router';
+import swal from 'sweetalert';
 import { Recipe } from '../../api/recipe/Recipe';
 import { Ingredient } from '../../api/ingredient/Ingredient';
+import { Students } from '../../api/student/Student';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const FullRecipe = () => {
   const { _id } = useParams();
 
-  const { ready, recipe, ingredients } = useTracker(() => {
+  const { ready, recipe, ingredients, student } = useTracker(() => {
     const recipeSubscription = Meteor.subscribe(Recipe.userPublicationName);
     const ingredientSubscription = Meteor.subscribe(Ingredient.userPublicationName);
+    const studentSubscription = Meteor.subscribe(Students.userPublicationName);
     // Determine if the subscription is ready
-    const rdy = recipeSubscription.ready() && ingredientSubscription.ready();
+    const rdy = recipeSubscription.ready() && ingredientSubscription.ready() && studentSubscription.ready();
     // Get the documents
     const recipeItem = Recipe.collection.findOne(_id);
     const ingredientItems = Ingredient.collection.find({}).fetch();
+    const studentItem = Students.collection.find({}).fetch();
     return {
       ready: rdy,
       recipe: recipeItem,
       ingredients: ingredientItems,
+      student: studentItem,
     };
   }, []);
   const vendorList = useRef();
@@ -54,12 +59,23 @@ const FullRecipe = () => {
     return word[0].toUpperCase() + word.slice(1);
   }
 
+  /* Function to save recipe into user's favorites */
+  function favoriteRecipe(id) {
+    const favorites = `${id}`;
+    Students.collection.update(student[0]._id, { $set: { favorites } }, (error) => (error ?
+      swal('Error', error.message, 'error') :
+      swal('Success', 'Recipe saved to Favorites', 'success')));
+  }
+
   return (ready ? (
     <Container className="py-3" id="full-recipe-page">
       <div className="d-flex" style={{ position: 'relative' }}>
         <div>
           <div className="d-flex align-items-baseline justify-content-between">
-            <h1>{recipe.name}</h1>
+            <h1>
+              {recipe.name}
+              <Star color="#F7DA45" className="pb-2 ps-2" onClick={() => favoriteRecipe(recipe._id)} />
+            </h1>
             { (Meteor.user() && Meteor.user().username === recipe.owner) || Roles.userIsInRole(Meteor.userId(), 'admin') ? <Link to={`/edit-recipe/${recipe._id}`} id="edit-recipe-link">Edit</Link> : null }
           </div>
           <Image rounded style={{ alignSelf: 'start' }} width={400} src={recipe.image} />
