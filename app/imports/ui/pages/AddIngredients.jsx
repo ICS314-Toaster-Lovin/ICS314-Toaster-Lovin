@@ -43,7 +43,7 @@ const AddIngredient = () => {
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   let fRef = null;
   return (
-    <Container className="py-3">
+    <Container className="py-3" id="add-ingredient-page">
       <Row className="justify-content-center">
         <Col xs={5}>
           <Col className="text-center"><h2>Add Ingredient</h2></Col>
@@ -53,15 +53,15 @@ const AddIngredient = () => {
                 <Row>
                   <Col>
                     <Row>
-                      <Col><TextField id="#addingredient-form-name" name="name" /></Col>
+                      <Col><TextField id="addingredient-form-name" name="name" /></Col>
                     </Row>
                   </Col>
 
                 </Row>
-                <Col><TextField id="#addingredient-form-image" name="image" help="Make image as square as possible" /></Col>
-                <Col><TextField id="#addingredient-form-quantity" name="quantity" /></Col>
-                <Col><TextField id="#addingredient-form-price" name="price" /></Col>
-                <SubmitField id="#addingredient-form-submit" value="Submit" />
+                <Col><TextField id="addingredient-form-image" name="image" help="Make image as square as possible" /></Col>
+                <Col><TextField id="addingredient-form-quantity" name="quantity" /></Col>
+                <Col><TextField id="addingredient-form-price" name="price" /></Col>
+                <SubmitField id="addingredient-form-submit" value="Submit" />
                 <ErrorsField />
               </Card.Body>
             </Card>
