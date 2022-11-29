@@ -17,7 +17,7 @@ const displayRestrictions = (student) => {
 const StudentInfoItem = ({ student }) => (
   <Col className="align-content-center text-center">
     <Row>
-      <h2>{student.name}</h2>
+      <h2 id="student-name">{student.name}</h2>
     </Row>
     <Row>
       <h3>Dietary Restrictions: {displayRestrictions(student).map((restriction) => `[${restriction}]`)}</h3>

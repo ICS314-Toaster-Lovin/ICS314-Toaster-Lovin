@@ -15,6 +15,7 @@ import { studentProfilePage } from './studentProfile.page';
 import { vendorProfilePage } from './vendorProfile.page';
 import { newestIngredientsPage } from './newestingredients.page';
 import { newestRecipesPage } from './newestrecipes.page';
+import { editStudentProfilePage } from './editStudentProfile.page';
 
 /* global fixture:false, test:false */
 
@@ -110,7 +111,7 @@ test('Test the Public Vendor Profile page', async (testController) => {
   await publicVendorProfilePage.isDisplayed(testController);
 });
 
-test('Test the Student Profile page', async (testController) => {
+test('Test the Student Profile and Edit Student Profile pages', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, student.username, student.password);
   await navBar.gotoStudentProfile(testController);
@@ -118,6 +119,14 @@ test('Test the Student Profile page', async (testController) => {
   const baconOmelette = Selector('a').withText('Bacon Omelette');
   await testController.click(baconOmelette);
   await fullRecipePage.isDisplayed(testController);
+
+  // Test Edit Student Profile page
+  await navBar.gotoStudentProfile(testController);
+  await studentProfilePage.isDisplayed(testController);
+  await studentProfilePage.gotoEditStudentProfile(testController);
+  await editStudentProfilePage.isDisplayed(testController);
+  await editStudentProfilePage.editProfile(testController);
+  await studentProfilePage.confirmEdits(testController);
 });
 
 test('Test the Vendor Profile page', async (testController) => {
