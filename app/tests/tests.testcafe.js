@@ -10,6 +10,7 @@ import { fullRecipePage } from './fullRecipe.page';
 import { editRecipePage } from './editRecipe.page';
 import { publicVendorProfilePage } from './publicVendorProfile.page';
 import { vendorHomePage } from './vendorHome.page';
+import { addIngredientPage} from './addIngredient.page';
 import { editIngredientPage } from './editIngredient.page';
 import { studentProfilePage } from './studentProfile.page';
 import { vendorProfilePage } from './vendorProfile.page';
@@ -164,4 +165,12 @@ test('Test the Newest Recipes page', async (testController) => {
   await navBar.gotoNewestRecipesPage(testController);
   await newestRecipesPage.isDisplayed(testController);
   await newestRecipesPage.hasTable(testController);
+});
+
+test.only('Test the Add Ingredient page', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, admin.username, admin.password);
+  await navBar.gotoAddIngredientsPage(testController);
+  await addIngredientPage.isDisplayed(testController);
+  await addIngredientPage.addRecipe(testController);
 });

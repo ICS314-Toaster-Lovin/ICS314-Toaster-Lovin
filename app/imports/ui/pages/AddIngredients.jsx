@@ -53,15 +53,15 @@ const AddIngredient = () => {
                 <Row>
                   <Col>
                     <Row>
-                      <Col><TextField name="name" /></Col>
+                      <Col><TextField id="#addingredient-form-name" name="name" /></Col>
                     </Row>
                   </Col>
 
                 </Row>
-                <Col><TextField name="image" help="Make image as square as possible" /></Col>
-                <Col><TextField name="quantity" /></Col>
-                <Col><TextField name="price" /></Col>
-                <SubmitField value="Submit" />
+                <Col><TextField id="#addingredient-form-image" name="image" help="Make image as square as possible" /></Col>
+                <Col><TextField id="#addingredient-form-quantity" name="quantity" /></Col>
+                <Col><TextField id="#addingredient-form-price" name="price" /></Col>
+                <SubmitField id="#addingredient-form-submit" value="Submit" />
                 <ErrorsField />
               </Card.Body>
             </Card>
