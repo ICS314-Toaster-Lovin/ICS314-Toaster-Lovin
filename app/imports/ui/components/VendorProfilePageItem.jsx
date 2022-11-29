@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Image, Row } from 'react-bootstrap';
 
-const VendorInfo = ({ vendors }) => (
+const VendorProfilePageItem = ({ vendors }) => (
   <Col className="align-content-center text-center">
     <Row>
       <h2>{vendors.name}</h2>
@@ -19,15 +19,15 @@ const VendorInfo = ({ vendors }) => (
   </Col>
 );
 
-export default VendorInfo;
+export default VendorProfilePageItem;
 
 // Require a document to be passed to this component.
-VendorInfo.propTypes = {
+VendorProfilePageItem.propTypes = {
   vendors: PropTypes.shape({
-    _id: PropTypes.string,
     name: PropTypes.string,
     location: PropTypes.string,
     hours: PropTypes.string,
     gps: PropTypes.string,
+    _id: PropTypes.string,
   }).isRequired,
 };
