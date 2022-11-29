@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Vendors } from '../../api/vendor/Vendor';
 import LoadingSpinner from '../components/LoadingSpinner';
-import VendorInfo from '../components/VendorInfo';
+import VendorProfilePageItem from '../components/VendorProfilePageItem';
 
 /* Renders a page containing all of the Vendor documents. */
 const PublicVendorProfile = () => {
@@ -26,7 +26,7 @@ const PublicVendorProfile = () => {
 
   return (ready ? (
     <Container id="public-vendor-profile-page">
-      <VendorInfo vendors={doc} />
+      <VendorProfilePageItem vendors={doc} />
     </Container>
   ) : <LoadingSpinner />);
 };
