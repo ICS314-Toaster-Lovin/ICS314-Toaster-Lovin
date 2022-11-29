@@ -33,7 +33,7 @@ const NewestRecipes = () => {
   };
 
   return (ready ? (
-    <Container className="py-3">
+    <Container id="newest-recipes-page" className="py-3">
       <Row className="justify-content-center">
         <Col md={7}>
           <Col className="text-center">

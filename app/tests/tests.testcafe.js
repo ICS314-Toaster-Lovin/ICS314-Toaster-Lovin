@@ -13,6 +13,8 @@ import { vendorHomePage } from './vendorHome.page';
 import { editIngredientPage } from './editIngredient.page';
 import { studentProfilePage } from './studentProfile.page';
 import { vendorProfilePage } from './vendorProfile.page';
+import { newestIngredientsPage } from './newestingredients.page';
+import { newestRecipesPage } from './newestrecipes.page';
 
 /* global fixture:false, test:false */
 
@@ -130,4 +132,20 @@ test('Test the Vendor Home page', async (testController) => {
   await signinPage.signin(testController, vendor.username, vendor.password);
   await navBar.gotoVendorHomePage(testController);
   await vendorHomePage.isDisplayed(testController);
+});
+
+test('Test the Newest Ingredients page', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, admin.username, admin.password);
+  await navBar.gotoNewestIngredientsPage(testController);
+  await newestIngredientsPage.isDisplayed(testController);
+  await newestIngredientsPage.hasTable(testController);
+});
+
+test('Test the Newest Recipes page', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, admin.username, admin.password);
+  await navBar.gotoNewestRecipesPage(testController);
+  await newestRecipesPage.isDisplayed(testController);
+  await newestRecipesPage.hasTable(testController);
 });
