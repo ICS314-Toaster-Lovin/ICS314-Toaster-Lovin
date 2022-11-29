@@ -5,16 +5,16 @@ import { Col, Image, Row } from 'react-bootstrap';
 const VendorProfilePageItem = ({ vendors }) => (
   <Col className="align-content-center text-center">
     <Row>
-      <h2>{vendors.name}</h2>
+      <h2 id="vendor-name">{vendors.name}</h2>
     </Row>
     <Row>
-      <h3>{vendors.location}</h3>
+      <h3 id="vendor-location">{vendors.location}</h3>
     </Row>
     <Row>
-      <h3>{vendors.hours}</h3>
+      <h3 id="vendor-hours">{vendors.hours}</h3>
     </Row>
     <Row>
-      <Image src={vendors.gps} />
+      <Image id="vendor-gps" src={vendors.gps} />
     </Row>
   </Col>
 );
