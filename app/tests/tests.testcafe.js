@@ -172,5 +172,5 @@ test('Test the Add Ingredient page', async (testController) => {
   await signinPage.signin(testController, admin.username, admin.password);
   await navBar.gotoAddIngredientsPage(testController);
   await addIngredientPage.isDisplayed(testController);
-  await addIngredientPage.addRecipe(testController);
+  await addIngredientPage.addIngredient(testController);
 });

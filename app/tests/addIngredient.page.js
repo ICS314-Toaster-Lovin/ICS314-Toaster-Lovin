@@ -12,7 +12,7 @@ class AddIngredientPage {
   }
 
   /** Add a new ingredient using the form. */
-  async addRecipe(testController) {
+  async addIngredient(testController) {
     // Fill out form
     await testController.typeText('#addingredient-form-name', 'Egg');
     await testController.typeText('#addingredient-form-image', 'https://img.livestrong.com/750x/cme-data/getty%2F58d552fe84674587a450b2c84488d52a.jpg?type=webp');
