@@ -40,7 +40,7 @@ const StudentProfile = () => {
   return (ready ? (
     <Container className="py-3" id="student-profile-page">
       <Row className="justify-content-center">
-        <Col md={7}>
+        <Col md={7} className="justify-content-center">
           {filteredStudents.map((student) => <StudentInfoItem key={student.id} student={student} />)}
         </Col>
         <Row className="pt-4">
