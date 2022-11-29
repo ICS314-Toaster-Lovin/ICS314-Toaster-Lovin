@@ -38,7 +38,7 @@ const StudentHomePage = () => {
     <Container className="py-3">
       <Col>
         <Row>
-          <h2 className="mt-2">Newest Recipes</h2>
+          <h2 className="mt-2">Edit New Recipes</h2>
         </Row>
         <Row className="d-flex flex-row flex-nowrap row-horizon overflow-auto">
           {recipes.map((homerecipeitem, index) => (<Col className="col-sm-3" key={index}><HomeRecipeItem homerecipeitem={homerecipeitem} /></Col>))}

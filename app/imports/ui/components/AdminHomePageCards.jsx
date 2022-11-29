@@ -5,25 +5,33 @@ import { Card, Col, Image, Row } from 'react-bootstrap';
 
 /** Renders recipe cards on the user home page */
 const HomeRecipeItem = ({ homerecipeitem }) => (
-  <Card style={{ width: '95%' }}>
-    <Card.Img style={{ objectFit: 'cover', height: '8vw' }} variant="top" src={homerecipeitem.image} />
-    <Card.Body>
-      <Card.Title style={{ margin: '-5px', size: '8vw' }}>{homerecipeitem.name}</Card.Title>
-    </Card.Body>
-  </Card>
-);
-
-const HomeIngredientItem = ({ homeingredientitem }) => (
-  <Link to={`/edit-ingredient/${homeingredientitem._id}`} className="text-decoration-none text-black">
+  <Link to={`/edit-recipe/${homerecipeitem._id}`} className="text-decoration-none text-black">
     <Card style={{ width: '95%' }}>
-      <Card.Header>
-        <Card.Text>{homeingredientitem.name} {homeingredientitem.price}</Card.Text>
-      </Card.Header>
+      <Card.Img style={{ objectFit: 'cover', height: '8vw' }} variant="top" src={homerecipeitem.image} />
       <Card.Body>
-        <Card.Text>{homeingredientitem.vendor}</Card.Text>
+        <Card.Title style={{ margin: '-5px', size: '8vw' }}>{homerecipeitem.name}</Card.Title>
       </Card.Body>
     </Card>
   </Link>
+);
+
+const HomeIngredientItem = ({ homeingredientitem }) => (
+  <Card style={{ width: '95%' }}>
+    <Card.Header>
+      <Card.Text>{homeingredientitem.name} {homeingredientitem.price}</Card.Text>
+    </Card.Header>
+    <Card.Body>
+      <Col style={{ width: '70%' }}>
+        <Card.Text>{homeingredientitem.vendor}</Card.Text>
+      </Col>
+      <Col>
+        <Link to={`/edit-ingredient/${homeingredientitem._id}`} className="text-decoration-none text-black">
+          <Card.Text>Edit</Card.Text>
+        </Link>
+      </Col>
+    </Card.Body>
+  </Card>
+
 );
 
 const UserList = ({ userlist }) => (
@@ -54,6 +62,7 @@ HomeRecipeItem.propTypes = {
     image: PropTypes.string,
     ingredientList: PropTypes.string,
     instructions: PropTypes.string,
+    _id: PropTypes.string,
   }).isRequired,
 };
 
@@ -75,6 +84,7 @@ UserList.propTypes = {
     email: PropTypes.string,
     password: PropTypes.string,
     role: PropTypes.string,
+    _id: PropTypes.string,
   }).isRequired,
 };
 

@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { User } from '../../api/user/User';
 
 const UserListItem = ({ userlistitem }) => (
   <tr>
     <td>{userlistitem.email}</td>
     <td>{userlistitem.role}</td>
-    <td>Edit</td>
+    <td><Link to={`/edit-user-list/${userlistitem._id}`}>Edit</Link></td>
   </tr>
 );
 
@@ -17,6 +18,7 @@ UserListItem.propTypes = {
     email: PropTypes.string,
     password: PropTypes.string,
     role: PropTypes.string,
+    _id: PropTypes.string,
   }).isRequired,
 };
 

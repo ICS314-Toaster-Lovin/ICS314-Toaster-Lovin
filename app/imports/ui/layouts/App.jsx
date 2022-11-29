@@ -31,6 +31,7 @@ import NewestIngredients from '../pages/NewestIngredients';
 import NewestRecipes from '../pages/NewestRecipes';
 import AdminHomePage from '../pages/AdminHomePage';
 import UserList from '../pages/UserList';
+import EditUserList from '../pages/EditUserList';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => (
@@ -63,6 +64,7 @@ const App = () => (
         <Route path="/newest-recipes" element={<AdminProtectedRoute><NewestRecipes /></AdminProtectedRoute>} />
         <Route path="/newest-ingredients" element={<AdminProtectedRoute><NewestIngredients /></AdminProtectedRoute>} />
         <Route path="/user-list" element={<AdminProtectedRoute><UserList /></AdminProtectedRoute>} />
+        <Route path="/edit-user-list" element={<AdminProtectedRoute><EditUserList /></AdminProtectedRoute>} />
         <Route path="/notauthorized" element={<NotAuthorized />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
