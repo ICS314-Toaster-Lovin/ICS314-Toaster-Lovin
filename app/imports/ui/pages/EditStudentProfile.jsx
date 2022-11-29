@@ -74,7 +74,7 @@ const EditStudentProfile = () => {
               <Card.Body>
                 <Row>
                   <Row>
-                    <Col><TextField name="name" /></Col>
+                    <Col><TextField name="name" id="edit-student-name" /></Col>
                   </Row>
                   <Row md="auto"><SelectField name="dietaryRestrictions" multiple checkboxes transform={transform} /></Row>
                 </Row>
