@@ -167,7 +167,7 @@ test('Test the Newest Recipes page', async (testController) => {
   await newestRecipesPage.hasTable(testController);
 });
 
-test.only('Test the Add Ingredient page', async (testController) => {
+test('Test the Add Ingredient page', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, admin.username, admin.password);
   await navBar.gotoAddIngredientsPage(testController);
