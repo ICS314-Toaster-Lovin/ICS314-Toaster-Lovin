@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Card, Image } from 'react-bootstrap';
+import { Card, Col, Image, Row } from 'react-bootstrap';
 
 /** Renders recipe cards on the user home page */
 const HomeRecipeItem = ({ homerecipeitem }) => (
@@ -14,23 +14,29 @@ const HomeRecipeItem = ({ homerecipeitem }) => (
 );
 
 const HomeIngredientItem = ({ homeingredientitem }) => (
-  <Card style={{ width: '95%' }}>
-    <Card.Header>
-      <Card.Text>{homeingredientitem.name} {homeingredientitem.price}</Card.Text>
-    </Card.Header>
-    <Card.Body>
-      <Card.Text>{homeingredientitem.vendor}</Card.Text>
-    </Card.Body>
-  </Card>
+  <Link to={`/edit-ingredient/${homeingredientitem._id}`} className="text-decoration-none text-black">
+    <Card style={{ width: '95%' }}>
+      <Card.Header>
+        <Card.Text>{homeingredientitem.name} {homeingredientitem.price}</Card.Text>
+      </Card.Header>
+      <Card.Body>
+        <Card.Text>{homeingredientitem.vendor}</Card.Text>
+      </Card.Body>
+    </Card>
+  </Link>
 );
 
 const UserList = ({ userlist }) => (
-  <Card>
-    <Card.Header>
-      <Card.Text>User List</Card.Text>
-    </Card.Header>
+  <Card className="p-0 border-0 ms-1">
     <Card.Body>
-      <Card.Title>{userlist.email} {userlist.role} </Card.Title>
+      <Row style={{ marginTop: '-1rem', marginBottom: '-1rem' }}>
+        <Col className="ps-1 pe-0 pt-0">
+          <Card.Text>{userlist.email}</Card.Text>
+        </Col>
+        <Col>
+          <Card.Text>Role: {userlist.role}</Card.Text>
+        </Col>
+      </Row>
     </Card.Body>
   </Card>
 );
@@ -60,12 +66,14 @@ HomeIngredientItem.propTypes = {
     image: PropTypes.string,
     vendor: PropTypes.string,
     owner: PropTypes.string,
+    _id: PropTypes.string,
   }).isRequired,
 };
 
 UserList.propTypes = {
   userlist: PropTypes.shape({
     email: PropTypes.string,
+    password: PropTypes.string,
     role: PropTypes.string,
   }).isRequired,
 };

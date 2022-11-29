@@ -60,7 +60,34 @@
       "ingredientList": "instant ramen",
       "instructions": "Pour boiling water into the cup of instant ramen. Cover and wait for 2 minutes.",
       "owner": "adam@foo.com",
-      "createdAt": "2022-03-25T12:00:00-06:30"
+      "createdAt": "2022-03-25T12:00:00-06:30",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Spam Musubi",
+      "servingSize": 5,
+      "estimatedTime": "10 minutes",
+      "glutenFree": false,
+      "lactoseFree": true,
+      "vegan": false,
+      "vegetarian": false,
+      "image": "https://takestwoeggs.com/wp-content/uploads/2022/05/Hawaiian-Spam-Musubi-Takestwoeggs-Final-Photography-sq-480x270.jpg",
+      "ingredientList": "rice, spam, seaweed",
+      "instructions": "Fry spam for 2 minutes on each side.  Mold the rice and cut seaweed. Assemble by placing spam on top of the rice, then wrapping it with seaweed.",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Spam Musubi",
+      "servingSize": 5,
+      "estimatedTime": "10 minutes",
+      "glutenFree": false,
+      "lactoseFree": true,
+      "vegan": false,
+      "vegetarian": false,
+      "image": "https://takestwoeggs.com/wp-content/uploads/2022/05/Hawaiian-Spam-Musubi-Takestwoeggs-Final-Photography-sq-480x270.jpg",
+      "ingredientList": "rice, spam, seaweed",
+      "instructions": "Fry spam for 2 minutes on each side.  Mold the rice and cut seaweed. Assemble by placing spam on top of the rice, then wrapping it with seaweed.",
+      "owner": "john@foo.com"
     }
   ],
 

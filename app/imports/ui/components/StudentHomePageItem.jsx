@@ -20,10 +20,13 @@ const HomeIngredientItem = ({ homeingredientitem }) => (
     <Card.Header>
       <Card.Text>{homeingredientitem.name} {homeingredientitem.price}</Card.Text>
     </Card.Header>
-    <Card.Body>
-      <Card.Text>{homeingredientitem.vendor}</Card.Text>
-    </Card.Body>
+    <Link to={`/publicVendorProfile/${homeingredientitem.vendor}`} className="text-decoration-none text-black">
+      <Card.Body>
+        <Card.Text>{homeingredientitem.vendor}</Card.Text>
+      </Card.Body>
+    </Link>
   </Card>
+
 );
 
 // Require a document to be passed to this component.
