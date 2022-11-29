@@ -27,15 +27,16 @@ const AddRecipe = () => {
   const submit = (data, formRef) => {
     // Get data from the forms
     const { name, servingSize, estimatedTime, image, ingredientList, instructions, dietaryRestrictions } = data;
+    // for Recipe collection fields
     const owner = Meteor.user().username;
     const glutenFree = dietaryRestrictions.includes('Gluten Free');
     const lactoseFree = dietaryRestrictions.includes('Lactose Free');
     const vegan = dietaryRestrictions.includes('Vegan');
     const vegetarian = dietaryRestrictions.includes('Vegetarian');
-    console.log(dietaryRestrictions);
+    const createdAt = new Date();
     // Insert into Recipe Collection
     Recipe.collection.insert(
-      { name, servingSize, estimatedTime, glutenFree, lactoseFree, vegan, vegetarian, image, ingredientList, instructions, owner },
+      { name, servingSize, estimatedTime, glutenFree, lactoseFree, vegan, vegetarian, image, ingredientList, instructions, owner, createdAt },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -51,7 +52,7 @@ const AddRecipe = () => {
   const transform = (label) => ` ${label}`;
   let fRef = null;
   return (
-    <Container className="py-3">
+    <Container id="add-recipe-page" className="py-3">
       <Row className="justify-content-center">
         <Col xs={5}>
           <Col className="text-center"><h2>Add Recipe</h2></Col>
@@ -61,19 +62,19 @@ const AddRecipe = () => {
                 <Row>
                   <Col>
                     <Row>
-                      <Col><TextField name="name" /></Col>
+                      <Col><TextField id="addrecipe-form-name" name="name" /></Col>
                     </Row>
                     <Row>
-                      <Col><NumField name="servingSize" decimal={null} /></Col>
-                      <Col><TextField name="estimatedTime" /></Col>
+                      <Col><NumField id="addrecipe-form-serving" name="servingSize" decimal={null} /></Col>
+                      <Col><TextField id="addrecipe-form-time" name="estimatedTime" /></Col>
                     </Row>
                   </Col>
-                  <Col md="auto"><SelectField name="dietaryRestrictions" multiple checkboxes transform={transform} /></Col>
+                  <Col md="auto"><SelectField id="addrecipe-form-restrictions" name="dietaryRestrictions" multiple checkboxes transform={transform} /></Col>
                 </Row>
-                <Col><TextField name="image" /></Col>
-                <Col><LongTextField name="ingredientList" /></Col>
-                <Col><LongTextField name="instructions" /></Col>
-                <SubmitField value="Submit" />
+                <Col><TextField id="addrecipe-form-image" name="image" /></Col>
+                <Col><LongTextField id="addrecipe-form-ingredients" name="ingredientList" /></Col>
+                <Col><LongTextField id="addrecipe-form-instructions" name="instructions" /></Col>
+                <SubmitField id="addrecipe-form-submit" value="Submit" />
                 <ErrorsField />
               </Card.Body>
             </Card>

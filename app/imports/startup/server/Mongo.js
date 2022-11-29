@@ -2,6 +2,8 @@ import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Recipe } from '../../api/recipe/Recipe';
 import { Ingredient } from '../../api/ingredient/Ingredient';
+import { Vendors } from '../../api/vendor/Vendor';
+import { Students } from '../../api/student/Student';
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.
@@ -20,6 +22,18 @@ const addRecipeData = (data) => {
 const addIngredientData = (data) => {
   console.log(`  Adding: ${data.name} (${data.owner})`);
   Ingredient.collection.insert(data);
+};
+
+// Initialize the vendor database with default vendors
+const addVendorData = (data) => {
+  console.log(`  Adding: ${data.name} (${data.owner})`);
+  Vendors.collection.insert(data);
+};
+
+// Initialize the student database with default students
+const addStudentData = (data) => {
+  console.log(`  Adding: ${data.name} (${data.owner})`);
+  Students.collection.insert(data);
 };
 
 // Initialize the StuffsCollection if empty.
@@ -43,5 +57,21 @@ if (Ingredient.collection.find().count() === 0) {
   if (Meteor.settings.ingredientData) {
     console.log('Creating default ingredient data.');
     Meteor.settings.ingredientData.forEach(data => addIngredientData(data));
+  }
+}
+
+// Initialize the VendorCollection if empty
+if (Vendors.collection.find().count() === 0) {
+  if (Meteor.settings.vendorData) {
+    console.log('Creating default vendor data.');
+    Meteor.settings.vendorData.forEach(data => addVendorData(data));
+  }
+}
+
+// Initialize the StudentCollection if empty
+if (Students.collection.find().count() === 0) {
+  if (Meteor.settings.studentData) {
+    console.log('Creating default student data.');
+    Meteor.settings.studentData.forEach(data => addStudentData(data));
   }
 }

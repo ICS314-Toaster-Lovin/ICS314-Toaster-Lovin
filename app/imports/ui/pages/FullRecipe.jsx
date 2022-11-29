@@ -1,6 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
-import React, { useRef, useState } from 'react';
+import { Roles } from 'meteor/alanning:roles';
+import { Link } from 'react-router-dom';
+import React, { useRef, useState, useCallback } from 'react';
 import { Container, Image, ListGroup, Row, Col } from 'react-bootstrap';
 import { CheckCircleFill, XCircleFill, AlarmFill, PersonFill } from 'react-bootstrap-icons';
 import { useParams } from 'react-router';
@@ -17,29 +19,35 @@ const FullRecipe = () => {
     // Determine if the subscription is ready
     const rdy = recipeSubscription.ready() && ingredientSubscription.ready();
     // Get the documents
-    const recipeItem = Recipe.collection.find({}).fetch() //Recipe.collection.findOne(_id);
+    const recipeItem = Recipe.collection.findOne(_id);
     const ingredientItems = Ingredient.collection.find({}).fetch();
     return {
       ready: rdy,
-      recipe: recipeItem[0],
+      recipe: recipeItem,
       ingredients: ingredientItems,
     };
   }, []);
   const vendorList = useRef();
-  const [searchIngredient, setSearchIngredient] = useState("");
+  const [searchIngredient, setSearchIngredient] = useState('');
   const filteredIngredients = ingredients.filter(ing => ing.name.trim().toLowerCase() === searchIngredient);
 
   /* Shows a list of vendors that carry an ingredient */
-  function showVendors(e) {
-    setSearchIngredient(e.target.innerText.toLowerCase());
-    vendorList.current.style.display = 'block';
-    vendorList.current.style.top = `${e.pageY - 95}px`;
-  }
+  const showVendors = useCallback(
+    function showVendors(e) {
+      setSearchIngredient(e.target.innerText.toLowerCase());
+      vendorList.current.style.display = 'block';
+      vendorList.current.style.top = `${e.pageY - 140}px`;
+    },
+    [],
+  );
 
   /* Hides the list of vendors */
-  function hideVendors() {
-    vendorList.current.style.display = 'none';
-  }
+  const hideVendors = useCallback(
+    function hideVendors() {
+      vendorList.current.style.display = 'none';
+    },
+    [],
+  );
 
   /* Capitalizes the first letter of a string */
   function capitalize(word) {
@@ -47,10 +55,13 @@ const FullRecipe = () => {
   }
 
   return (ready ? (
-    <Container className="py-3">
+    <Container className="py-3" id="full-recipe-page">
       <div className="d-flex" style={{ position: 'relative' }}>
         <div>
-          <h1>{recipe.name}</h1>
+          <div className="d-flex align-items-baseline justify-content-between">
+            <h1>{recipe.name}</h1>
+            { (Meteor.user() && Meteor.user().username === recipe.owner) || Roles.userIsInRole(Meteor.userId(), 'admin') ? <Link to={`/edit-recipe/${recipe._id}`} id="edit-recipe-link">Edit</Link> : null }
+          </div>
           <Image rounded style={{ alignSelf: 'start' }} width={400} src={recipe.image} />
           <div className="d-flex align-items-center mt-1">
             <AlarmFill className="me-1" /> {recipe.estimatedTime}
@@ -119,7 +130,7 @@ const FullRecipe = () => {
         </div>
         <div className="ms-5">
           <h4 className="text-center" style={{ marginTop: '19px' }}><u>Instructions</u></h4>
-          <p className="border rounded px-3 py-2">{recipe.instructions}</p>
+          <p className="border rounded px-3 py-2" id="recipe-instructions">{recipe.instructions}</p>
         </div>
       </div>
     </Container>

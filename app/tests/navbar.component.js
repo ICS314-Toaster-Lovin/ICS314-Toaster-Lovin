@@ -52,6 +52,116 @@ class NavBar {
     await testController.click('#login-dropdown');
     await testController.click('#login-dropdown-sign-up');
   }
+
+  /** Click on the Student Home link in the navbar */
+  async gotoStudentHomePage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#student-home-nav');
+  }
+
+  /** Click on the Favorites link in the navbar */
+  async gotoFavoritesPage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#favorites-nav');
+  }
+
+  /** Click on the Add Recipe link in the navbar */
+  async gotoAddRecipePage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#add-recipe-nav');
+  }
+
+  /** Click on the Search Recipes link in the navbar */
+  async gotoSearchRecipesPage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#search-nav');
+  }
+
+  /** Click on the Search Ingredients link in the navbar */
+  async gotoSearchIngredientsPage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#search-ing-nav');
+  }
+
+  /** Click on the Vendor Home link in the navbar */
+  async gotoVendorHomePage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#vendor-home-nav');
+  }
+
+  /** Click on the Add Ingredients link in the navbar */
+  async gotoAddIngredientsPage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#add-ingredients-nav');
+  }
+
+  /** Click on the User List link in the navbar */
+  async gotoUserListPage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#user-list-admin-nav');
+  }
+
+  /** Click on the Newest Recipes link in the navbar */
+  async gotoNewestRecipesPage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#newest-recipes-admin-nav');
+  }
+
+  /** Click on the Newest Ingredients link in the navbar */
+  async gotoNewestIngredientsPage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#newest-Ingredients-admin-nav');
+  }
+
+  /** Go to Student Profile page */
+  async gotoStudentProfile(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#navbar-current-user');
+    await testController.click('#student-navbar-profile');
+  }
+
+  /** Go to Vendor Profile page */
+  async gotoVendorProfile(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#navbar-current-user');
+    await testController.click('#vendor-navbar-profile');
+  }
 }
 
 export const navBar = new NavBar();
