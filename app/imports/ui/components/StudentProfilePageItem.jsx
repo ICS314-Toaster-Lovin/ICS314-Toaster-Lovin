@@ -38,17 +38,6 @@ const StudentRecipeItem = ({ recipe }) => (
   </Link>
 );
 
-/** Renders a single row in the Student Ingredient table. */
-const StudentIngredientItem = ({ ingredient }) => (
-  <tr>
-    <td>{ingredient.name}</td>
-    <td>{ingredient.quantity}</td>
-    <td>
-      <Link to={`/edit/${ingredient._id}`}>Edit</Link>
-    </td>
-  </tr>
-);
-
 // Require a document to be passed to this component.
 StudentInfoItem.propTypes = {
   student: PropTypes.shape({
@@ -69,16 +58,7 @@ StudentRecipeItem.propTypes = {
   }).isRequired,
 };
 
-StudentIngredientItem.propTypes = {
-  ingredient: PropTypes.shape({
-    name: PropTypes.string,
-    quantity: PropTypes.number,
-    _id: PropTypes.string,
-  }).isRequired,
-};
-
 export {
   StudentInfoItem,
   StudentRecipeItem,
-  StudentIngredientItem,
 };
