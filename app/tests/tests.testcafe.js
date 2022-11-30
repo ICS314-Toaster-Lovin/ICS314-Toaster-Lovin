@@ -178,7 +178,7 @@ test('Test the Add Ingredient page', async (testController) => {
   await addIngredientPage.addIngredient(testController);
 });
 
-test.only('Test Admin Home page and functionality', async (testController) => {
+test('Test Admin Home page and functionality', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, admin.username, admin.password);
   await navBar.gotoAdminHome(testController);
