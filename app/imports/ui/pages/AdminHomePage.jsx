@@ -1,10 +1,9 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Link } from 'react-router-dom';
-import { Col, Container, Row, Card } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Recipe } from '../../api/recipe/Recipe';
-import { HomeIngredientItem, HomeRecipeItem, UserList } from '../components/AdminHomePageCards';
+import { HomeIngredientItem, HomeRecipeItem } from '../components/AdminHomePageCards';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Ingredient } from '../../api/ingredient/Ingredient';
 import { User } from '../../api/user/User';
@@ -12,7 +11,7 @@ import { User } from '../../api/user/User';
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 const StudentHomePage = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { ready, recipes, ingredients, users } = useTracker(() => {
+  const { ready, recipes, ingredients } = useTracker(() => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
     // Get access to Recipe documents.
