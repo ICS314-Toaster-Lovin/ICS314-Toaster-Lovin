@@ -5,7 +5,7 @@ import { Card } from 'react-bootstrap';
 
 /** Renders recipe cards on the user home page */
 const HomeRecipeItem = ({ homerecipeitem }) => (
-  <Link to={`/recipe/${homerecipeitem._id}`} className="text-decoration-none">
+  <Link to={`/recipe/${homerecipeitem._id}`} className="text-decoration-none" id="userhome-recipe-card">
     <Card style={{ width: '95%' }}>
       <Card.Img style={{ objectFit: 'cover', height: '8vw' }} variant="top" src={homerecipeitem.image} />
       <Card.Body>
@@ -20,7 +20,7 @@ const HomeIngredientItem = ({ homeingredientitem }) => (
     <Card.Header>
       <Card.Text>{homeingredientitem.name} {homeingredientitem.price}</Card.Text>
     </Card.Header>
-    <Link to={`/publicVendorProfile/${homeingredientitem.vendor}`} className="text-decoration-none text-black">
+    <Link to={`/publicVendorProfile/${homeingredientitem.vendor}`} className="text-decoration-none text-black" id="userhome-ingredient-card">
       <Card.Body>
         <Card.Text>{homeingredientitem.vendor}</Card.Text>
       </Card.Body>

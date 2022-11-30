@@ -60,13 +60,13 @@ const EditUserList = () => {
                 <Row>
                   <Col>
                     <Row>
-                      <Col><TextField name="email" /></Col>
+                      <Col><TextField name="email" id="edituser-form-email" /></Col>
                     </Row>
                   </Col>
 
                 </Row>
-                <Col><TextField name="role" /></Col>
-                <SubmitField value="Submit" />
+                <Col><TextField name="role" id="edituser-form-role" /></Col>
+                <SubmitField value="Submit" id="edituser-form-submit" />
                 <ErrorsField />
               </Card.Body>
             </Card>

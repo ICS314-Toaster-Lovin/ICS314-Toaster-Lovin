@@ -8,7 +8,7 @@ const UserListItem = ({ userlistitem }) => (
   <tr>
     <td>{userlistitem.email}</td>
     <td>{userlistitem.role}</td>
-    <td><Link to={`/edit-user-list/${userlistitem._id}`}>Edit</Link></td>
+    <td><Link to={`/edit-user-list/${userlistitem._id}`} id="edituserlist-link">Edit</Link></td>
   </tr>
 );
 

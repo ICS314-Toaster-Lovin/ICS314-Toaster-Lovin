@@ -35,12 +35,12 @@ const StudentHomePage = () => {
   }, []);
 
   return (ready ? (
-    <Container className="py-3">
+    <Container className="py-3" id="admin-home-page">
       <Col>
         <Row>
           <h2 className="mt-2">Edit New Recipes</h2>
         </Row>
-        <Row className="d-flex flex-row flex-nowrap row-horizon overflow-auto">
+        <Row className="d-flex flex-row flex-nowrap row-horizon overflow-auto" id="adminhome-recipe-card">
           {recipes.map((homerecipeitem, index) => (<Col className="col-sm-3" key={index}><HomeRecipeItem homerecipeitem={homerecipeitem} /></Col>))}
         </Row>
         <Row>

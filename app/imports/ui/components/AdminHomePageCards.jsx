@@ -17,7 +17,7 @@ const HomeRecipeItem = ({ homerecipeitem }) => (
 
 const HomeIngredientItem = ({ homeingredientitem }) => (
   <Card style={{ width: '95%' }}>
-    <Link to={`/edit-ingredient/${homeingredientitem._id}`} className="text-decoration-none text-black">
+    <Link to={`/edit-ingredient/${homeingredientitem._id}`} className="text-decoration-none text-black" id="adminhome-ingredient-card">
       <Card.Header>
         <Card.Text>{homeingredientitem.name} {homeingredientitem.price}</Card.Text>
       </Card.Header>
