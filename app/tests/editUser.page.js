@@ -15,10 +15,6 @@ class EditUserPage {
   async gotoEdit(testController) {
     // Click on Edit Link
     await testController.click('#edituserlist-link');
-
-    // Check for Success alert
-    await testController.expect(this.pageSelector('.swal-modal').exists).ok();
-    await this.pageSelector('.swal-title').withText('Success');
   }
 
   /** Edit a user using the form. */
@@ -27,10 +23,6 @@ class EditUserPage {
     await testController.typeText('#edituser-form-email', 'john@foo.com');
     await testController.typeText('#edituser-form-role', 'admin');
     await testController.click('#edituser-form-submit input.btn.btn-primary');
-
-    // Check for Success alert
-    await testController.expect(this.pageSelector('.swal-modal').exists).ok();
-    await this.pageSelector('.swal-title').withText('Success');
   }
 
 }

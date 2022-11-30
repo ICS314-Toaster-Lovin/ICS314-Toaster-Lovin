@@ -189,7 +189,7 @@ test.only('Test Admin Home page and functionality', async (testController) => {
 
 test('Test User Home page and functionality', async (testController) => {
   await navBar.gotoSignInPage(testController);
-  await signinPage.signin(testController, admin.username, admin.password);
+  await signinPage.signin(testController, student.username, student.password);
   await navBar.gotoUserHome(testController);
   await userHomePage.checkHomeRecipeCard(testController);
   await navBar.gotoUserHome(testController);

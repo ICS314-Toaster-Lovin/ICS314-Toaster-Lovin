@@ -15,18 +15,12 @@ class AdminHomePage {
   async checkHomeRecipeCard(testController) {
     // Click through the different cards
     await testController.click('#adminhome-recipe-card');
-    // Check for Success alert
-    await testController.expect(this.pageSelector('.swal-modal').exists).ok();
-    await this.pageSelector('.swal-title').withText('Success');
   }
 
   /** Navigate to Ingredient Card */
   async checkHomeIngredientCard(testController) {
     // Click through the different cards
     await testController.click('#adminhome-ingredient-card');
-    // Check for Success alert
-    await testController.expect(this.pageSelector('.swal-modal').exists).ok();
-    await this.pageSelector('.swal-title').withText('Success');
   }
 }
 
