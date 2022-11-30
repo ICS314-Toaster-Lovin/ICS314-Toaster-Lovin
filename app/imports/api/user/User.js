@@ -1,35 +1,32 @@
- import { Mongo } from 'meteor/mongo';
+import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /**
- * The StudentCollection. It encapsulates state and variable values for Student.
+ * The IngredientCollection. It encapsulates state and variable values for ingredients.
  */
-class StudentCollection {
+class UserCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'StudentCollection';
+    this.name = 'UserCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      name: String,
-      glutenFree: Boolean,
-      lactoseFree: Boolean,
-      vegan: Boolean,
-      vegetarian: Boolean,
-      owner: String,
+      email: String,
+      password: String,
+      role: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
     // Define names for publications and subscriptions
-    this.userPublicationName = `${this.name}.publication.student`;
+    this.userPublicationName = `${this.name}.publication.user`;
     this.adminPublicationName = `${this.name}.publication.admin`;
   }
 }
 
 /**
- * The singleton instance of the StudentCollection.
- * @type {StudentCollection}
+ * The singleton instance of the RecipeCollection.
+ * @type {UserCollection}
  */
-export const Students = new StudentCollection();
+export const User = new UserCollection();

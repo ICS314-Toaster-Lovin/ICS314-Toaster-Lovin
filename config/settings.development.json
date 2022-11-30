@@ -48,7 +48,7 @@
       "owner": "john@foo.com",
       "createdAt": "2022-04-25T12:00:00-06:30"
     },
-    { 
+    {
       "name": "Top Ramen",
       "servingSize": 1,
       "estimatedTime": "2 minutes",
