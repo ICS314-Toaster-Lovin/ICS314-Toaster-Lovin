@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Card, Col, Image, Row } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
 
 /** Renders recipe cards on the user home page */
 const HomeRecipeItem = ({ homerecipeitem }) => (
@@ -17,19 +17,17 @@ const HomeRecipeItem = ({ homerecipeitem }) => (
 
 const HomeIngredientItem = ({ homeingredientitem }) => (
   <Card style={{ width: '95%' }}>
-    <Card.Header>
-      <Card.Text>{homeingredientitem.name} {homeingredientitem.price}</Card.Text>
-    </Card.Header>
-    <Card.Body>
-      <Col style={{ width: '70%' }}>
-        <Card.Text>{homeingredientitem.vendor}</Card.Text>
-      </Col>
-      <Col>
-        <Link to={`/edit-ingredient/${homeingredientitem._id}`} className="text-decoration-none text-black">
-          <Card.Text>Edit</Card.Text>
-        </Link>
-      </Col>
-    </Card.Body>
+    <Link to={`/edit-ingredient/${homeingredientitem._id}`} className="text-decoration-none text-black">
+      <Card.Header>
+        <Card.Text>{homeingredientitem.name} {homeingredientitem.price}</Card.Text>
+      </Card.Header>
+      <Card.Body>
+        <Col style={{ width: '70%' }}>
+          <Card.Text>{homeingredientitem.vendor}
+          </Card.Text>
+        </Col>
+      </Card.Body>
+    </Link>
   </Card>
 
 );

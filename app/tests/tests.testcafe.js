@@ -10,7 +10,7 @@ import { fullRecipePage } from './fullRecipe.page';
 import { editRecipePage } from './editRecipe.page';
 import { publicVendorProfilePage } from './publicVendorProfile.page';
 import { vendorHomePage } from './vendorHome.page';
-import { addIngredientPage} from './addIngredient.page';
+import { addIngredientPage } from './addIngredient.page'; 
 import { editIngredientPage } from './editIngredient.page';
 import { studentProfilePage } from './studentProfile.page';
 import { vendorProfilePage } from './vendorProfile.page';

@@ -14,7 +14,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
   email: String,
-  password: Number,
+  password: String,
   role: String,
 });
 
@@ -25,9 +25,9 @@ const EditUserList = () => {
   const [redirect, setRedirect] = useState(false);
 
   const { ready, doc } = useTracker(() => {
-    const subscription = Meteor.subscribe(User.adminPublicationName);
+    const userSubscription = Meteor.subscribe(User.adminPublicationName);
     // Determine if the subscription is ready
-    const rdy = subscription.ready();
+    const rdy = userSubscription.ready();
     // Get the documents
     const document = User.collection.findOne(_id);
     return {
@@ -40,22 +40,20 @@ const EditUserList = () => {
   const submit = (data) => {
     // Get data from the forms
     const { email, password, role } = data;
-    const owner = Meteor.user().username;
-    const createdAt = new Date();
     // Insert into Recipe Collection
-    User.collection.update(_id, { $set: { email, password, role, owner, createdAt } }, (error) => (error ?
+    User.collection.update(_id, { $set: { email, password, role } }, (error) => (error ?
       swal('Error', error.message, 'error') :
-      swal('Success', 'Ingredient updated successfully', 'success').then(() => setRedirect(true))));
+      swal('Success', 'User updated successfully', 'success').then(() => setRedirect(true))));
   };
 
   if (redirect) return <Navigate to="/user-list" />;
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   return (ready ? (
-    <Container className="py-3" id="edit-ingredient-page">
+    <Container className="py-3">
       <Row className="justify-content-center">
         <Col xs={5}>
-          <Col className="text-center"><h2>Edit User List</h2></Col>
+          <Col className="text-center"><h2>Edit User</h2></Col>
           <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>
             <Card>
               <Card.Body>
