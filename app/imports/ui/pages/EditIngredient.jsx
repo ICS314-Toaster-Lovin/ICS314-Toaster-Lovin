@@ -68,7 +68,7 @@ const EditIngredient = () => {
                   </Col>
 
                 </Row>
-                <Col><TextField name="image" help="Make image as square as possible" /></Col>
+                <Col><TextField name="image" help="Submit as a URL, make image as square as possible" /></Col>
                 <Col><TextField name="quantity" /></Col>
                 <Col><TextField name="price" /></Col>
                 <SubmitField value="Submit" id="edit-ingredient-submit" />

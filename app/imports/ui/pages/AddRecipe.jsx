@@ -66,14 +66,14 @@ const AddRecipe = () => {
                     </Row>
                     <Row>
                       <Col><NumField id="addrecipe-form-serving" name="servingSize" decimal={null} /></Col>
-                      <Col><TextField id="addrecipe-form-time" name="estimatedTime" /></Col>
+                      <Col><TextField id="addrecipe-form-time" name="estimatedTime" help="In minutes" /></Col>
                     </Row>
                   </Col>
                   <Col md="auto"><SelectField id="addrecipe-form-restrictions" name="dietaryRestrictions" multiple checkboxes transform={transform} /></Col>
                 </Row>
-                <Col><TextField id="addrecipe-form-image" name="image" /></Col>
-                <Col><LongTextField id="addrecipe-form-ingredients" name="ingredientList" /></Col>
-                <Col><LongTextField id="addrecipe-form-instructions" name="instructions" /></Col>
+                <Col><TextField id="addrecipe-form-image" name="image" help="Submit as a URL, make image as square as possible" /></Col>
+                <Col><LongTextField id="addrecipe-form-ingredients" name="ingredientList" help="Separate ingredients with a comma (no measurements)" /></Col>
+                <Col><LongTextField id="addrecipe-form-instructions" name="instructions" help="You can put ingredient measurements here" /></Col>
                 <SubmitField id="addrecipe-form-submit" value="Submit" />
                 <ErrorsField />
               </Card.Body>
