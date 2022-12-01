@@ -15,15 +15,16 @@ const NavBar = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand as={NavLink} to="/">
+        <Navbar.Brand>
           <Image src="/images/ramen-logo.png" width="100px" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto justify-content-start">
-            {currentUser === '' ? (
-              <Nav.Link id="search-nav" as={NavLink} to="/search" key="search">Search</Nav.Link>
-            ) : (
+            {currentUser === '' ? ([
+              <Nav.Link id="search-nav" as={NavLink} to="/">Home</Nav.Link>,
+              <Nav.Link id="search-nav" as={NavLink} to="/search" key="search">Search</Nav.Link>,
+            ]) : (
               ''
             )}
             {Roles.userIsInRole(Meteor.userId(), 'student') ? ([
