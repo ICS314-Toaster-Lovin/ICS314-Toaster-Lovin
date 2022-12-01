@@ -90,9 +90,9 @@ const EditRecipe = () => {
                   </Col>
                   <Col md="auto"><SelectField name="dietaryRestrictions" multiple checkboxes transform={transform} /></Col>
                 </Row>
-                <Col><TextField name="image" /></Col>
-                <Col><LongTextField name="ingredientList" /></Col>
-                <Col><LongTextField name="instructions" id="edit-recipe-instructions" /></Col>
+                <Col><TextField name="image" help="Submit as a URL, make image as square as possible" /></Col>
+                <Col><LongTextField name="ingredientList" help="Separate ingredients with a comma (no measurements)" /></Col>
+                <Col><LongTextField name="instructions" id="edit-recipe-instructions" help="You can put ingredient measurements here" /></Col>
                 <SubmitField value="Submit" id="edit-recipe-submit" />
                 <ErrorsField />
               </Card.Body>

@@ -15,7 +15,7 @@ class RecipeCollection {
     this.schema = new SimpleSchema({
       name: String,
       servingSize: Number,
-      estimatedTime: String,
+      estimatedTime: Number,
       glutenFree: Boolean,
       lactoseFree: Boolean,
       vegan: Boolean,

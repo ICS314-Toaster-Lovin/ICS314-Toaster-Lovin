@@ -58,7 +58,7 @@ const AddIngredient = () => {
                   </Col>
 
                 </Row>
-                <Col><TextField id="addingredient-form-image" name="image" help="Make image as square as possible" /></Col>
+                <Col><TextField id="addingredient-form-image" name="image" help="Submit as a URL, make image as square as possible" /></Col>
                 <Col><TextField id="addingredient-form-quantity" name="quantity" /></Col>
                 <Col><TextField id="addingredient-form-price" name="price" /></Col>
                 <SubmitField id="addingredient-form-submit" value="Submit" />
