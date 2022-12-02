@@ -7,7 +7,10 @@ import SimpleSchema from 'simpl-schema';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { AutoForm, ErrorsField, RadioField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import { Meteor } from 'meteor/meteor';
+import swal from 'sweetalert';
 import { setUserRoleMethod } from '../../startup/both/Methods';
+import { Students } from '../../api/student/Student';
+import { Vendors } from '../../api/vendor/Vendor';
 
 /**
  * SignUp component is similar to signin component, but we create a new user instead.
@@ -17,23 +20,23 @@ const SignUp = ({ location }) => {
   const [redirectToReferer, setRedirectToRef] = useState(false);
 
   const schema = new SimpleSchema({
+    name: String,
     email: String,
     password: String,
-    userRole: {
+    role: {
       label: 'User Role',
       type: String,
       optional: false,
       allowedValues: ['student', 'vendor', 'admin'],
     },
-    organization: String,
   });
   const bridge = new SimpleSchema2Bridge(schema);
 
   /* Handle SignUp submission. Create user account and a profile entry, then redirect to the home page. */
   const submit = (doc) => {
-    const { email, password, organization, userRole } = doc;
+    const { name, email, password, role } = doc;
     // Organization is stored in the built-in "profile" object
-    Accounts.createUser({ email, username: email, password, profile: { organization: organization } }, (err) => {
+    Accounts.createUser({ email, username: email, password, profile: { name: name } }, (err) => {
       if (err) {
         setError(err.reason);
       } else {
@@ -41,11 +44,44 @@ const SignUp = ({ location }) => {
 
         // Add the role to the user using Meteor Methods
         const userID = Meteor.userId();
-        Meteor.call(setUserRoleMethod, { userID: userID, role: userRole });
+        Meteor.call(setUserRoleMethod, { userID: userID, role: role });
+
+        // Save the new account into the respective collection
+        const owner = Meteor.user().username;
+        if (role === 'student') {
+          Students.collection.insert({ name, owner });
+        } else if (role === 'vendor') {
+          Vendors.collection.insert({ name, owner });
+        }
 
         setRedirectToRef(true);
       }
     });
+
+    // Save the data to the appropriate user collection
+    const owner = Meteor.user().username;
+    if (role === 'student') {
+      Students.collection.insert(
+        { name, owner },
+        (err) => {
+          if (err) {
+            swal('Error', err.message, 'error');
+          } else {
+          }
+        },
+      );
+    } else if (role === 'vendor') {
+      Vendors.collection.insert(
+        { name, owner },
+        (err) => {
+          if (err) {
+            swal('Error', err.message, 'error');
+          } else {
+            setRedirectToRef(true);
+          }
+        },
+      );
+    }
   };
 
   const { from } = location?.state || { from: { pathname: '/home' } };
@@ -63,10 +99,10 @@ const SignUp = ({ location }) => {
           <AutoForm schema={bridge} onSubmit={data => submit(data)}>
             <Card>
               <Card.Body>
+                <TextField name="name" placeholder="Name" />
                 <TextField name="email" placeholder="E-mail address" />
                 <TextField name="password" placeholder="Password" type="password" />
-                <TextField name="organization" placeholder="Organization Name" />
-                <RadioField name="userRole" checkboxes />
+                <RadioField name="role" checkboxes />
                 <ErrorsField />
                 <SubmitField />
               </Card.Body>

@@ -29,6 +29,7 @@ import RecipeSearch from '../pages/RecipeSearch';
 import IngredientSearch from '../pages/IngredientSearch';
 import NewestIngredients from '../pages/NewestIngredients';
 import NewestRecipes from '../pages/NewestRecipes';
+import Favorites from '../pages/Favorites';
 import AdminHomePage from '../pages/AdminHomePage';
 import UserList from '../pages/UserList';
 import EditUserList from '../pages/EditUserList';
@@ -51,6 +52,7 @@ const App = () => (
         <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
         <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
         <Route path="/profile" element={<ProtectedRoute><StudentProfile /></ProtectedRoute>} />
+        <Route path="/favorites" element={<ProtectedRoute><Favorites /></ProtectedRoute>} />
         <Route path="/add-recipe" element={<ProtectedRoute><AddRecipe /></ProtectedRoute>} />
         <Route path="/add-ingredients" element={<ProtectedRoute><AddIngredients /></ProtectedRoute>} />
         <Route path="/vendor" element={<ProtectedRoute><VendorHome /></ProtectedRoute>} />
