@@ -6,8 +6,11 @@
 
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin", "name": "admin" },
-    { "email": "john@foo.com", "password": "changeme", "role": "student", "name": "University of Hawaii" },
-    { "email": "adam@foo.com", "password": "changeme", "role": "student", "name": "University of Hawaii" },
+    { "email": "john@foo.com", "password": "changeme", "role": "student", "name": "John Doe" },
+    { "email": "adam@foo.com", "password": "changeme", "role": "student", "name": "Adam Montoya" },
+    { "email": "mike@foo.com", "password": "changeme", "role": "student", "name": "Michael Scott" },
+    { "email": "dwayne@foo.com", "password": "changeme", "role": "student", "name": "Dwayne Johnson" },
+    { "email": "keanu@foo.com", "password": "changeme", "role": "student", "name": "Keanu Reeves" },
     { "email": "walmart@foo.com", "password": "changeme", "role": "vendor", "name": "Walmart" },
     { "email": "foodland@foo.com", "password": "changeme", "role": "vendor", "name":  "Foodland Market City"}
   ],
@@ -122,6 +125,30 @@
       "vegan": false,
       "vegetarian": true,
       "owner": "adam@foo.com"
+    },
+    {
+      "name": "Michael Scott",
+      "glutenFree": true,
+      "lactoseFree": true,
+      "vegan": false,
+      "vegetarian": false,
+      "owner": "mike@foo.com"
+    },
+    {
+      "name": "Dwayne Johnson",
+      "glutenFree": false,
+      "lactoseFree": false,
+      "vegan": true,
+      "vegetarian": true,
+      "owner": "dwayne@foo.com"
+    },
+    {
+      "name": "Keanu Reeves",
+      "glutenFree": true,
+      "lactoseFree": false,
+      "vegan": true,
+      "vegetarian": false,
+      "owner": "keanu@foo.com"
     }
   ],
   "vendorData": [
