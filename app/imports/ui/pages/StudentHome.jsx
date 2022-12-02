@@ -34,7 +34,7 @@ const StudentHome = () => {
   return (ready ? (
     <Container className="py-3">
       <Row>
-        <h2 className="mt-2">Favorite Recipe</h2>
+        <h2 className="mt-2">Favorite Recipes</h2>
       </Row>
       <Row className="d-flex flex-row flex-nowrap row-horizon overflow-auto">
         {!student.favorites.includes('null')
