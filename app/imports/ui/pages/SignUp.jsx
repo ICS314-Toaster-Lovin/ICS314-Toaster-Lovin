@@ -27,7 +27,7 @@ const SignUp = ({ location }) => {
       label: 'User Role',
       type: String,
       optional: false,
-      allowedValues: ['student', 'vendor', 'admin'],
+      allowedValues: ['student', 'vendor'],
     },
   });
   const bridge = new SimpleSchema2Bridge(schema);
