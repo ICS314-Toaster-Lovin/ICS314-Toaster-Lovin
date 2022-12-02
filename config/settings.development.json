@@ -23,7 +23,7 @@
     {
       "name": "Bacon Omelette",
       "servingSize": 2,
-      "estimatedTime": "4 minutes",
+      "estimatedTime": 4,
       "glutenFree": true,
       "lactoseFree": true,
       "vegan": false,
@@ -37,7 +37,7 @@
     {
       "name": "Spam Musubi",
       "servingSize": 5,
-      "estimatedTime": "10 minutes",
+      "estimatedTime": 10,
       "glutenFree": false,
       "lactoseFree": true,
       "vegan": false,
@@ -48,10 +48,10 @@
       "owner": "john@foo.com",
       "createdAt": "2022-04-25T12:00:00-06:30"
     },
-    { 
+    {
       "name": "Top Ramen",
       "servingSize": 1,
-      "estimatedTime": "2 minutes",
+      "estimatedTime": 2,
       "glutenFree": false,
       "lactoseFree": true,
       "vegan": true,

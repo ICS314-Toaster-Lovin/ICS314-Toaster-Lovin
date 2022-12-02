@@ -18,6 +18,9 @@ import { newestIngredientsPage } from './newestingredients.page';
 import { newestRecipesPage } from './newestrecipes.page';
 import { editStudentProfilePage } from './editStudentProfile.page';
 import { editVendorProfilePage } from './editVendorProfile.page';
+import { adminHomePage } from './adminhome.page';
+import { userListPage } from './editUser.page';
+import { userHomePage } from './userhome.page';
 
 /* global fixture:false, test:false */
 
@@ -169,8 +172,34 @@ test('Test the Newest Recipes page', async (testController) => {
 
 test('Test the Add Ingredient page', async (testController) => {
   await navBar.gotoSignInPage(testController);
-  await signinPage.signin(testController, admin.username, admin.password);
+  await signinPage.signin(testController, vendor.username, vendor.password);
   await navBar.gotoAddIngredientsPage(testController);
   await addIngredientPage.isDisplayed(testController);
   await addIngredientPage.addIngredient(testController);
+});
+
+test('Test Admin Home page and functionality', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, admin.username, admin.password);
+  await navBar.gotoAdminHome(testController);
+  await adminHomePage.checkHomeRecipeCard(testController);
+  await navBar.gotoAdminHome(testController);
+  await adminHomePage.checkHomeIngredientCard(testController);
+});
+
+test('Test User Home page and functionality', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, student.username, student.password);
+  await navBar.gotoUserHome(testController);
+  await userHomePage.checkHomeRecipeCard(testController);
+  await navBar.gotoUserHome(testController);
+  await userHomePage.checkHomeIngredientCard(testController);
+});
+
+test('Test Editing User List Page and functionality', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, admin.username, admin.password);
+  await navBar.gotoUserListPage(testController);
+  await userListPage.gotoEdit(testController);
+  await userListPage.editUser(testController);
 });

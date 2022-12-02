@@ -97,7 +97,7 @@ const FullRecipe = () => {
           </div>
           <Image rounded style={{ alignSelf: 'start' }} width={400} src={recipe.image} />
           <div className="d-flex align-items-center mt-1">
-            <AlarmFill className="me-1" /> {recipe.estimatedTime}
+            <AlarmFill className="me-1" /> {recipe.estimatedTime} {recipe.estimatedTime === 1 ? 'minute' : 'minutes'}
             <PersonFill className="ms-3 me-1" /> {recipe.servingSize} {recipe.servingSize === 1 ? 'serving' : 'servings'}
           </div>
           <Row className="mt-3 mb-1">

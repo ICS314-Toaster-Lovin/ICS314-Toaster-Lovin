@@ -162,6 +162,24 @@ class NavBar {
     await testController.click('#navbar-current-user');
     await testController.click('#vendor-navbar-profile');
   }
+
+  /** Click on the Admin home link in the navbar */
+  async gotoAdminHome(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#list-stuff-admin-nav');
+  }
+
+  /** Click on the User home link in the navbar */
+  async gotoUserHome(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#student-home-nav');
+  }
 }
 
 export const navBar = new NavBar();

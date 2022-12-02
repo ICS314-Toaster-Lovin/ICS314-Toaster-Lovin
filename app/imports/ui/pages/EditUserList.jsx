@@ -8,29 +8,28 @@ import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
 import { useParams } from 'react-router';
 import { Navigate } from 'react-router-dom';
-import { Ingredient } from '../../api/ingredient/Ingredient';
+import { User } from '../../api/user/User';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
-  name: String,
-  quantity: Number,
-  image: String,
-  price: String,
+  email: String,
+  password: String,
+  role: String,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
-const EditIngredient = () => {
+const EditUserList = () => {
   const { _id } = useParams();
   const [redirect, setRedirect] = useState(false);
 
   const { ready, doc } = useTracker(() => {
-    const ingredientSubscription = Meteor.subscribe(Ingredient.userPublicationName);
+    const userSubscription = Meteor.subscribe(User.adminPublicationName);
     // Determine if the subscription is ready
-    const rdy = ingredientSubscription.ready();
+    const rdy = userSubscription.ready();
     // Get the documents
-    const document = Ingredient.collection.findOne(_id);
+    const document = User.collection.findOne(_id);
     return {
       ready: rdy,
       doc: document,
@@ -40,38 +39,34 @@ const EditIngredient = () => {
   // On submit, insert the data.
   const submit = (data) => {
     // Get data from the forms
-    const { name, quantity, price, image } = data;
-    const owner = Meteor.user().username;
-    const createdAt = new Date();
+    const { email, password, role } = data;
     // Insert into Recipe Collection
-    Ingredient.collection.update(_id, { $set: { name, quantity, price, image, owner, createdAt } }, (error) => (error ?
+    User.collection.update(_id, { $set: { email, password, role } }, (error) => (error ?
       swal('Error', error.message, 'error') :
-      swal('Success', 'Ingredient updated successfully', 'success').then(() => setRedirect(true))));
+      swal('Success', 'User updated successfully', 'success').then(() => setRedirect(true))));
   };
 
-  if (redirect) return <Navigate to="/vendor" />;
+  if (redirect) return <Navigate to="/user-list" />;
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   return (ready ? (
-    <Container className="py-3" id="edit-ingredient-page">
+    <Container className="py-3">
       <Row className="justify-content-center">
         <Col xs={5}>
-          <Col className="text-center"><h2>Edit Ingredient</h2></Col>
+          <Col className="text-center"><h2>Edit User</h2></Col>
           <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>
             <Card>
               <Card.Body>
                 <Row>
                   <Col>
                     <Row>
-                      <Col><TextField name="name" id="edit-ingredient-name" /></Col>
+                      <Col><TextField name="email" id="edituser-form-email" /></Col>
                     </Row>
                   </Col>
 
                 </Row>
-                <Col><TextField name="image" help="Submit as a URL, make image as square as possible" /></Col>
-                <Col><TextField name="quantity" /></Col>
-                <Col><TextField name="price" /></Col>
-                <SubmitField value="Submit" id="edit-ingredient-submit" />
+                <Col><TextField name="role" id="edituser-form-role" /></Col>
+                <SubmitField value="Submit" id="edituser-form-submit" />
                 <ErrorsField />
               </Card.Body>
             </Card>
@@ -82,4 +77,4 @@ const EditIngredient = () => {
   ) : <LoadingSpinner />);
 };
 
-export default EditIngredient;
+export default EditUserList;

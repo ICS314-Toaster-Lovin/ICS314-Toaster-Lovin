@@ -5,6 +5,7 @@ import { Recipe } from '../../api/recipe/Recipe';
 import { Ingredient } from '../../api/ingredient/Ingredient';
 import { Vendors } from '../../api/vendor/Vendor';
 import { Students } from '../../api/student/Student';
+import { User } from '../../api/user/User';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -92,6 +93,13 @@ Meteor.publish(Vendors.adminPublicationName, function () {
 Meteor.publish(Students.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'vendor')) {
     return Students.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(User.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return User.collection.find();
   }
   return this.ready();
 });

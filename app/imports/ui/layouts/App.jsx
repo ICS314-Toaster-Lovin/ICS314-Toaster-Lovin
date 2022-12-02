@@ -30,6 +30,9 @@ import IngredientSearch from '../pages/IngredientSearch';
 import NewestIngredients from '../pages/NewestIngredients';
 import NewestRecipes from '../pages/NewestRecipes';
 import Favorites from '../pages/Favorites';
+import AdminHomePage from '../pages/AdminHomePage';
+import UserList from '../pages/UserList';
+import EditUserList from '../pages/EditUserList';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => (
@@ -45,6 +48,7 @@ const App = () => (
         <Route path="/search-ingredients" element={<IngredientSearch />} />
         <Route path="/recipe/:_id" element={<FullRecipe />} />
         <Route path="/student" element={<ProtectedRoute><StudentHome /></ProtectedRoute>} />
+        <Route path="/admin" element={<ProtectedRoute><AdminHomePage /></ProtectedRoute>} />
         <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
         <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
         <Route path="/profile" element={<ProtectedRoute><StudentProfile /></ProtectedRoute>} />
@@ -61,6 +65,8 @@ const App = () => (
         <Route path="/admin" element={<AdminProtectedRoute><ListStuffAdmin /></AdminProtectedRoute>} />
         <Route path="/newest-recipes" element={<AdminProtectedRoute><NewestRecipes /></AdminProtectedRoute>} />
         <Route path="/newest-ingredients" element={<AdminProtectedRoute><NewestIngredients /></AdminProtectedRoute>} />
+        <Route path="/user-list" element={<AdminProtectedRoute><UserList /></AdminProtectedRoute>} />
+        <Route path="/edit-user-list/:_id" element={<AdminProtectedRoute><EditUserList /></AdminProtectedRoute>} />
         <Route path="/notauthorized" element={<NotAuthorized />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
