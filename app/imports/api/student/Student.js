@@ -14,11 +14,11 @@ class StudentCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       name: String,
-      glutenFree: { type: Boolean, required: false, defaultValue: false },
-      lactoseFree: { type: Boolean, required: false, defaultValue: false },
-      vegan: { type: Boolean, required: false, defaultValue: false },
-      vegetarian: { type: Boolean, required: false, defaultValue: false },
-      favorites: { type: String, required: false, defaultValue: '' },
+      glutenFree: { type: Boolean, defaultValue: false },
+      lactoseFree: { type: Boolean, defaultValue: false },
+      vegan: { type: Boolean, defaultValue: false },
+      vegetarian: { type: Boolean, defaultValue: false },
+      favorites: { type: String, defaultValue: 'null' },
       owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.

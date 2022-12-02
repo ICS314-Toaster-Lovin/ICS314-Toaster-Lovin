@@ -4,9 +4,8 @@ import { Roles } from 'meteor/alanning:roles';
 import { Link } from 'react-router-dom';
 import React, { useRef, useState, useCallback } from 'react';
 import { Container, Image, ListGroup, Row, Col } from 'react-bootstrap';
-import { CheckCircleFill, XCircleFill, AlarmFill, PersonFill, Star } from 'react-bootstrap-icons';
+import { CheckCircleFill, XCircleFill, AlarmFill, PersonFill, Star, StarFill } from 'react-bootstrap-icons';
 import { useParams } from 'react-router';
-import swal from 'sweetalert';
 import { Recipe } from '../../api/recipe/Recipe';
 import { Ingredient } from '../../api/ingredient/Ingredient';
 import { Students } from '../../api/student/Student';
@@ -61,10 +60,27 @@ const FullRecipe = () => {
 
   /* Function to save recipe into user's favorites */
   function favoriteRecipe(id) {
-    const favorites = `${id}`;
-    Students.collection.update(student[0]._id, { $set: { favorites } }, (error) => (error ?
-      swal('Error', error.message, 'error') :
-      swal('Success', 'Recipe saved to Favorites', 'success')));
+    if (ready) {
+      let favoritesList = student[0].favorites;
+      if (favoritesList.includes('null')) {
+        favoritesList = favoritesList.replace('null', `${id},`);
+      } else if (!favoritesList.includes(id)) {
+        favoritesList = `${favoritesList + id},`;
+      }
+      Students.collection.update(student[0]._id, { $set: { favorites: favoritesList } });
+    }
+  }
+
+  /* Function to remove recipe from user's favorites */
+  function removeFavorite(id) {
+    if (ready) {
+      let favoritesList = student[0].favorites;
+      favoritesList = favoritesList.replace(`${id},`, '');
+      if (!favoritesList) {
+        favoritesList = 'null';
+      }
+      Students.collection.update(student[0]._id, { $set: { favorites: favoritesList } });
+    }
   }
 
   return (ready ? (
@@ -74,7 +90,8 @@ const FullRecipe = () => {
           <div className="d-flex align-items-baseline justify-content-between">
             <h1>
               {recipe.name}
-              <Star color="#F7DA45" className="pb-2 ps-2" onClick={() => favoriteRecipe(recipe._id)} />
+              {student[0].favorites.includes(recipe._id) ?
+                <StarFill color="#F7DA45" className="pb-2 ps-2" onClick={() => removeFavorite(recipe._id)} /> : <Star color="#F7DA45" className="pb-2 ps-2" onClick={() => favoriteRecipe(recipe._id)} /> }
             </h1>
             { (Meteor.user() && Meteor.user().username === recipe.owner) || Roles.userIsInRole(Meteor.userId(), 'admin') ? <Link to={`/edit-recipe/${recipe._id}`} id="edit-recipe-link">Edit</Link> : null }
           </div>
