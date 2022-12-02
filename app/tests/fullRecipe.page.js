@@ -21,6 +21,11 @@ class FullRecipePage {
     const modifiedInstructions = Selector('#recipe-instructions').withText('this is a test sentence');
     await testController.expect(modifiedInstructions.exists).ok();
   }
+
+  /** Clicks on the favorite icon */
+  async favorite(testController) {
+    await testController.click('#favorite');
+  }
 }
 
 export const fullRecipePage = new FullRecipePage();

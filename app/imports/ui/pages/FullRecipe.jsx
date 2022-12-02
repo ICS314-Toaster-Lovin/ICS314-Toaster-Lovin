@@ -91,7 +91,7 @@ const FullRecipe = () => {
             <h1>
               {recipe.name}
               {student[0].favorites.includes(recipe._id) ?
-                <StarFill color="#F7DA45" className="pb-2 ps-2" onClick={() => removeFavorite(recipe._id)} /> : <Star color="#F7DA45" className="pb-2 ps-2" onClick={() => favoriteRecipe(recipe._id)} /> }
+                <StarFill color="#F7DA45" className="pb-2 ps-2" onClick={() => removeFavorite(recipe._id)} /> : <Star id="favorite" color="#F7DA45" className="pb-2 ps-2" onClick={() => favoriteRecipe(recipe._id)} /> }
             </h1>
             { (Meteor.user() && Meteor.user().username === recipe.owner) || Roles.userIsInRole(Meteor.userId(), 'admin') ? <Link to={`/edit-recipe/${recipe._id}`} id="edit-recipe-link">Edit</Link> : null }
           </div>

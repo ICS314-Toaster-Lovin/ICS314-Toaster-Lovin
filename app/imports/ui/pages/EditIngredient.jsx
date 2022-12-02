@@ -49,36 +49,43 @@ const EditIngredient = () => {
       swal('Success', 'Ingredient updated successfully', 'success').then(() => setRedirect(true))));
   };
 
+  // Checks that the user is the owner of the ingredient
+  const checkOwner = () => (
+    doc.owner !== Meteor.user().username ? <Navigate to="/notauthorized" /> : null
+  );
+
   if (redirect) return <Navigate to="/vendor" />;
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   return (ready ? (
-    <Container className="py-3" id="edit-ingredient-page">
-      <Row className="justify-content-center">
-        <Col xs={5}>
-          <Col className="text-center"><h2>Edit Ingredient</h2></Col>
-          <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>
-            <Card>
-              <Card.Body>
-                <Row>
-                  <Col>
-                    <Row>
-                      <Col><TextField name="name" id="edit-ingredient-name" /></Col>
-                    </Row>
-                  </Col>
-
-                </Row>
-                <Col><TextField name="image" help="Submit as a URL, make image as square as possible" /></Col>
-                <Col><TextField name="quantity" /></Col>
-                <Col><TextField name="price" /></Col>
-                <SubmitField value="Submit" id="edit-ingredient-submit" />
-                <ErrorsField />
-              </Card.Body>
-            </Card>
-          </AutoForm>
-        </Col>
-      </Row>
-    </Container>
+    <>
+      {checkOwner()}
+      <Container className="py-3" id="edit-ingredient-page">
+        <Row className="justify-content-center">
+          <Col xs={5}>
+            <Col className="text-center"><h2>Edit Ingredient</h2></Col>
+            <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>
+              <Card>
+                <Card.Body>
+                  <Row>
+                    <Col>
+                      <Row>
+                        <Col><TextField name="name" id="edit-ingredient-name" /></Col>
+                      </Row>
+                    </Col>
+                  </Row>
+                  <Col><TextField name="image" help="Submit as a URL, make image as square as possible" /></Col>
+                  <Col><TextField name="quantity" /></Col>
+                  <Col><TextField name="price" help="Include the currency symbol" /></Col>
+                  <SubmitField value="Submit" id="edit-ingredient-submit" />
+                  <ErrorsField />
+                </Card.Body>
+              </Card>
+            </AutoForm>
+          </Col>
+        </Row>
+      </Container>
+    </>
   ) : <LoadingSpinner />);
 };
 

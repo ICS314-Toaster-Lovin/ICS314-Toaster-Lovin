@@ -59,11 +59,18 @@ const EditRecipe = () => {
   };
 
   // Add dietary restrictions into an array so Autoforms can read as a model
-  doc.dietaryRestrictions = [];
-  if (doc.glutenFree) doc.dietaryRestrictions.push('Gluten Free');
-  if (doc.lactoseFree) doc.dietaryRestrictions.push('Lactose Free');
-  if (doc.vegan) doc.dietaryRestrictions.push('Vegan');
-  if (doc.vegetarian) doc.dietaryRestrictions.push('Vegetarian');
+  const addDietRestrict = () => {
+    doc.dietaryRestrictions = [];
+    if (doc.glutenFree) doc.dietaryRestrictions.push('Gluten Free');
+    if (doc.lactoseFree) doc.dietaryRestrictions.push('Lactose Free');
+    if (doc.vegan) doc.dietaryRestrictions.push('Vegan');
+    if (doc.vegetarian) doc.dietaryRestrictions.push('Vegetarian');
+  };
+
+  // Checks that the user is the owner of the ingredient
+  const checkOwner = () => (
+    doc.owner !== Meteor.user().username ? <Navigate to="/notauthorized" /> : null
+  );
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   const transform = (label) => ` ${label}`;
@@ -71,36 +78,39 @@ const EditRecipe = () => {
   if (redirect) return <Navigate to={`/recipe/${doc._id}`} />;
 
   return (ready ? (
-    <Container className="py-3" id="edit-recipe-page">
-      <Row className="justify-content-center">
-        <Col xs={5}>
-          <Col className="text-center"><h2>Edit Recipe</h2></Col>
-          <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>
-            <Card>
-              <Card.Body>
-                <Row>
-                  <Col>
-                    <Row>
-                      <Col><TextField name="name" /></Col>
-                    </Row>
-                    <Row>
-                      <Col><NumField name="servingSize" decimal={null} /></Col>
-                      <Col><TextField name="estimatedTime" /></Col>
-                    </Row>
-                  </Col>
-                  <Col md="auto"><SelectField name="dietaryRestrictions" multiple checkboxes transform={transform} /></Col>
-                </Row>
-                <Col><TextField name="image" help="Submit as a URL, make image as square as possible" /></Col>
-                <Col><LongTextField name="ingredientList" help="Separate ingredients with a comma (no measurements)" /></Col>
-                <Col><LongTextField name="instructions" id="edit-recipe-instructions" help="You can put ingredient measurements here" /></Col>
-                <SubmitField value="Submit" id="edit-recipe-submit" />
-                <ErrorsField />
-              </Card.Body>
-            </Card>
-          </AutoForm>
-        </Col>
-      </Row>
-    </Container>
+    <>
+      {checkOwner()} {addDietRestrict()}
+      <Container className="py-3" id="edit-recipe-page">
+        <Row className="justify-content-center">
+          <Col xs={5}>
+            <Col className="text-center"><h2>Edit Recipe</h2></Col>
+            <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>
+              <Card>
+                <Card.Body>
+                  <Row>
+                    <Col>
+                      <Row>
+                        <Col><TextField name="name" /></Col>
+                      </Row>
+                      <Row>
+                        <Col><NumField name="servingSize" decimal={null} /></Col>
+                        <Col><TextField name="estimatedTime" /></Col>
+                      </Row>
+                    </Col>
+                    <Col md="auto"><SelectField name="dietaryRestrictions" multiple checkboxes transform={transform} /></Col>
+                  </Row>
+                  <Col><TextField name="image" help="Submit as a URL, make image as square as possible" /></Col>
+                  <Col><LongTextField name="ingredientList" help="Separate ingredients with a comma (no measurements)" /></Col>
+                  <Col><LongTextField name="instructions" id="edit-recipe-instructions" help="You can put ingredient measurements here" /></Col>
+                  <SubmitField value="Submit" id="edit-recipe-submit" />
+                  <ErrorsField />
+                </Card.Body>
+              </Card>
+            </AutoForm>
+          </Col>
+        </Row>
+      </Container>
+    </>
   ) : <LoadingSpinner />);
 };
 

@@ -90,6 +90,7 @@ test('Test the Full Recipe and Edit Recipe pages', async (testController) => {
   const baconOmelette = Selector('a').withText('Bacon Omelette');
   await testController.click(baconOmelette);
   await fullRecipePage.isDisplayed(testController);
+  await fullRecipePage.favorite(testController);
 
   // Test Edit Recipe page
   await fullRecipePage.gotoEditRecipe(testController);

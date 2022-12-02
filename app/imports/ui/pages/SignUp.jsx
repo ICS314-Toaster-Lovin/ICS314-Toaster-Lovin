@@ -66,7 +66,6 @@ const SignUp = ({ location }) => {
         (err) => {
           if (err) {
             swal('Error', err.message, 'error');
-          } else {
           }
         },
       );
