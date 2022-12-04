@@ -69,7 +69,6 @@ HomeIngredientItem.propTypes = {
     name: PropTypes.string,
     price: PropTypes.string,
     quantity: PropTypes.number,
-    units: PropTypes.string,
     image: PropTypes.string,
     vendor: PropTypes.string,
     owner: PropTypes.string,
