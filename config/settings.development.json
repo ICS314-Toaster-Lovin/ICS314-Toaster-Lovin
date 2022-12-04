@@ -12,7 +12,7 @@
     { "email": "dwayne@foo.com", "password": "changeme", "role": "student", "name": "Dwayne Johnson" },
     { "email": "keanu@foo.com", "password": "changeme", "role": "student", "name": "Keanu Reeves" },
     { "email": "walmart@foo.com", "password": "changeme", "role": "vendor", "name": "Walmart" },
-    { "email": "foodland@foo.com", "password": "changeme", "role": "vendor", "name":  "Foodland Market City"},
+    { "email": "foodland@foo.com", "password": "changeme", "role": "vendor", "name":  "Foodland"},
     { "email": "safeway@foo.com", "password": "changeme", "role": "vendor", "name": "Safeway" },
     { "email": "target@foo.com", "password": "changeme", "role": "vendor", "name": "Target" },
     { "email": "wholefoods@foo.com", "password": "changeme", "role": "vendor", "name": "Whole Foods" }
@@ -69,7 +69,7 @@
       "createdAt": "2022-03-20T12:00:00-07:30"
     },
     {
-      "name": "Avacado Sandwich",
+      "name": "Avocado Sandwich",
       "servingSize": 1,
       "estimatedTime": 10,
       "glutenFree": false,
@@ -77,7 +77,7 @@
       "vegan": false,
       "vegetarian": true,
       "image": "https://takestwoeggs.com/wp-content/uploads/2022/05/Hawaiian-Spam-Musubi-Takestwoeggs-Final-Photography-sq-480x270.jpg",
-      "ingredientList": "bread, provolone cheese, avocado, tomato, balsamic vinegar",
+      "ingredientList": "bread, provolone cheese, avocados, tomatoes, balsamic vinegar",
       "instructions": "Lay 1 slice bread on a plate. Place provolone cheese on bread and top with avocado and tomato slices, respectively. Drizzle balsamic vinegar over tomato and top with remaining slice of bread.",
       "owner": "john@foo.com",
       "createdAt": "2022-05-10T12:00:00-07:30"
@@ -105,7 +105,7 @@
       "vegan": false,
       "vegetarian": false,
       "image": "https://www.budgetbytes.com/wp-content/uploads/2016/08/Beef-and-Cabbage-Stir-Fry-V1-768x1024.jpg",
-      "ingredientList": "soy sauce, seasame oil, sriracha, brown sugar, green cabbage, carrots, green onions, cooking oil, ground beef, garlic, ginger, salt, pepper, sesame seeds, sriracha",
+      "ingredientList": "soy sauce, sesame oil, sriracha, brown sugar, green cabbage, carrots, green onions, cooking oil, ground beef, garlic, ginger, salt, pepper, sesame seeds, sriracha",
       "instructions": "Prepare the stir fry sauce first. In a small bowl stir together the soy sauce, toasted sesame oil, sriracha, and brown sugar. Set the sauce aside.\nShred the vegetables so they are ready to go when you need them. Cut one small cabbage in half, remove the core, and then finely shred the leaves of one half the cabbage (4-6 cups once shredded, save the other half for another recipe). Peel two carrots, then use a cheese grater to shred them (1 cup shredded). Slice three green onions. Mince two cloves of garlic. Peel a knob of ginger using either a vegetable peeler or by scraping with the side of a spoon, then grate it using a small-holed cheese grater.\nHeat a large skillet over medium heat. Once hot add the cooking oil, ground beef, garlic, ginger, and a pinch of salt and pepper. Cook the beef until browned (about five minutes).\nAdd the cabbage and carrots to the skillet and continue to stir and cook until the cabbage is slightly wilted (or fully wilted, if you prefer). Stir in the prepared sauce and the green onions. Top with a sprinkle of sesame seeds and a drizzle of sriracha, then serve.",
       "owner": "john@foo.com",
       "createdAt": "2022-02-14T12:00:00-09:30"
@@ -217,7 +217,7 @@
       "vegan": true,
       "vegetarian": false,
       "image": "https://www.budgetbytes.com/wp-content/uploads/2019/09/Vegan-Creamy-Mushroom-Ramen-garnished.jpg",
-      "ingredientList": "cooking oil, baby bella mushrooms, vegetable broth, spinach, rmane noodles, coconut milk, green onions, chili garlic sauce",
+      "ingredientList": "cooking oil, baby bella mushrooms, vegetable broth, spinach, ramen noodles, coconut milk, green onions, chili garlic sauce",
       "instructions": "Slice the mushrooms. Add them to a small sauce pot with the cooking oil and sauté over medium heat until the mushrooms are soft, dark, and all the moisture in the bottom of the pot has evaporated.\nAdd the vegetable broth, turn the heat up to medium-high, and bring the broth up to a boil. Once boiling, add the ramen noodles (without the seasoning packet) to the broth. Cook the noodles in the boiling broth for about 3 minutes, or until tender.\nTurn the heat off, add a heaping handful of fresh spinach, and stir until the spinach is wilted (about 30 seconds). Pour the coconut milk into the pot and stir to combine.\nServe the Vegan Creamy Coconut Ramen as-is, or with garnishes like green onion or chili garlic sauce.",
       "owner": "adam@foo.com",
       "createdAt": "2022-04-22T12:00:00-09:37"
@@ -231,7 +231,7 @@
       "vegan": false,
       "vegetarian": false,
       "image": "https://www.budgetbytes.com/wp-content/uploads/2020/10/Sheet-Pan-Kielbasa-Potatoes-and-Green-Beans-bowl.jpg",
-      "ingredientList": "red tomatoes, kielbasa, yellow onion, frozen green beans, olive oil, steak seasoning",
+      "ingredientList": "tomatoes, kielbasa, yellow onion, frozen green beans, olive oil, steak seasoning",
       "instructions": "Preheat the oven to 400ºF. Wash and slice the potatoes into 1-inch pieces. Slice the kielbasa into medallions. Dice the onion into 1-inch pieces.\nAdd the potatoes, kielbasa, onion, and frozen green beans (no need to thaw) to a large baking sheet. Drizzle with olive oil and sprinkle the steak seasoning over top. Use your hands to toss the ingredients until everything is coated in oil and spices.\nTransfer the baking sheet to the oven and roast in the oven for 20 minutes, then give the ingredients on the sheet pan a good stir. Roast for an additional 15 minutes, or until the ingredients achieve the level of browning you desire. Serve hot.",
       "owner": "adam@foo.com",
       "createdAt": "2022-04-11T12:00:00-08:30"
@@ -311,45 +311,231 @@
   "ingredientData": [
     {
       "name": "Spinach",
-      "price": "$8.50",
+      "price": "$3.50",
       "quantity": 13,
-      "units": "lb",
       "image": "https://images.heb.com/is/image/HEBGrocery/000319108?fit=constrain,1&wid=800&hei=800&fmt=jpg&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0",
-      "vendor": "Foodland Market City",
+      "vendor": "Foodland",
       "owner": "foodland@foo.com",
       "createdAt": "2022-05-25T12:00:00-06:30"
+    },
+    {
+      "name": "Bananas",
+      "price": "$5.25",
+      "quantity": 22,
+      "image": "https://i5.walmartimages.com/asr/3bbb1151-d69a-43fb-b132-47e0bc066307.1f28c1acf3df725a6a39ba4c8738e025.jpeg",
+      "vendor": "Foodland",
+      "owner": "foodland@foo.com",
+      "createdAt": "2022-08-02T12:00:00-06:30"
+    },
+    {
+      "name": "Tomatoes",
+      "price": "$0.91",
+      "quantity": 52,
+      "image": "https://i5.walmartimages.com/asr/9f8b7456-81d0-4dc2-b422-97cf63077762.0ddba51bbf14a5029ce82f5fce878dee.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF",
+      "vendor": "Foodland",
+      "owner": "foodland@foo.com",
+      "createdAt": "2022-06-25T12:00:00-06:30"
+    },
+    {
+      "name": "Bread",
+      "price": "$7.99",
+      "quantity": 48,
+      "image": "https://storage.googleapis.com/images-fol-prd-83dd8b8.fol.prd.v8.commerce.mi9cloud.com/product-images/detail/7313000132.jpg",
+      "vendor": "Foodland",
+      "owner": "foodland@foo.com",
+      "createdAt": "2022-08-03T12:00:00-06:30"
+    },
+    {
+      "name": "Green Onions",
+      "price": "$2.49",
+      "quantity": 51,
+      "image": "https://storage.googleapis.com/images-fol-prd-83dd8b8.fol.prd.v8.commerce.mi9cloud.com/product-images/detail/4068.jpg",
+      "vendor": "Foodland",
+      "owner": "foodland@foo.com",
+      "createdAt": "2022-08-04T12:00:00-06:30"
+    },
+    {
+      "name": "Broccoli",
+      "price": "$2.12",
+      "quantity": 36,
+      "image": "https://storage.googleapis.com/images-fol-prd-83dd8b8.fol.prd.v8.commerce.mi9cloud.com/product-images/detail/3082.jpg",
+      "vendor": "Foodland",
+      "owner": "foodland@foo.com",
+      "createdAt": "2022-08-05T12:00:00-06:30"
+    },
+    {
+      "name": "Black Beans",
+      "price": "$2.50",
+      "quantity": 75,
+      "image": "https://storage.googleapis.com/images-fol-prd-83dd8b8.fol.prd.v8.commerce.mi9cloud.com/product-images/detail/3940001880-1.jpg",
+      "vendor": "Foodland",
+      "owner": "foodland@foo.com",
+      "createdAt": "2022-08-06T12:00:00-06:30"
+    },
+    {
+      "name": "Parmesan",
+      "price": "$4.29",
+      "quantity": 61,
+      "image": "https://storage.googleapis.com/images-fol-prd-83dd8b8.fol.prd.v8.commerce.mi9cloud.com/product-images/detail/2100061542.jpg",
+      "vendor": "Foodland",
+      "owner": "foodland@foo.com",
+      "createdAt": "2022-08-07T12:00:00-06:30"
+    },
+    {
+      "name": "Sriracha",
+      "price": "$3.99",
+      "quantity": 33,
+      "image": "https://target.scene7.com/is/image/Target/GUEST_f96d46a0-42c1-432a-aac7-bfbfea7a2b6a?wid=325&hei=325&qlt=80&fmt=pjpeg",
+      "vendor": "Foodland",
+      "owner": "foodland@foo.com",
+      "createdAt": "2022-08-08T12:00:00-06:30"
+    },
+    {
+      "name": "Corn",
+      "price": "$1.99",
+      "quantity": 28,
+      "image": "https://storage.googleapis.com/images-fol-prd-83dd8b8.fol.prd.v8.commerce.mi9cloud.com/product-images/detail/4078.jpg",
+      "vendor": "Foodland",
+      "owner": "foodland@foo.com",
+      "createdAt": "2022-08-09T12:00:00-06:30"
+    },
+    {
+      "name": "Paprika",
+      "price": "$5.49",
+      "quantity": 48,
+      "image": "https://storage.googleapis.com/images-fol-prd-83dd8b8.fol.prd.v8.commerce.mi9cloud.com/product-images/detail/5210000448.jpg",
+      "vendor": "Foodland",
+      "owner": "foodland@foo.com",
+      "createdAt": "2022-08-10T12:00:00-06:30"
+    },
+    {
+      "name": "Mozzarella",
+      "price": "$4.50",
+      "quantity": 27,
+      "image": "https://storage.googleapis.com/images-fol-prd-83dd8b8.fol.prd.v8.commerce.mi9cloud.com/product-images/detail/2100000197-1.jpg",
+      "vendor": "Foodland",
+      "owner": "foodland@foo.com",
+      "createdAt": "2022-08-11T12:00:00-06:30"
     },
     {
       "name": "Eggs",
       "price": "$7.00",
       "quantity": 5,
-      "units": "dozen",
       "image": "https://cdn.shopify.com/s/files/1/0571/1321/5163/products/EGPH-OPENWEGGS.png?v=1653408003",
       "vendor": "Walmart",
       "owner": "walmart@foo.com",
       "createdAt": "2022-04-25T12:00:00-06:30"
     },
     {
-      "name": "Bananas",
-      "price": "$5.25",
-      "quantity": 22,
-      "units": "bunch",
-      "image": "https://i5.walmartimages.com/asr/3bbb1151-d69a-43fb-b132-47e0bc066307.1f28c1acf3df725a6a39ba4c8738e025.jpeg",
-      "vendor": "Foodland Market City",
-      "owner": "foodland@foo.com",
-      "createdAt": "2022-06-25T12:00:00-06:30"
-    },
-    {
       "name": "Spam",
       "price": "$3.59",
       "quantity": 18,
-      "units": "can",
       "image": "https://m.media-amazon.com/images/I/A1xRLOh8ukL.jpg",
       "vendor": "Walmart",
       "owner": "walmart@foo.com",
       "createdAt": "2022-07-25T12:00:00-06:30"
+    },
+    {
+      "name": "Rice",
+      "price": "$1.50",
+      "quantity": 27,
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSLdB61lgsMguuSGa9OyBlFzuz2kyp5yHxvFi-rWYr1tRIVm8HI-pKVf5zuojL7Yjg0tjLzWpb1MAHqSPCygTLhHD1naK9rIp9dGP3cavZfAAwBXwywntdueQ&usqp=CAE",
+      "vendor": "Walmart",
+      "owner": "walmart@foo.com",
+      "createdAt": "2022-07-26T12:00:00-06:30"
+    },
+    {
+      "name": "Mushrooms",
+      "price": "$2.29",
+      "quantity": 38,
+      "image": "https://i5.walmartimages.com/asr/3bbb1151-d69a-43fb-b132-47e0bc066307.1f28c1acf3df725a6a39ba4c8738e025.jpeg",
+      "vendor": "Walmart",
+      "owner": "walmart@foo.com",
+      "createdAt": "2022-06-28T12:00:00-06:30"
+    },
+    {
+      "name": "Penne Pasta",
+      "price": "$2.99",
+      "quantity": 76,
+      "image": "https://images.albertsons-media.com/is/image/ABS/960102524-ECOM?$ng-ecom-pdp-desktop$&defaultImage=Not_Available",
+      "vendor": "Walmart",
+      "owner": "walmart@foo.com",
+      "createdAt": "2022-07-27T12:00:00-06:30"
+    },
+    {
+      "name": "Avocados",
+      "price": "$1.59",
+      "quantity": 31,
+      "image": "https://target.scene7.com/is/image/Target/GUEST_8958b79a-b301-4205-ae5e-7f975b289f01?wid=325&hei=325&qlt=80&fmt=pjpeg",
+      "vendor": "Walmart",
+      "owner": "walmart@foo.com",
+      "createdAt": "2022-07-28T12:00:00-06:30"
+    },
+    {
+      "name": "Soy Sauce",
+      "price": "$1.59",
+      "quantity": 48,
+      "image": "https://images.albertsons-media.com/is/image/ABS/127050008-ECOM?$ng-ecom-pdp-desktop$&defaultImage=Not_Available",
+      "vendor": "Walmart",
+      "owner": "walmart@foo.com",
+      "createdAt": "2022-07-29T12:00:00-06:30"
+    },
+    {
+      "name": "Salt",
+      "price": "$2.89",
+      "quantity": 21,
+      "image": "https://images.albertsons-media.com/is/image/ABS/114100009-ECOM?$ng-ecom-pdp-desktop$&defaultImage=Not_Available",
+      "vendor": "Walmart",
+      "owner": "walmart@foo.com",
+      "createdAt": "2022-07-30T12:00:00-06:30"
+    },
+    {
+      "name": "Pepper",
+      "price": "$5.81",
+      "quantity": 21,
+      "image": "https://images.albertsons-media.com/is/image/ABS/960278502-ECOM?$ng-ecom-pdp-desktop$&defaultImage=Not_Available",
+      "vendor": "Walmart",
+      "owner": "walmart@foo.com",
+      "createdAt": "2022-07-31T12:00:00-06:30"
+    },
+    {
+      "name": "Olive Oil",
+      "price": "$15.87",
+      "quantity": 68,
+      "image": "https://i5.walmartimages.com/asr/4ed739c7-f72d-422c-954a-cc33761c7c7f.b7eb0583c16c92b52e0d04647bd4a68f.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+      "vendor": "Walmart",
+      "owner": "walmart@foo.com",
+      "createdAt": "2022-08-01T12:00:00-06:30"
+    },
+    {
+      "name": "Pepperoni",
+      "price": "$3.00",
+      "quantity": 54,
+      "image": "https://i5.walmartimages.com/asr/6bfb791e-84a7-48b8-bdf1-7d824c2831a8.b63b7ad403c501a06ac8fcf7db135cc2.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+      "vendor": "Walmart",
+      "owner": "walmart@foo.com",
+      "createdAt": "2022-08-02T12:00:00-06:30"
+    },
+    {
+      "name": "Flour Tortillas",
+      "price": "$5.67",
+      "quantity": 17,
+      "image": "https://i5.walmartimages.com/asr/61950f51-902a-43f9-aed7-d73b61884c73_1.1652342002eb1b038960c1ed0cb88bee.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+      "vendor": "Walmart",
+      "owner": "walmart@foo.com",
+      "createdAt": "2022-08-03T12:00:00-06:30"
+    },
+    {
+      "name": "Garlic",
+      "price": "$3.18",
+      "quantity": 74,
+      "image": "https://i5.walmartimages.com/asr/282332f9-a9fb-4913-871c-570e19aefaa7_2.31440d452c7fa7c1945ad9cb46a607b2.png?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+      "vendor": "Walmart",
+      "owner": "walmart@foo.com",
+      "createdAt": "2022-08-04T12:00:00-06:30"
     }
   ],
+
   "studentData": [
     {
       "name": "John Doe",
@@ -392,6 +578,7 @@
       "owner": "keanu@foo.com"
     }
   ],
+  
   "vendorData": [
     {
       "name": "Walmart",
@@ -401,7 +588,7 @@
       "owner": "walmart@foo.com"
     },
     {
-      "name": "Foodland Market City",
+      "name": "Foodland",
       "location": "2939 Harding Ave, Honolulu, HI 96816",
       "hours": "Everyday: 6AM-9PM",
       "gps": "https://www.google.com/maps/vt/data=yEDsUADVL32mYAv-EF3mJOuwSP64c1nxyGbVwL-MdW1cPSSi7bv9CjYjpWrG0OYglaP5orFOAQxDUSwtRzD7Q0NPop8SJgWMBOPGuCWo95B3w7jj_grtRtsn_-2QzVNlk3-a16_vDxjdOxddsnifukpk9Sgb2nitDA",

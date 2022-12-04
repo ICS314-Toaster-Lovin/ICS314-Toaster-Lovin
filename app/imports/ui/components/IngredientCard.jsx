@@ -45,7 +45,6 @@ IngredientCard.propTypes = {
     name: PropTypes.string,
     quantity: PropTypes.number,
     price: PropTypes.string,
-    units: PropTypes.string,
     image: PropTypes.string,
     vendor: PropTypes.string,
     owner: PropTypes.string,
