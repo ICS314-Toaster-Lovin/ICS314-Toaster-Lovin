@@ -305,6 +305,146 @@
       "instructions": "Add the butter, olive oil, minced garlic, garlic powder, salt, and parsley to a bowl. Mix the ingredients together until they form a fairly smooth mixture.\nSlice the French bread into 1-inch thick slices (12-16 slices, depending on the size of the loaf). Add 1/2 to 1 Tbsp of the garlic spread to each slice of bread and spread it from edge to edge. Arrange the slices on a baking sheet and then place them in the freezer for about 30 minutes to allow the butter to firm up. Once firm, transfer the garlic bread to a gallon-sized freezer bag for longer storage. Store in the freezer up to three months.\nTo cook the frozen slices of garlic bread, preheat the oven to 400 degrees. Once the oven is heated, take as many slices out of the freezer as you'd like, and place them on a baking sheet. Bake for 10-15 minutes, or until the edges are golden brown.* If you prefer a softer garlic bread without crispy edges, wrap the slices in foil before baking.",
       "owner": "adam@foo.com",
       "createdAt": "2022-06-11T12:00:00-09:45"
+    },
+    {
+      "name": "Avocado Toast",
+      "servingSize": 4,
+      "estimatedTime": 10,
+      "glutenFree": false,
+      "lactoseFree": true,
+      "vegan": true,
+      "vegetarian": true,
+      "image": "https://www.allrecipes.com/thmb/g_oS-hy5vRJZn70IDv5QiX_BrUA=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/avocado-toast-vegan-76684f89725c4b269cd5b49485181508.jpg",
+      "ingredientList": "bread, avocados, parsley, olive oil, lemon, salt, pepper, garlic powder",
+      "instructions": "Toast the bread. Scoop the avocado into a bowl. Add the parsley, olive oil, lemon, salt, pepper, and garlic powder to the avocado and mix together. Spread the mixture on the pieces of toast.",
+      "owner": "mike@foo.com",
+      "createdAt": "2022-05-12T12:00:00-14:10"
+    },
+    {
+      "name": "Baked Potato",
+      "servingSize": 1,
+      "estimatedTime": 12,
+      "glutenFree": true,
+      "lactoseFree": false,
+      "vegan": false,
+      "vegetarian": true,
+      "image": "https://www.allrecipes.com/thmb/S0bANAyU1OiX07OT00GxKRPa2Vs=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/1968922-bd150957edad4b34b5709edf86dda715.jpg",
+      "ingredientList": "potatoes, salt, pepper, butter, cheese, sour cream",
+      "instructions": "Scrub potato and prick holes with a fork. Microwave for 5 minutes. Turn potato over and microwave for an additional 5 minutes. Cut potato in half lengthwise and season with salt and pepper. Mash up the inside of the potato with a fork. Add the butter and cheese. Microwave the potato for 1 minute. Top with sour cream.",
+      "owner": "mike@foo.com",
+      "createdAt": "2022-05-12T12:00:00-14:20"
+    },
+    {
+      "name": "Salted Chocolate-Peanut Butter Vegan Nice Cream",
+      "servingSize": 1,
+      "estimatedTime": 10,
+      "glutenFree": true,
+      "lactoseFree": true,
+      "vegan": true,
+      "vegetarian": true,
+      "image": "https://www.allrecipes.com/thmb/sCtMUyaGCF6zQmshUIvkIj11kWM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/5449624-906abd5afca042f485027104300e0c28.jpg",
+      "ingredientList": "cashews, bananas, tofu, cacao powder, dates, peanut butter, vanilla extract, soy milk, salt, peanuts",
+      "instructions": "Soak cashews in a bowl of water for 1-3 hours, Drain. Combine the cashews with 1 banana, 1 cup of ice cubes, 3 ounces of tofu, 1/2 cup of cacao powder, 2 pitted dates, 3 tablespoons of peanut butter, 2 teaspoons of vanilla extract, 1 teaspoon of soy milk, and 1/4 teaspoon of sea salt. Blend until smooth. When finished, sprinkle with crushed peanuts.  ",
+      "owner": "mike@foo.com",
+      "createdAt": "2022-05-12T12:00:00-14:20"
+    },
+    {
+      "name": "Toasted Cheese Sandwich",
+      "servingSize": 4,
+      "estimatedTime": 10,
+      "glutenFree": false,
+      "lactoseFree": false,
+      "vegan": false,
+      "vegetarian": true,
+      "image": "https://www.allrecipes.com/thmb/_PI3olhQL-jFed4bhzIMnVa_Q_E=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/2375602-c3d367e05c164350b09ce9aa27fc072d.jpg",
+      "ingredientList": "Cheese, bread rolls, sugar",
+      "instructions": "Top each bread roll with some cheese. Toast the rolls in a toaster oven until cheese is melted, about 5 to 7 minutes. Sprinkle sugar over the melted cheese to taste.",
+      "owner": "mike@foo.com",
+      "createdAt": "2022-05-12T12:00:00-14:40"
+    },
+    {
+      "name": "Carbonara",
+      "servingSize": 6,
+      "estimatedTime": 20,
+      "glutenFree": false,
+      "lactoseFree": false,
+      "vegan": false,
+      "vegetarian": false,
+      "image": "https://www.allrecipes.com/thmb/55vsP2-FEGa_Nw3m9FFWUJoRuj0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/2434057-fc8814272f4841a3a26230d1962859e1.jpg",
+      "ingredientList": "spaghetti, bacon, eggs, parmesan, olive oil",
+      "instructions": "Bring a pot of lightly salted water to a boil. Cook spaghetti for 8 to 10 minutes. Drain water. Place 1 pound of chopped bacon into a skillet and cook until evenly brown. Place spaghetti in a large bowl and add in 1/4 cup of olive oil. Stir in bacon, 4 beaten eggs, and 3/4 cup of parmesan cheese.",
+      "owner": "mike@foo.com",
+      "createdAt": "2022-05-12T12:00:00-14:50"
+    },
+    {
+      "name": "Beef Stroganoff",
+      "servingSize": 4,
+      "estimatedTime": 20,
+      "glutenFree": false,
+      "lactoseFree": false,
+      "vegan": false,
+      "vegetarian": false,
+      "image": "https://www.allrecipes.com/thmb/6Ij-LMZIJr2g1qFXrvPjxXh2Y-o=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/61311-simple-beef-stroganoff-ddmfs-1x1-1-03f36d6638f249ce9f2fdaaf12eee4a7.jpg",
+      "ingredientList": "egg noodles, ground beef, cream of mushroom soup, garlic powder, sour cream, pepper",
+      "instructions": "Cook 1 pound of ground beef until browned. Bring a pot of lightly salted water to a boil and cook egg noodles for 7 to 9 minutes. Drain water. Stir 1 can of cream of mushroom soup and garlic powder into the ground beef. Simmer for 10 minutes. Remove from heat and add egg noodles. Stir in 1/2 a cup of sour cream and season with salt and pepper.",
+      "owner": "mike@foo.com",
+      "createdAt": "2022-05-12T12:00:00-15:00"
+    },
+    {
+      "name": "Pork Chops",
+      "servingSize": 4,
+      "estimatedTime": 35,
+      "glutenFree": true,
+      "lactoseFree": true,
+      "vegan": false,
+      "vegetarian": false,
+      "image": "https://www.allrecipes.com/thmb/O0yg0m3hpiycUXSIEaHdcDtr_uU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/7935392-a575c7e84bf34972a83b6a2ecaca0448.jpg",
+      "ingredientList": "italian salad dressing, soy sauce, pepper, pork chops",
+      "instructions": "Mix 2 cups of the italian salad dressing, 1/2 teaspoon of pepper, and 1/4 coup of soy sauce in a bowl. Place 4 boneless pork chops int a skillet over medium high heat. Cover with the dressing mixture. Cover skillet and cook for 25 minutes, turning occasionally. Remove cover, reduce heat, and cook until done.",
+      "owner": "mike@foo.com",
+      "createdAt": "2022-05-12T12:00:00-15:30"
+    },
+    {
+      "name": "Sloppy Joes",
+      "servingSize": 6,
+      "estimatedTime": 55,
+      "glutenFree": false,
+      "lactoseFree": true,
+      "vegan": false,
+      "vegetarian": false,
+      "image": "https://www.allrecipes.com/thmb/VLoVG5bRKzIYuw5gEgtxsVTL-ng=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/650151-3f28ae186f8d440990df9ff5f2d512af.jpg",
+      "ingredientList": "ground turkey, ketchup, sugar, vinegar, mustard",
+      "instructions": "Cook 1 pound of ground turkey until evenly brown. In a large saucepan over medium heat, mix 1 cup of ketchup, 2 tablespoons of sugar, 2 tablespoons of vinegar, and 2 tablespoons of mustard. Mix in the turkey. Cook for 30 minutes, serving occasionally. Serve with buns.",
+      "owner": "mike@foo.com",
+      "createdAt": "2022-05-12T12:00:00-15:40"
+    },
+    {
+      "name": "Peanut Butter Mousse",
+      "servingSize": 1,
+      "estimatedTime": 6,
+      "glutenFree": true,
+      "lactoseFree": true,
+      "vegan": true,
+      "vegetarian": true,
+      "image": "https://www.allrecipes.com/thmb/V0DgNFwU03TZEu0_RVHtdWqLpt8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/4453566-87b196742fb54c378006dd4e790afdc9.jpg",
+      "ingredientList": "peanut butter, greek yogurt, brown sugar, vanilla extract, chocolate chips",
+      "instructions": "Microwave 2 tablespoons of peanut butter until liquid and smooth. Stir in 1/4 cup of plain greek yogurt until smooth. Stir in 1/2 teaspoon of brown sugar and 1/8 teaspoon of vanilla extract. Fold in chocolate chips",
+      "owner": "mike@foo.com",
+      "createdAt": "2022-05-12T12:00:00-15:50"
+    },
+    {
+      "name": "Red Curry Chicken",
+      "servingSize": 6,
+      "estimatedTime": 29,
+      "glutenFree": true,
+      "lactoseFree": true,
+      "vegan": false,
+      "vegetarian": false,
+      "image": "https://www.allrecipes.com/thmb/eO04k0Z3BpsaabXC7HRD0kOB0Ng=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/3949345-3459078c727943f69a0e57f6254c3c1f.jpg",
+      "ingredientList": "coconut oil, chicken breast, cream of coconut, red thai curry sauce, vermicelli noodles",
+      "instructions": "Heat up oil on high. Cut chicken breasts into cubes and cook until browned. Reduce heat and add 1 can of cream of coconut and 1 bottle of red Thai curry sauce. Cook for an additional 5 minutes. Fill another pot with lightly salted water and cook vermicelli pasta. Drain water. Reduce chicken curry to a simmer. Add noodles and simmer for about 5 minutes.",
+      "owner": "mike@foo.com",
+      "createdAt": "2022-05-12T12:00:00-16:00"
     }
   ],
 
@@ -533,6 +673,96 @@
       "vendor": "Walmart",
       "owner": "walmart@foo.com",
       "createdAt": "2022-08-04T12:00:00-06:30"
+    },
+    {
+      "name": "Potatoes",
+      "price": "$5.99",
+      "quantity": 80,
+      "image": "https://images.albertsons-media.com/is/image/ABS/960143719-ECOM?$ng-ecom-pdp-desktop$&defaultImage=Not_Available",
+      "vendor": "Safeway",
+      "owner": "safeway@foo.com",
+      "createdAt": "2022-12-05T12:00:00-06:30"
+    },
+    {
+      "name": "Sour Cream",
+      "price": "$2.49",
+      "quantity": 10,
+      "image": "https://images.albertsons-media.com/is/image/ABS/136200019-ECOM?$ng-ecom-pdp-desktop$&defaultImage=Not_Available",
+      "vendor": "Safeway",
+      "owner": "safeway@foo.com",
+      "createdAt": "2022-12-05T12:00:00-06:35"
+    },
+    {
+      "name": "Cashews",
+      "price": "$13.99",
+      "quantity": 50,
+      "image": "https://images.albertsons-media.com/is/image/ABS/960052373-ECOM?$ng-ecom-pdp-desktop$&defaultImage=Not_Available",
+      "vendor": "Safeway",
+      "owner": "safeway@foo.com",
+      "createdAt": "2022-12-05T12:00:00-06:40"
+    },
+    {
+      "name": "Peanut Butter",
+      "price": "$6.99",
+      "quantity": 23,
+      "image": "https://images.albertsons-media.com/is/image/ABS/960081797-ECOM?$ng-ecom-pdp-desktop$&defaultImage=Not_Available",
+      "vendor": "Safeway",
+      "owner": "safeway@foo.com",
+      "createdAt": "2022-12-05T12:00:00-06:45"
+    },
+    {
+      "name": "Vanilla Extract",
+      "price": "$4.99",
+      "quantity": 75,
+      "image": "https://images.albertsons-media.com/is/image/ABS/214010060?$ng-ecom-pdp-desktop$&defaultImage=Not_Available",
+      "vendor": "Safeway",
+      "owner": "safeway@foo.com",
+      "createdAt": "2022-12-05T12:00:00-06:50"
+    },
+    {
+      "name": "Bread Rolls",
+      "price": "$8.99",
+      "quantity": 56,
+      "image": "https://images.albertsons-media.com/is/image/ABS/960055723?$ng-ecom-pdp-desktop$&defaultImage=Not_Available",
+      "vendor": "Safeway",
+      "owner": "safeway@foo.com",
+      "createdAt": "2022-12-05T12:00:00-06:55"
+    },
+    {
+      "name": "Cheese",
+      "price": "$3.99",
+      "quantity": 64,
+      "image": "https://images.albertsons-media.com/is/image/ABS/960109669-ECOM?$ng-ecom-pdp-desktop$&defaultImage=Not_Available",
+      "vendor": "Safeway",
+      "owner": "safeway@foo.com",
+      "createdAt": "2022-12-05T12:00:00-07:00"
+    },
+    {
+      "name": "Bacon",
+      "price": "$10.99",
+      "quantity": 43,
+      "image": "https://images.albertsons-media.com/is/image/ABS/188560019-ECOM?$ng-ecom-pdp-desktop$&defaultImage=Not_Available",
+      "vendor": "Safeway",
+      "owner": "safeway@foo.com",
+      "createdAt": "2022-12-05T12:00:00-07:05"
+    },
+    {
+      "name": "Spaghetti",
+      "price": "$1.99",
+      "quantity": 81,
+      "image": "https://images.albertsons-media.com/is/image/ABS/128200289-ECOM?$ng-ecom-pdp-desktop$&defaultImage=Not_Available",
+      "vendor": "Safeway",
+      "owner": "safeway@foo.com",
+      "createdAt": "2022-12-05T12:00:00-07:10"
+    },
+    {
+      "name": "Ground Beef",
+      "price": "$5.99",
+      "quantity": 35,
+      "image": "https://images.albertsons-media.com/is/image/ABS/960170471?$ng-ecom-pdp-desktop$&defaultImage=Not_Available",
+      "vendor": "Safeway",
+      "owner": "safeway@foo.com",
+      "createdAt": "2022-12-05T12:00:00-07:15"
     }
   ],
 
