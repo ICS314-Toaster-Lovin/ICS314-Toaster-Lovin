@@ -30,7 +30,7 @@ const RecipeItem = ({ recipe }) => (
 RecipeItem.propTypes = {
   recipe: PropTypes.shape({
     name: PropTypes.string,
-    image: PropTypes.string,
+    image: PropTypes.number,
     servingSize: PropTypes.number,
     estimatedTime: PropTypes.string,
     ingredientList: PropTypes.string,
