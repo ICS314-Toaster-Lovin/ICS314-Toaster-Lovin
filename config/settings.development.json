@@ -76,10 +76,11 @@
       "lactoseFree": false,
       "vegan": false,
       "vegetarian": true,
-      "image": "https://takestwoeggs.com/wp-content/uploads/2022/05/Hawaiian-Spam-Musubi-Takestwoeggs-Final-Photography-sq-480x270.jpg",
+      "image": "https://www.allrecipes.com/thmb/wZCdFGOiHThCLh7qNg19zi-A0ek=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/1977630-1fbe154412eb44018ddc980f73ce7f7d.jpg",
       "ingredientList": "bread, provolone cheese, avocados, tomatoes, balsamic vinegar",
       "instructions": "Lay 1 slice bread on a plate. Place provolone cheese on bread and top with avocado and tomato slices, respectively. Drizzle balsamic vinegar over tomato and top with remaining slice of bread.",
       "owner": "john@foo.com",
+      "_id": "zMLpopqJ38TEbPH63",
       "createdAt": "2022-05-10T12:00:00-07:30"
     },
     {
@@ -94,6 +95,7 @@
       "ingredientList": "chili garlic sauce, soy sauce, brown sugar, ground pork, ramen noodles, green onions, unsalted peanuts",
       "instructions": "Combine the chili garlic sauce, soy sauce, and brown sugar in a bowl.\nAdd the ground pork to a skillet and cook over medium heat until it is fully browned*. Once browned, add the prepared dragon sauce and chopped peanuts. Allow the pork and peanuts to simmer in the sauce for another 5 minutes, or until the sauce has reduced by half.\nWhile the pork is browning, begin boiling water for your noodles. Once boiling, add your noodles and cook according to the package directions. Drain the noodles in a colander.\nOnce the sauce has reduced and the noodles have drained, add the noodles to the skillet and toss until everything is combined and coated in sauce. Top with sliced green onions and serve!",
       "owner": "john@foo.com",
+      "_id": "LYghH5DJ2ZyZx9vyF",
       "createdAt": "2022-05-11T12:00:00-07:30"
     },
     {
@@ -164,6 +166,7 @@
       "ingredientList": "red bell pepper, zucchini, yellow squash, red onion, boneless chicken breast, cooking oil, green beans, pesto, salt, pepper, parmesan",
       "instructions": "Chop the bell pepper, yellow squash, and zucchini, and slice the red onion. I like to make different shapes for each vegetable, but aim to make the pieces all around the same size.\nCube the chicken breasts into ½-inch pieces.\nAdd the cooking oil to a large skillet and heat over medium-high. Once the skillet and oil are very hot, add the chicken and sauté until the chicken pieces are opaque (3-5 minutes – the chicken will continue to cook as you add vegetables).\nAdd the green beans to the skillet and sauté for 1-2 minutes more, or just until thawed.\nAdd the bell pepper and red onion to the skillet. Sauté for 1-2 minutes more. If water is beginning to pool in the skillet, turn the heat up slightly. It should be hot enough that the water released from the vegetables evaporates quickly.\nAdd the yellow squash and zucchini to the skillet and continue to sauté 2-3 minutes more, or just until the squash softens slightly.\nTurn the heat off, add the pesto to the skillet, and stir until everything is coated. Give the vegetables a taste and add salt, pepper, or more pesto if desired. Top with a light sprinkle of Parmesan just before serving.",
       "owner": "john@foo.com",
+      "_id": "twnDuseygQodZBvpb",
       "createdAt": "2022-05-27T12:00:00-06:30"
     },
     {
@@ -178,6 +181,7 @@
       "ingredientList": "instant ramen",
       "instructions": "Pour boiling water into the cup of instant ramen. Cover and wait for 2 minutes.",
       "owner": "adam@foo.com",
+      "_id": "AqPp7QbuoBt9GJ53S",
       "createdAt": "2022-03-25T12:00:00-06:30"
     },
     {
@@ -272,7 +276,7 @@
       "lactoseFree": false,
       "vegan": false,
       "vegetarian": false,
-      "image": "https://www.budgetbytes.com/pizza-roll-ups/",
+      "image": "https://www.budgetbytes.com/wp-content/uploads/2017/12/Pizza-Roll-Ups-V2.jpg",
       "ingredientList": "flour tortillas, pepperoni, mozzarella cheese sticks, oil, pizza sauce",
       "instructions": "Preheat the oven to 400ºF. Lightly spritz a baking sheet with spray oil or brush a thin layer of your favorite cooking oil onto the baking sheet.\nStack about 4 tortillas at a time on a plate and cover with a damp paper towel. Microwave for 20-30 seconds, or until they are steamy and pliable. Microwave the second batch when you're ready to roll more.\nSlice each of the mozzarella sticks in half, lengthwise. Place about 5 pepperoni on each tortilla in the bottom 1/3 o the circle, then place the halved mozzarella stick on top. Fold the sides of the tortilla in to cover the ends, then roll them up tight light a burrito.\nPlace the tightly rolled Pizza Roll Ups on the baking sheet, seam side down. Leave them slightly apart from one another to allow hot air to surround the rolls. Either spritz the top with spray oil, or brush a thin layer of oil on top of the roll ups.\nBake the Pizza Roll Ups for 12-15 minutes, or until they're lightly browned and the cheese is just beginning to ooze. Because every oven is different, begin checking on the Pizza Roll Ups at about 10 minutes, then check ever two minutes or so until they're done.\nServe immediately, with pizza sauce for dipping.",
       "owner": "adam@foo.com",
@@ -318,7 +322,8 @@
       "ingredientList": "bread, avocados, parsley, olive oil, lemon, salt, pepper, garlic powder",
       "instructions": "Toast the bread. Scoop the avocado into a bowl. Add the parsley, olive oil, lemon, salt, pepper, and garlic powder to the avocado and mix together. Spread the mixture on the pieces of toast.",
       "owner": "mike@foo.com",
-      "createdAt": "2022-05-12T12:00:00-14:10"
+      "_id": "SpBue8rWpnbA3HxsW",
+      "createdAt": "2022-08-12T12:00:00-14:10"
     },
     {
       "name": "Baked Potato",
@@ -332,7 +337,7 @@
       "ingredientList": "potatoes, salt, pepper, butter, cheese, sour cream",
       "instructions": "Scrub potato and prick holes with a fork. Microwave for 5 minutes. Turn potato over and microwave for an additional 5 minutes. Cut potato in half lengthwise and season with salt and pepper. Mash up the inside of the potato with a fork. Add the butter and cheese. Microwave the potato for 1 minute. Top with sour cream.",
       "owner": "mike@foo.com",
-      "createdAt": "2022-05-12T12:00:00-14:20"
+      "createdAt": "2022-09-12T12:00:00-14:20"
     },
     {
       "name": "Salted Chocolate-Peanut Butter Vegan Nice Cream",
@@ -346,7 +351,8 @@
       "ingredientList": "cashews, bananas, tofu, cacao powder, dates, peanut butter, vanilla extract, soy milk, salt, peanuts",
       "instructions": "Soak cashews in a bowl of water for 1-3 hours, Drain. Combine the cashews with 1 banana, 1 cup of ice cubes, 3 ounces of tofu, 1/2 cup of cacao powder, 2 pitted dates, 3 tablespoons of peanut butter, 2 teaspoons of vanilla extract, 1 teaspoon of soy milk, and 1/4 teaspoon of sea salt. Blend until smooth. When finished, sprinkle with crushed peanuts.  ",
       "owner": "mike@foo.com",
-      "createdAt": "2022-05-12T12:00:00-14:20"
+      "_id": "AY8XHDGAipwXFCruG",
+      "createdAt": "2022-01-12T12:00:00-14:20"
     },
     {
       "name": "Toasted Cheese Sandwich",
@@ -360,7 +366,7 @@
       "ingredientList": "Cheese, bread rolls, sugar",
       "instructions": "Top each bread roll with some cheese. Toast the rolls in a toaster oven until cheese is melted, about 5 to 7 minutes. Sprinkle sugar over the melted cheese to taste.",
       "owner": "mike@foo.com",
-      "createdAt": "2022-05-12T12:00:00-14:40"
+      "createdAt": "2022-02-12T12:00:00-14:40"
     },
     {
       "name": "Carbonara",
@@ -374,7 +380,8 @@
       "ingredientList": "spaghetti, bacon, eggs, parmesan, olive oil",
       "instructions": "Bring a pot of lightly salted water to a boil. Cook spaghetti for 8 to 10 minutes. Drain water. Place 1 pound of chopped bacon into a skillet and cook until evenly brown. Place spaghetti in a large bowl and add in 1/4 cup of olive oil. Stir in bacon, 4 beaten eggs, and 3/4 cup of parmesan cheese.",
       "owner": "mike@foo.com",
-      "createdAt": "2022-05-12T12:00:00-14:50"
+      "_id": "c8RjcMYZohMc5hD7G",
+      "createdAt": "2022-07-12T12:00:00-14:50"
     },
     {
       "name": "Beef Stroganoff",
@@ -388,7 +395,7 @@
       "ingredientList": "egg noodles, ground beef, cream of mushroom soup, garlic powder, sour cream, pepper",
       "instructions": "Cook 1 pound of ground beef until browned. Bring a pot of lightly salted water to a boil and cook egg noodles for 7 to 9 minutes. Drain water. Stir 1 can of cream of mushroom soup and garlic powder into the ground beef. Simmer for 10 minutes. Remove from heat and add egg noodles. Stir in 1/2 a cup of sour cream and season with salt and pepper.",
       "owner": "mike@foo.com",
-      "createdAt": "2022-05-12T12:00:00-15:00"
+      "createdAt": "2022-06-12T12:00:00-15:00"
     },
     {
       "name": "Pork Chops",
@@ -402,7 +409,8 @@
       "ingredientList": "italian salad dressing, soy sauce, pepper, pork chops",
       "instructions": "Mix 2 cups of the italian salad dressing, 1/2 teaspoon of pepper, and 1/4 coup of soy sauce in a bowl. Place 4 boneless pork chops int a skillet over medium high heat. Cover with the dressing mixture. Cover skillet and cook for 25 minutes, turning occasionally. Remove cover, reduce heat, and cook until done.",
       "owner": "mike@foo.com",
-      "createdAt": "2022-05-12T12:00:00-15:30"
+      "_id": "5jPoXZun7CoJPG997",
+      "createdAt": "2022-05-22T12:00:00-15:30"
     },
     {
       "name": "Sloppy Joes",
@@ -416,7 +424,7 @@
       "ingredientList": "ground turkey, ketchup, sugar, vinegar, mustard",
       "instructions": "Cook 1 pound of ground turkey until evenly brown. In a large saucepan over medium heat, mix 1 cup of ketchup, 2 tablespoons of sugar, 2 tablespoons of vinegar, and 2 tablespoons of mustard. Mix in the turkey. Cook for 30 minutes, serving occasionally. Serve with buns.",
       "owner": "mike@foo.com",
-      "createdAt": "2022-05-12T12:00:00-15:40"
+      "createdAt": "2022-02-15T12:00:00-10:40"
     },
     {
       "name": "Peanut Butter Mousse",
@@ -430,7 +438,8 @@
       "ingredientList": "peanut butter, greek yogurt, brown sugar, vanilla extract, chocolate chips",
       "instructions": "Microwave 2 tablespoons of peanut butter until liquid and smooth. Stir in 1/4 cup of plain greek yogurt until smooth. Stir in 1/2 teaspoon of brown sugar and 1/8 teaspoon of vanilla extract. Fold in chocolate chips",
       "owner": "mike@foo.com",
-      "createdAt": "2022-05-12T12:00:00-15:50"
+      "_id": "jMDQwdAXpGw6ZwMH2",
+      "createdAt": "2022-05-24T12:00:00-11:50"
     },
     {
       "name": "Red Curry Chicken",
@@ -444,7 +453,8 @@
       "ingredientList": "coconut oil, chicken breast, cream of coconut, red thai curry sauce, vermicelli noodles",
       "instructions": "Heat up oil on high. Cut chicken breasts into cubes and cook until browned. Reduce heat and add 1 can of cream of coconut and 1 bottle of red Thai curry sauce. Cook for an additional 5 minutes. Fill another pot with lightly salted water and cook vermicelli pasta. Drain water. Reduce chicken curry to a simmer. Add noodles and simmer for about 5 minutes.",
       "owner": "mike@foo.com",
-      "createdAt": "2022-05-12T12:00:00-16:00"
+      "_id": "Lehta2hs8ZrCpHbXw",
+      "createdAt": "2022-05-12T12:00:00-06:05"
     }
   ],
 
@@ -773,14 +783,16 @@
       "lactoseFree": true,
       "vegan": true,
       "vegetarian": true,
+      "favorites": "jMDQwdAXpGw6ZwMH2,AY8XHDGAipwXFCruG,",
       "owner": "john@foo.com"
     },
     {
       "name": "Adam Montoya",
-      "glutenFree": true,
+      "glutenFree": false,
       "lactoseFree": false,
-      "vegan": true,
+      "vegan": false,
       "vegetarian": false,
+      "favorites": "LYghH5DJ2ZyZx9vyF,c8RjcMYZohMc5hD7G,",
       "owner": "adam@foo.com"
     },
     {
@@ -789,6 +801,7 @@
       "lactoseFree": true,
       "vegan": false,
       "vegetarian": false,
+      "favorites": "5jPoXZun7CoJPG997,Lehta2hs8ZrCpHbXw,",
       "owner": "mike@foo.com"
     },
     {
@@ -797,14 +810,16 @@
       "lactoseFree": false,
       "vegan": true,
       "vegetarian": true,
+      "favorites": "AqPp7QbuoBt9GJ53S,SpBue8rWpnbA3HxsW,",
       "owner": "dwayne@foo.com"
     },
     {
       "name": "Keanu Reeves",
-      "glutenFree": true,
+      "glutenFree": false,
       "lactoseFree": false,
-      "vegan": true,
-      "vegetarian": false,
+      "vegan": false,
+      "vegetarian": true,
+      "favorites": "zMLpopqJ38TEbPH63,twnDuseygQodZBvpb",
       "owner": "keanu@foo.com"
     }
   ],
