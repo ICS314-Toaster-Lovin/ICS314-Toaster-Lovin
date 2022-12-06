@@ -43,7 +43,7 @@ const RecipeSearch = () => {
       filtered = filtered.filter(function (obj) { return obj.servingSize.toString() === servingSize.toString(); });
     }
     if (estimatedTime) {
-      filtered = filtered.filter(function (obj) { return obj.estimatedTime.includes(estimatedTime); });
+      filtered = filtered.filter(function (obj) { return obj.estimatedTime.toString() === estimatedTime.toString(); });
     }
     if (ingredients) {
       filtered = filtered.filter(function (obj) { return obj.ingredientList.toLowerCase().includes(ingredients.toLowerCase()); });
@@ -58,7 +58,7 @@ const RecipeSearch = () => {
     case 'Vegan':
       filtered = filtered.filter(function (obj) { return obj.vegan === true; });
       break;
-    case 'vegetarian':
+    case 'Vegetarian':
       filtered = filtered.filter(function (obj) { return obj.vegetarian === true; });
       break;
     default:
@@ -110,7 +110,7 @@ const RecipeSearch = () => {
                       Estimated Time
                     </Col>
                     <input
-                      type="text"
+                      type="number"
                       className="shadow-sm"
                       placeholder="Enter a time"
                       onChange={e => setEstimatedTime(e.target.value)}
