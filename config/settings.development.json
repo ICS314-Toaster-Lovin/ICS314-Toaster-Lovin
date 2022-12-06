@@ -18,13 +18,6 @@
     { "email": "wholefoods@foo.com", "password": "changeme", "role": "vendor", "name": "Whole Foods" }
   ],
 
-  "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
-  ],
-
   "recipeData": [
     {
       "name": "Bacon Omelette",
@@ -455,8 +448,147 @@
       "owner": "mike@foo.com",
       "_id": "Lehta2hs8ZrCpHbXw",
       "createdAt": "2022-05-12T12:00:00-06:05"
+    },
+    {
+      "name": "Macaroni and Cheese",
+      "servingSize": 4,
+      "estimatedTime": 25,
+      "glutenFree": false,
+      "lactoseFree": false,
+      "vegan": false,
+      "vegetarian": true,
+      "image": "https://www.allrecipes.com/thmb/RHILKup3NPxxZU9HRKKaDtyntGo=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/238691-Simple-Macaroni-And-Cheese-mfs_008-7a50b284b67140919a0984093cb4611b.jpg",
+      "ingredientList": "macaroni, butter, flour, salt, black pepper, milk, shredded cheddar cheese",
+      "instructions": "Bring a large pot of water to boil and add a pinch of salt to the water. Add in macaroni and follow box instructions for cooking and drain once done. Melt butter in a separate saucepan and mix together flour, salt, and pepper until smooth for around 5 minutes. Add in milk slowly while stirring until smooth. Add in cheddar cheese to the mixture until melted. Then combine the pasta and cheese sauce together.",
+      "owner": "keanu@foo.com",
+      "createdAt": "2022-05-12T12:00:00-06:16"
+    },
+    {
+      "name": "Baked Chicken Wings",
+      "servingSize": 2,
+      "estimatedTime": 70,
+      "glutenFree": true,
+      "lactoseFree": true,
+      "vegan": false,
+      "vegetarian": false,
+      "image": "https://www.allrecipes.com/thmb/5Zf-1r9-xAMieAlujh8HrIE-1DQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/187822_BakedChickenWings_Square_DanielleK-44ec23b899764ee1b26080e1be80bfad.jpg",
+      "ingredientList": "chicken wings, olive oil, garlic, chili powder, garlic powder, salt, black pepper",
+      "instructions": "Preheat your oven to 375 degrees Fahrenheit. Combine chicken wings, olive oil, and garlic into a mixing bowl. In a separate bowl, mix chili powder, garlic powder, salt, and black pepper together then pour over the chicken and mix thoroughly. Place chicken on a baking sheet and cook chicken wings in the oven for about an hour or until crisp and cooked through.",
+      "owner": "keanu@foo.com",
+      "createdAt": "2022-05-12T12:00:00-06:26"
+    },
+    {
+      "name": "Baked Parmesan Chicken",
+      "servingSize": 6,
+      "estimatedTime": 45,
+      "glutenFree": false,
+      "lactoseFree": true,
+      "vegan": false,
+      "vegetarian": false,
+      "image": "https://www.allrecipes.com/thmb/p6wwzr9WcnabMQC3I3hh-Y-oaQU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/618489-91c1274c3ace498f8f84da3ed17838cd.jpg",
+      "ingredientList": "chicken breast, garlic, bread crumbs, parmesan cheese, dried basil, black pepper",
+      "instructions": "Preheat your oven to 350 degrees Fahrenheit. Mince your garlic and combine it with the olive oil and place it in a bowl. In a separate bowl, combine the bread crumbs, parmesan cheese, dried basil, and pepper. Dip the chicken breast in the oil mixture, then in the bread crumb mixture. Once all the chicken is coated in breadcrumbs, arrange on a baking sheet and place in the oven to cook for 30 minutes.",
+      "owner": "keanu@foo.com",
+      "createdAt": "2022-05-12T12:00:00-06:36"
+    },
+    {
+      "name": "Vegetarian Taco Casserole",
+      "servingSize": 4,
+      "estimatedTime": 35,
+      "glutenFree": false,
+      "lactoseFree": false,
+      "vegan": false,
+      "vegetarian": true,
+      "image": "https://www.allrecipes.com/thmb/KO6wKydwpD34KIe1c5Ve6w6d8TQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/1411575-ad5bd480ddbd4bce808a86feb02ef889.jpg",
+      "ingredientList": "tortilla chips, vegetarian chili, cheddar cheese, lettuce, tomatoes, salsa, sour cream",
+      "instructions": "Preheat your oven to 350 degrees Fahrenheit. In a baking dish, cover the bottom with tortilla chips and pour vegetarian chili and cheese on top. Bake in the oven for 25 minutes until chili and cheese is heated through. Top with lettuce, tomato, salsa, and sour cream once out of the oven and enjoy.",
+      "owner": "keanu@foo.com",
+      "createdAt": "2022-05-12T12:00:00-06:46"
+    },
+    {
+      "name": "Peanut Butter Banana Oatmeal",
+      "servingSize": 4,
+      "estimatedTime": 15,
+      "glutenFree": true,
+      "lactoseFree": true,
+      "vegan": true,
+      "vegetarian": true,
+      "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Peanut-Butter-Banana-Oatmeal_EXPS_HCKA19_39203_C08_24_3b-5.jpg?fit=700,1024",
+      "ingredientList": "oats, water, salt, banana, peanut butter, vanilla extract",
+      "instructions": "Heat up water and salt in a pot and stir in oats once boiling. Once the oats thicken up, remove from heat and combine with banana, peanut butter, and vanilla extract.",
+      "owner": "keanu@foo.com",
+      "createdAt": "2022-05-12T12:00:00-06:56"
+    },
+    {
+      "name": "Roasted Carrots",
+      "servingSize": 4,
+      "estimatedTime": 30,
+      "glutenFree": true,
+      "lactoseFree": true,
+      "vegan": true,
+      "vegetarian": true,
+      "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Roasted-Carrots-with-Thyme_EXPS_SSCBZ18_178887_B08_30_1b-2.jpg?fit=700,1024",
+      "ingredientList": "carrots, thyme, olive oil, honey, salt",
+      "instructions": "Preheat your oven to 400 degrees Fahrenheit. Slice carrots into thin slices and place on a baking tray and brush the carrots with a mixture of oil, honey, salt, and thyme. Roast carrots for 20-25 minutes until tender.",
+      "owner": "keanu@foo.com",
+      "createdAt": "2022-05-12T12:00:00-07:06"
+    },
+    {
+      "name": "Roasted Cauliflower",
+      "servingSize": 6,
+      "estimatedTime": 30,
+      "glutenFree": true,
+      "lactoseFree": true,
+      "vegan": true,
+      "vegetarian": true,
+      "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Roasted-Rosemary-Cauliflower_EXPS_SDON16_18952_B06_03_8b.jpg?fit=700,1024",
+      "ingredientList": "cauliflower, olive oil, rosemary, salt",
+      "instructions": "Preheat your oven to 450 degrees Fahrenheit. Chop up cauliflower into large chunks and toss together with olive oil, rosemary, and salt. Then place on baking tray and roast in the oven for 20-25 minutes.",
+      "owner": "keanu@foo.com",
+      "createdAt": "2022-05-12T12:00:00-07:16"
+    },
+    {
+      "name": "Cauliflower Mash",
+      "servingSize": 6,
+      "estimatedTime": 20,
+      "glutenFree": true,
+      "lactoseFree": true,
+      "vegan": true,
+      "vegetarian": true,
+      "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Cauliflower-Mash_EXPS_THCOMS17_210984_D09_08_1b-2.jpg?fit=700,1024",
+      "ingredientList": "cauliflower, chicken broth, garlic, black pepper, bay leaf, salt",
+      "instructions": "Combine chicken broth, garlic, black pepper, bay leaf, and salt in a pot to boil. Once boiling, strain the garlic and bay leaf and remove from heat. Place cauliflower in a large pot of boiling water until tender and add it to the other pot of seasoned chicken broth. Mash until desired consistency.",
+      "owner": "keanu@foo.com",
+      "createdAt": "2022-05-12T12:00:00-07:26"
+    },
+    {
+      "name": "Guacamole",
+      "servingSize": 2,
+      "estimatedTime": 10,
+      "glutenFree": true,
+      "lactoseFree": true,
+      "vegan": true,
+      "vegetarian": true,
+      "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Simple-Guacamole_EXPS_HCA19_17370_C01_17_5b-1.jpg?fit=700,1024",
+      "ingredientList": "avocado, lemon juice, salsa, salt",
+      "instructions": "Peel and chop avocados and place into a small bowl. Mash together while combining with lemon juice, salsa, and salt. Place in the fridge to chill before serving.",
+      "owner": "keanu@foo.com",
+      "createdAt": "2022-05-12T12:00:00-07:36"
+    },
+    {
+      "name": "Caprese Salad Kabobs",
+      "servingSize": 6,
+      "estimatedTime": 10,
+      "glutenFree": true,
+      "lactoseFree": false,
+      "vegan": false,
+      "vegetarian": true,
+      "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Caprese-Salad-Kabobs_EXPS_HCKA19_123345_C05_11_1b-6.jpg?fit=700,1024",
+      "ingredientList": "cherry tomato, mozzarella, basil, olive oil, balsamic vinegar",
+      "instructions": "On skewers, thread together tomatoes, mozzarella, and basil leaves alternating between each ingredient. Combine olive oil and balsamic vinegar together and drizzle over kabobs.",
+      "owner": "keanu@foo.com",
+      "createdAt": "2022-05-12T12:00:00-07:46"
     }
-
   ],
 
   "ingredientData": [
@@ -865,6 +997,51 @@
       "vendor": "Target",
       "owner": "target@foo.com",
       "createdAt": "2022-12-05T12:00:00-08:50"
+    },
+    {
+      "name": "Milk",
+      "price": "$7.29",
+      "quantity": 8,
+      "image": "https://m.media-amazon.com/images/S/assets.wholefoodsmarket.com/PIE/product/62d80d824604707cd90041cc_2022-cen-eb-365-orgmilkjug-gallon-whole-front-099482415518._TTD_._SR1200,1200_._QL100_.jpg",
+      "vendor": "Whole Foods",
+      "owner": "wholefoods@foo.com",
+      "createdAt": "2022-12-05T12:00:00-08:51"
+    },
+    {
+      "name": "Flour",
+      "price": "$6.29",
+      "quantity": 40,
+      "image": "https://m.media-amazon.com/images/S/assets.wholefoodsmarket.com/PIE/product/5cdccaff99082d1c6360b033_upc-00071012080052-glamor-frontpackageglamor-2019-03-26t16-44-03-42818a0b-c385-4fe1-8163-86e32c3aaf07._TTD_._SR1200,1200_._QL100_.jpg",
+      "vendor": "Whole Foods",
+      "owner": "wholefoods@foo.com",
+      "createdAt": "2022-12-05T12:00:00-08:52"
+    },
+    {
+      "name": "Carrots",
+      "price": "$2.99",
+      "quantity": 20,
+      "image": "https://m.media-amazon.com/images/S/assets.wholefoodsmarket.com/PIE/product/56e5c14bf7c6bd1100c9b41d_365_-organic-carrots-loose-.1._TTD_._SR1200,1200_._QL100_.jpg",
+      "vendor": "Whole Foods",
+      "owner": "wholefoods@foo.com",
+      "createdAt": "2022-12-05T12:00:00-08:53"
+    },
+    {
+      "name": "Honey",
+      "price": "$12.99",
+      "quantity": 5,
+      "image": "https://m.media-amazon.com/images/S/assets.wholefoodsmarket.com/PIE/product/5cdd1e3259433a1c26ea1916_upc-00181457000093-glamor-frontpackageglamor-2019-03-26t21-11-56-3697aef8-2761-4296-9f8c-c9eac5d2788d._TTD_._SR1200,1200_._QL100_.jpg",
+      "vendor": "Whole Foods",
+      "owner": "wholefoods@foo.com",
+      "createdAt": "2022-12-05T12:00:00-08:54"
+    },
+    {
+      "name": "Banana",
+      "price": "$1.49",
+      "quantity": 13,
+      "image": "https://m.media-amazon.com/images/S/assets.wholefoodsmarket.com/PIE/product/56da232c7c3b931100975d81._TTD_._SR1200,1200_._QL100_.jpg",
+      "vendor": "Whole Foods",
+      "owner": "wholefoods@foo.com",
+      "createdAt": "2022-12-05T12:00:00-08:55"
     }
   ],
 
