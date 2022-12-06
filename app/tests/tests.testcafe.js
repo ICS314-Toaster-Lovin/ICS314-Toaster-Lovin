@@ -21,6 +21,7 @@ import { editVendorProfilePage } from './editVendorProfile.page';
 import { adminHomePage } from './adminhome.page';
 import { userListPage } from './editUser.page';
 import { userHomePage } from './userhome.page';
+import { favoritesPage } from './favorites.page';
 
 /* global fixture:false, test:false */
 
@@ -203,4 +204,11 @@ test('Test Editing User List Page and functionality', async (testController) => 
   await navBar.gotoUserListPage(testController);
   await userListPage.gotoEdit(testController);
   await userListPage.editUser(testController);
+});
+
+test('Test the Favorites page', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, student.username, student.password);
+  await navBar.gotoFavoritesPage(testController);
+  await favoritesPage.isDisplayed(testController);
 });
