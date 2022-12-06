@@ -23,7 +23,7 @@ const Favorites = () => {
   }, []);
 
   return (ready ? (
-    <Container className="py-3">
+    <Container id="favorites-page" className="py-3">
       <Row>
         <Col className="text-center">
           <h2>My Favorites</h2>

@@ -85,7 +85,7 @@ const FullRecipe = () => {
 
   function displayStar() {
     if (student[0].favorites.includes(recipe._id)) {
-      return <StarFill color="#F7DA45" className="pb-2 ps-2" onClick={() => removeFavorite(recipe._id)} />;
+      return <StarFill id="favorite" color="#F7DA45" className="pb-2 ps-2" onClick={() => removeFavorite(recipe._id)} />;
     }
     return <Star id="favorite" color="#F7DA45" className="pb-2 ps-2" onClick={() => favoriteRecipe(recipe._id)} />;
   }
