@@ -35,7 +35,7 @@ HomeRecipeItem.propTypes = {
     _id: PropTypes.string,
     name: PropTypes.string,
     servingSize: PropTypes.number,
-    estimatedTime: PropTypes.string,
+    estimatedTime: PropTypes.number,
     glutenFree: PropTypes.bool,
     lactoseFree: PropTypes.bool,
     vegan: PropTypes.bool,
