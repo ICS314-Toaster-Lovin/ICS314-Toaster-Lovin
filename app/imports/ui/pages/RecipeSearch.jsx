@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import React, { useEffect, useState } from 'react';
-import { Accordion, Col, Dropdown, DropdownButton, Row, Table } from 'react-bootstrap';
+import { Accordion, Col, Dropdown, DropdownButton, Row, Table, Container } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Recipe } from '../../api/recipe/Recipe';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -159,7 +159,7 @@ const RecipeSearch = () => {
   );
 
   const returnList = () => (
-    <div style={{ height: '100vh', overflowY: 'visible' }}>
+    <div>
       <Table striped className="border border-2">
         <thead style={{ zIndex: 200 }}>
           <tr>
@@ -181,7 +181,7 @@ const RecipeSearch = () => {
   );
 
   return (
-    <div id="search-recipe-page">
+    <Container id="search-recipe-page">
       <div className="d-flex justify-content-center">
         <Row id="dashboard-screen">
           <Col className="mx-3">
@@ -191,7 +191,7 @@ const RecipeSearch = () => {
           </Col>
         </Row>
       </div>
-    </div>
+    </Container>
   );
 };
 
