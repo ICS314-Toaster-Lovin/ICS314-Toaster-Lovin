@@ -25,6 +25,18 @@ const StudentHomePage = () => {
     const ingredientItems = Ingredient.collection.find({}).fetch();
     const userLists = User.collection.find({}).fetch();
 
+    recipeItems.sort((a, b) => {
+      const da = new Date(a.createdAt);
+      const db = new Date(b.createdAt);
+      return db - da;
+    });
+
+    ingredientItems.sort((c, d) => {
+      const dc = new Date(c.createdAt);
+      const dd = new Date(d.createdAt);
+      return dd - dc;
+    });
+
     return {
       ingredients: ingredientItems,
       recipes: recipeItems,
