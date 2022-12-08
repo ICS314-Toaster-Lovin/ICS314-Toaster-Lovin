@@ -5,8 +5,6 @@ import { Roles } from 'meteor/alanning:roles';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import ListStuff from '../pages/ListStuff';
-import ListStuffAdmin from '../pages/ListStuffAdmin';
 import AddRecipe from '../pages/AddRecipe';
 import AddIngredients from '../pages/AddIngredients';
 import EditRecipe from '../pages/EditRecipe';
@@ -50,7 +48,6 @@ const App = () => (
         <Route path="/student" element={<ProtectedRoute><StudentHome /></ProtectedRoute>} />
         <Route path="/admin" element={<ProtectedRoute><AdminHomePage /></ProtectedRoute>} />
         <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
-        <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
         <Route path="/profile" element={<ProtectedRoute><StudentProfile /></ProtectedRoute>} />
         <Route path="/favorites" element={<ProtectedRoute><Favorites /></ProtectedRoute>} />
         <Route path="/add-recipe" element={<ProtectedRoute><AddRecipe /></ProtectedRoute>} />
@@ -62,7 +59,6 @@ const App = () => (
         <Route path="/edit-ingredient/:_id" element={<ProtectedRoute><EditIngredient /></ProtectedRoute>} />
         <Route path="/edit-student-profile/:_id" element={<ProtectedRoute><EditStudentProfile /></ProtectedRoute>} />
         <Route path="/edit-vendor-profile/:_id" element={<ProtectedRoute><EditVendorProfile /></ProtectedRoute>} />
-        <Route path="/admin" element={<AdminProtectedRoute><ListStuffAdmin /></AdminProtectedRoute>} />
         <Route path="/newest-recipes" element={<AdminProtectedRoute><NewestRecipes /></AdminProtectedRoute>} />
         <Route path="/newest-ingredients" element={<AdminProtectedRoute><NewestIngredients /></AdminProtectedRoute>} />
         <Route path="/user-list" element={<AdminProtectedRoute><UserList /></AdminProtectedRoute>} />
