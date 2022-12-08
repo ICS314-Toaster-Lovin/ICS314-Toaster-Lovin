@@ -9,6 +9,7 @@ const Landing = () => (
         <img
           id="img"
           className="img-fluid w-100"
+          style={{ height: '75vh' }}
           src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
           alt="First slide"
         />
@@ -23,6 +24,7 @@ const Landing = () => (
         <img
           id="img"
           className="img-fluid w-100"
+          style={{ height: '75vh' }}
           src="https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt="Second slide"
         />
@@ -36,7 +38,8 @@ const Landing = () => (
       <Carousel.Item>
         <img
           id="img"
-          className="img-fluid"
+          className="img-fluid w-100"
+          style={{ height: '75vh' }}
           src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt="Third slide"
         />
