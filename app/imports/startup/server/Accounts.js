@@ -32,7 +32,7 @@ const createUser = (email, password, role, name) => {
 if (Meteor.users.find().count() === 0) {
   if (Meteor.settings.defaultAccounts) {
     console.log('Creating the default user(s)');
-    Meteor.settings.defaultAccounts.forEach(({ email, password, role, organization }) => createUser(email, password, role, organization));
+    Meteor.settings.defaultAccounts.forEach(({ email, password, role, name }) => createUser(email, password, role, name));
   } else {
     console.log('Cannot initialize the database!  Please invoke meteor with a settings file.');
   }

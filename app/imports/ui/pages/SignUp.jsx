@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link, Navigate } from 'react-router-dom';
+import { Roles } from 'meteor/alanning:roles';
 import { Accounts } from 'meteor/accounts-base';
 import { Alert, Card, Col, Container, Row } from 'react-bootstrap';
 import SimpleSchema from 'simpl-schema';
@@ -83,7 +84,16 @@ const SignUp = ({ location }) => {
     }
   };
 
-  const { from } = location?.state || { from: { pathname: '/home' } };
+  const setPathname = () => {
+    if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
+      return ('/admin');
+    } if (Roles.userIsInRole(Meteor.userId(), 'student')) {
+      return ('/student');
+    }
+    return ('/vendor');
+  };
+
+  const { from } = location?.state || { from: { pathname: setPathname() } };
   // if correct authentication, redirect to from: page instead of signup screen
   if (redirectToReferer) {
     return <Navigate to={from} />;

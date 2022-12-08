@@ -52,7 +52,7 @@ HomeRecipeItem.propTypes = {
   homerecipeitem: PropTypes.shape({
     name: PropTypes.string,
     servingSize: PropTypes.number,
-    estimatedTime: PropTypes.string,
+    estimatedTime: PropTypes.number,
     glutenFree: PropTypes.bool,
     lactoseFree: PropTypes.bool,
     vegan: PropTypes.bool,

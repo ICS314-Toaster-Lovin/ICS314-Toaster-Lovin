@@ -32,7 +32,7 @@ RecipeItem.propTypes = {
     name: PropTypes.string,
     image: PropTypes.string,
     servingSize: PropTypes.number,
-    estimatedTime: PropTypes.string,
+    estimatedTime: PropTypes.number,
     ingredientList: PropTypes.string,
     glutenFree: PropTypes.bool,
     lactoseFree: PropTypes.bool,
