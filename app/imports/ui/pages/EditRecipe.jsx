@@ -16,7 +16,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 const formSchema = new SimpleSchema({
   name: String,
   servingSize: Number,
-  estimatedTime: String,
+  estimatedTime: Number,
   dietaryRestrictions: Array,
   'dietaryRestrictions.$': { type: String, allowedValues: ['Gluten Free', 'Lactose Free', 'Vegan', 'Vegetarian'] },
   image: String,
