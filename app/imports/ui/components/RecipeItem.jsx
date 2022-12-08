@@ -20,7 +20,7 @@ const RecipeItem = ({ recipe }) => (
       <Link to={`/recipe/${recipe._id}`}>{recipe.name}</Link>
     </td>
     <td>{recipe.servingSize}</td>
-    <td>{recipe.estimatedTime}</td>
+    <td>{recipe.estimatedTime} min</td>
     <td>{recipe.ingredientList}</td>
     <td><ul>{displayRestrictions(recipe).map((restriction) => <li>{restriction}</li>)}</ul></td>
   </tr>
