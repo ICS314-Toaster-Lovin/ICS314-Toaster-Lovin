@@ -12,6 +12,7 @@ import swal from 'sweetalert';
 import { setUserRoleMethod } from '../../startup/both/Methods';
 import { Students } from '../../api/student/Student';
 import { Vendors } from '../../api/vendor/Vendor';
+import { User } from '../../api/user/User';
 
 /**
  * SignUp component is similar to signin component, but we create a new user instead.
@@ -51,8 +52,10 @@ const SignUp = ({ location }) => {
         const owner = Meteor.user().username;
         if (role === 'student') {
           Students.collection.insert({ name, owner });
+          User.collection.insert({ email, password, role });
         } else if (role === 'vendor') {
           Vendors.collection.insert({ name, owner });
+          User.collection.insert({ email, password, role });
         }
 
         setRedirectToRef(true);
@@ -70,6 +73,14 @@ const SignUp = ({ location }) => {
           }
         },
       );
+      User.collection.insert(
+        { email, password, role },
+        (err) => {
+          if (err) {
+            swal('Error', err.message, 'error');
+          }
+        },
+      );
     } else if (role === 'vendor') {
       Vendors.collection.insert(
         { name, owner },
@@ -78,6 +89,14 @@ const SignUp = ({ location }) => {
             swal('Error', err.message, 'error');
           } else {
             setRedirectToRef(true);
+          }
+        },
+      );
+      User.collection.insert(
+        { email, password, role },
+        (err) => {
+          if (err) {
+            swal('Error', err.message, 'error');
           }
         },
       );
