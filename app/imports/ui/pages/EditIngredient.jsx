@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
+import { Roles } from 'meteor/alanning:roles';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -41,7 +42,7 @@ const EditIngredient = () => {
   const submit = (data) => {
     // Get data from the forms
     const { name, quantity, price, image } = data;
-    const owner = Meteor.user().username;
+    const owner = doc.owner;
     const createdAt = new Date();
     // Insert into Recipe Collection
     Ingredient.collection.update(_id, { $set: { name, quantity, price, image, owner, createdAt } }, (error) => (error ?
@@ -51,9 +52,10 @@ const EditIngredient = () => {
 
   // Checks that the user is the owner of the ingredient
   const checkOwner = () => (
-    doc.owner !== Meteor.user().username ? <Navigate to="/notauthorized" /> : null
+    doc.owner !== Meteor.user().username && !Roles.userIsInRole(Meteor.userId(), 'admin') ? <Navigate to="/notauthorized" /> : null
   );
 
+  if (redirect && Roles.userIsInRole(Meteor.userId(), 'admin')) return <Navigate to="/admin" />;
   if (redirect) return <Navigate to="/vendor" />;
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms

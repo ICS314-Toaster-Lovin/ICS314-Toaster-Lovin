@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { AutoForm, ErrorsField, NumField, SelectField, SubmitField, TextField, LongTextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
+import { Roles } from 'meteor/alanning:roles';
 import { Meteor } from 'meteor/meteor';
 import { useParams } from 'react-router';
 import { Navigate } from 'react-router-dom';
@@ -46,7 +47,7 @@ const EditRecipe = () => {
     // Get data from the forms
     const { name, servingSize, estimatedTime, image, ingredientList, instructions, dietaryRestrictions } = data;
     // for Recipe collection fields
-    const owner = Meteor.user().username;
+    const owner = doc.owner;
     const glutenFree = dietaryRestrictions.includes('Gluten Free');
     const lactoseFree = dietaryRestrictions.includes('Lactose Free');
     const vegan = dietaryRestrictions.includes('Vegan');
@@ -69,7 +70,7 @@ const EditRecipe = () => {
 
   // Checks that the user is the owner of the ingredient
   const checkOwner = () => (
-    doc.owner !== Meteor.user().username ? <Navigate to="/notauthorized" /> : null
+    doc.owner !== Meteor.user().username && !Roles.userIsInRole(Meteor.userId(), 'admin') ? <Navigate to="/notauthorized" /> : null
   );
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms

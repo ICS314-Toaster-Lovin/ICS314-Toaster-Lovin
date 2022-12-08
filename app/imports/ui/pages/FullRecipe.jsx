@@ -84,6 +84,9 @@ const FullRecipe = () => {
   }
 
   function displayStar() {
+    if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
+      return null;
+    }
     if (student[0].favorites.includes(recipe._id)) {
       return <StarFill id="favorite" color="#F7DA45" className="pb-2 ps-2" onClick={() => removeFavorite(recipe._id)} />;
     }
