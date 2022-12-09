@@ -13,8 +13,8 @@ const VendorProfilePageItem = ({ vendors }) => (
     <Row>
       <h3 id="vendor-hours">{vendors.hours}</h3>
     </Row>
-    <Row>
-      <Image id="vendor-gps" src={vendors.gps} />
+    <Row className="justify-content-center">
+      <Image id="vendor-gps" className="h-auto w-auto" src={vendors.gps} />
     </Row>
   </Col>
 );
