@@ -2,10 +2,10 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Col, Container, Row, Table } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
+import swal from 'sweetalert';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { User } from '../../api/user/User';
 import UserListItem from '../components/UserListItem';
-import swal from 'sweetalert';
 
 const UserList = () => {
 
